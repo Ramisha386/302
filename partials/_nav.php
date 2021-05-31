@@ -55,7 +55,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <div class="avatar">
-                                        <img src="/examples/images/avatar.png" alt="Avatar">
+                                       <!-- <img src="images/avatar.jpg" alt="Avatar">-->
                                     </div>				
                                     <h4 class="modal-title">Member Login</h4>	
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -122,10 +122,10 @@
                                     <input type="text" class="form-control" name="email" placeholder="Email" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+                                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+                                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
                                 </div>  
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="phone_number" placeholder="phone number" required="required">
@@ -233,20 +233,7 @@
     </section>
    
 
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-              
-                    <div class="copyright-text text-center">
-                        <p>&copy; Your Company 2014. All Rights Reserved.</p>
-                        <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-       
-    </footer>
+
     <!--/#footer-->
 
     

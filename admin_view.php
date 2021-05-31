@@ -211,7 +211,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 <body>
- <?php require 'partials/_nav.php' 
+ <?php require 'partials/_nav1.php' 
  
    
 
