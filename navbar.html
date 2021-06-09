@@ -23,13 +23,14 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbnZ0dUhHSWtwNmhCOWwtb0luQ0ltSWVBdTdvd3xBQ3Jtc0tucDNNNENoV2tuLWV5V0lJV21Zcm5EdEpFQmxMb3ZiZjNva2RjczA3R3VCVHp0dTd4OGpuZ3FvOWJmb1JwUEQ4dGp3dnptVUFFMXg0d2VPWnk4SGo5d3M5LVBzTGVIYW1hUGJlUmJkZlZKcGZCM1ItQQ&q=https%3A%2F%2Fstackpath.bootstrapcdn.com%2Ffont-awesome%2F4.7.0%2Fcss%2Ffont-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
     <style>
         * {
             padding: 0;
@@ -213,6 +214,63 @@
             font-size: 1.5rem;
             padding-left: 5px;
         }
+        
+        .container
+        {
+            margin-top: 110px;
+        }
+
+        .card
+        {
+            border:none;
+            outline:none;
+            background-color:rgba(139, 0, 0, 0.123);
+            border-radius: 20px;
+            
+            transition:transform .3s;
+        }
+        .card:hover
+        {
+            transform: translateY(-15px);
+            transition:transform .3s;
+        }
+
+        .text1
+        {
+            font-size: 13px;
+            color:floralwhite;
+        }
+        .info
+        {
+            line-height: 17px;
+        }
+        .star
+        {
+            color:#fbc02d;
+
+        }
+        /*card 1*/
+        .cost span
+        {
+            color:honeydew;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .shoe
+        {
+            background:darkred;
+        }
+        /* card 1 ends here*/
+        .shoe:hover
+        {
+            opacity: 0.8;
+        }
+        .cursor
+        {
+            cursor:pointer;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
 
    
     </style>
@@ -308,9 +366,276 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <!--Container for all products-->
+        <div class="container mb-5 mt-5">
+            <!--1st Row Cards-->
+            <div class="row">
+               <!--Card 1-->
+                <div class="col-md-4">
+                    <div class="card mt-3">
+                        <div class="product-1 align-items-center p-2 text-center">
+                            <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                            <h5>Mug</h5>
+                            <div class="mt-3 info">
+                                <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                                <span class="text1">Lorem, ipsum dolor.</span>
+                            </div>
+                            <div class="cost mt-3 text-dark">
+                                <span>$69.99</span>
+                                <div class="star mt-3 align-items-center">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Button for Cards-->
+                        <div class="p-3 shoe text-center text-white mt-3 cursor">
+                            <span class="text-uppercase">Add To Cart</span>
+                        </div>
+                    </div>
+                </div>
+            <!--Card 1 Ends Here-->
+            <!--Card 2 Starts-->
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <div class="product-1 align-items-center p-2 text-center">
+                        <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                        <h5>Mug</h5>
+                        <div class="mt-3 info">
+                            <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                            <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                        <div class="cost mt-3 text-dark">
+                            <span>$69.99</span>
+                            <div class="star mt-3 align-items-center">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button for Cards-->
+                    <div class="p-3 shoe text-center text-white mt-3 cursor">
+                        <span class="text-uppercase">Add To Cart</span>
+                    </div>
+                </div>
+            </div>
+            <!--Card 2 ends Here-->
+               <!--Card 3 Starts-->
+               <div class="col-md-4">
+                <div class="card mt-3">
+                    <div class="product-1 align-items-center p-2 text-center">
+                        <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                        <h5>Mug</h5>
+                        <div class="mt-3 info">
+                            <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                            <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                        <div class="cost mt-3 text-dark">
+                            <span>$69.99</span>
+                            <div class="star mt-3 align-items-center">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button for Cards-->
+                    <div class="p-3 shoe text-center text-white mt-3 cursor">
+                        <span class="text-uppercase">Add To Cart</span>
+                    </div>
+                </div>
+            </div>
+            <!--Card 3 ends Here-->
+            </div>
+            <!--3rd Row Card ends Here-->
+                      <!--2nd Row Cards-->
+                      <div class="row">
+                        <!--Card 1-->
+                         <div class="col-md-4">
+                             <div class="card mt-3">
+                                 <div class="product-1 align-items-center p-2 text-center">
+                                     <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                                     <h5>Mug</h5>
+                                     <div class="mt-3 info">
+                                         <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                                         <span class="text1">Lorem, ipsum dolor.</span>
+                                     </div>
+                                     <div class="cost mt-3 text-dark">
+                                         <span>$69.99</span>
+                                         <div class="star mt-3 align-items-center">
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!--Button for Cards-->
+                                 <div class="p-3 shoe text-center text-white mt-3 cursor">
+                                     <span class="text-uppercase">Add To Cart</span>
+                                 </div>
+                             </div>
+                         </div>
+                     <!--Card 1 Ends Here-->
+                     <!--Card 2 Starts-->
+                     <div class="col-md-4">
+                         <div class="card mt-3">
+                             <div class="product-1 align-items-center p-2 text-center">
+                                 <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                                 <h5>Mug</h5>
+                                 <div class="mt-3 info">
+                                     <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                                     <span class="text1">Lorem, ipsum dolor.</span>
+                                 </div>
+                                 <div class="cost mt-3 text-dark">
+                                     <span>$69.99</span>
+                                     <div class="star mt-3 align-items-center">
+                                         <i class="fa fa-star"></i>
+                                         <i class="fa fa-star"></i>
+                                         <i class="fa fa-star"></i>
+                                         <i class="fa fa-star"></i>
+                                         <i class="fa fa-star"></i>
+                                     </div>
+                                 </div>
+                             </div>
+                             <!--Button for Cards-->
+                             <div class="p-3 shoe text-center text-white mt-3 cursor">
+                                 <span class="text-uppercase">Add To Cart</span>
+                             </div>
+                         </div>
+                     </div>
+                     <!--Card 2 ends Here-->
+                        <!--Card 3 Starts-->
+                        <div class="col-md-4">
+                         <div class="card mt-3">
+                             <div class="product-1 align-items-center p-2 text-center">
+                                 <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                                 <h5>Mug</h5>
+                                 <div class="mt-3 info">
+                                     <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                                     <span class="text1">Lorem, ipsum dolor.</span>
+                                 </div>
+                                 <div class="cost mt-3 text-dark">
+                                     <span>$69.99</span>
+                                     <div class="star mt-3 align-items-center">
+                                         <i class="fa fa-star"></i>
+                                         <i class="fa fa-star"></i>
+                                         <i class="fa fa-star"></i>
+                                         <i class="fa fa-star"></i>
+                                         <i class="fa fa-star"></i>
+                                     </div>
+                                 </div>
+                             </div>
+                             <!--Button for Cards-->
+                             <div class="p-3 shoe text-center text-white mt-3 cursor">
+                                 <span class="text-uppercase">Add To Cart</span>
+                             </div>
+                         </div>
+                     </div>
+                     <!--Card 3 ends Here-->
+                     </div>
+                     <!--2nd Row Card ends Here-->
+                               <!--1st Row Cards-->
+            <div class="row">
+                <!--Card 1-->
+                 <div class="col-md-4">
+                     <div class="card mt-3">
+                         <div class="product-1 align-items-center p-2 text-center">
+                             <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                             <h5>Mug</h5>
+                             <div class="mt-3 info">
+                                 <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                                 <span class="text1">Lorem, ipsum dolor.</span>
+                             </div>
+                             <div class="cost mt-3 text-dark">
+                                 <span>$69.99</span>
+                                 <div class="star mt-3 align-items-center">
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                 </div>
+                             </div>
+                         </div>
+                         <!--Button for Cards-->
+                         <div class="p-3 shoe text-center text-white mt-3 cursor">
+                             <span class="text-uppercase">Add To Cart</span>
+                         </div>
+                     </div>
+                 </div>
+             <!--Card 1 Ends Here-->
+             <!--Card 2 Starts-->
+             <div class="col-md-4">
+                 <div class="card mt-3">
+                     <div class="product-1 align-items-center p-2 text-center">
+                         <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                         <h5>Mug</h5>
+                         <div class="mt-3 info">
+                             <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                         </div>
+                         <div class="cost mt-3 text-dark">
+                             <span>$69.99</span>
+                             <div class="star mt-3 align-items-center">
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                             </div>
+                         </div>
+                     </div>
+                     <!--Button for Cards-->
+                     <div class="p-3 shoe text-center text-white mt-3 cursor">
+                         <span class="text-uppercase">Add To Cart</span>
+                     </div>
+                 </div>
+             </div>
+             <!--Card 2 ends Here-->
+                <!--Card 3 Starts-->
+                <div class="col-md-4">
+                 <div class="card mt-3">
+                     <div class="product-1 align-items-center p-2 text-center">
+                         <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
+                         <h5>Mug</h5>
+                         <div class="mt-3 info">
+                             <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                         </div>
+                         <div class="cost mt-3 text-dark">
+                             <span>$69.99</span>
+                             <div class="star mt-3 align-items-center">
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                             </div>
+                         </div>
+                     </div>
+                     <!--Button for Cards-->
+                     <div class="p-3 shoe text-center text-white mt-3 cursor">
+                         <span class="text-uppercase">Add To Cart</span>
+                     </div>
+                 </div>
+             </div>
+             <!--Card 3 ends Here-->
+             </div>
+             <!--3rd Row Card ends Here-->
+        </div>
        
-        <!--footer-->
-        <footer>
+       
+        <!-- <footer>
             <div class="main-content">
                 <div class="left box">
                     <h2>About Us</h2>
@@ -362,7 +687,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> -->
     </body>
 </body>
 </body>
