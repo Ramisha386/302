@@ -319,7 +319,7 @@
                                          <input type="time" id="appt" name="appt" required="required">
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group" >
                                 <label for="quantity">Seats available:</label>
                                        <input type="number" id="quantity" name="quantity" min="0" max="50" required="required">                                </div>
 
