@@ -311,17 +311,17 @@
 
                                 <div class="form-group">
                                 <label for="appt">Select Start Time:</label>
-                                                <input type="time" id="appt" name="appt">
+                                                <input type="time" id="appt" name="appt" required="required">
                                 </div>
 
                                 <div class="form-group">
                                 <label for="appt">Select End Time:</label>
-                                         <input type="time" id="appt" name="appt">
+                                         <input type="time" id="appt" name="appt" required="required">
                                 </div>
 
                                 <div class="form-group">
                                 <label for="quantity">Seats available:</label>
-                                       <input type="number" id="quantity" name="quantity" min="0" max="50">                                </div>
+                                       <input type="number" id="quantity" name="quantity" min="0" max="50" required="required">                                </div>
 
                                 
                                 
