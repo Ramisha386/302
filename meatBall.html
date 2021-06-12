@@ -25,141 +25,133 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <style>
-        .own
-        {
-            font-weight: bolder;
-            font-size: large;
-            font-family: 'Lobster', cursive;
-            font-family: 'Merriweather', serif;
-            color: darkred;
-        }
-        .display
-        {
-            font-style: oblique;
-            font-size: medium;
-        }
-        <style>
-        .own
-        {
-            font-weight: bolder;
-            font-size: large;
-            font-family: 'Lobster', cursive;
-            font-family: 'Merriweather', serif;
-            color: darkred;
-        }
-        .display
-        {
-            font-style: oblique;
-            font-size: medium;
-        }
         *
-       {
-           padding: 0;
-           margin: 0;
-           box-sizing: border-box;
-       }
-       body
-       {
-           
+      {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+      }
+      body
+      {
+          background-image: url("images/back.jpg");
+          background-size: cover;
+          background-position: center;
+         
+          font-family: 'Oswald', sans-serif;
+      }
+      .menu-bar
+      {
+          background:darkred;
+          text-align: center;
+          font-size: 15px;
+      }
+      .menu-bar ul
+      {
+          display: inline-flex;
+          list-style: none;
+          color: #fff;
+      }
+      .menu-bar ul li
+      {
+          width:120px;
+          margin:15px;
+          padding: 15px;
+      }
+      .menu-bar ul li a
+      {
+          text-decoration: none;
+          color: #fff;
+      }
+      .active , .menu-ar ul li:hover
+      {
+          background: #000;
+          border-radius: 2px;
 
-        font-family: 'Varela Round', sans-serif;
-        background-image: url('images/platter.jpg');
-        background: rgba(76, 175, 100, 0.9)
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-        color: #fff;
-        
-       }
-       .menu-bar
-       {
-           background:darkred;
-           text-align: center;
-           font-size: 15px;
-       }
-       .menu-bar ul
-       {
-           display: inline-flex;
-           list-style: none;
-           color: #fff;
-       }
-       .menu-bar ul li
-       {
-           width:120px;
-           margin:15px;
-           padding: 15px;
-       }
-       .menu-bar ul li a
-       {
-           text-decoration: none;
-           color: #fff;
-       }
-       .active , .menu-ar ul li:hover
-       {
-           background: #000;
-           border-radius: 2px;
+      }
+      .menu-bar fa
+      {
+          margin-left: 20px;
+          float: left;
+          padding-right: 5px;
+      }
+      .sub-menu-1
+      {
+          display:none;
 
-       }
-       .menu-bar fa
-       {
-           margin-left: 20px;
-           float: left;
-           padding-right: 5px;
-       }
-       .sub-menu-1
-       {
-           display:none;+
-
-       }
-       .menu-bar ul li:hover  .sub-menu-1
-       {
-           display: block;
-           position: absolute;
-           background-color:darkred;
-           margin-top: 15px;
-           margin-left:-15px;
-           
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul
-       {
-           display: block;
-           margin:10px;
-           
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul li
-       {
-           width:150px;
-           padding:10px;
-           border-bottom: 1px dotted #fff;
-           background:transparent;
-           border-radius: 0;
-           text-align: left;
-           color: white;
-       }
-       
-       .menu-bar ul li:hover  .sub-menu-1 ul li:last-child
-       {
-           border-bottom: none;
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul a:hover
-       {
-           color: white;
-       }
-       .sub-menu-2
-       {
-           display: none;
-       }
-       .hover-me:hover .sub-menu-2
-       {
-           position: absolute;
-           display: block;
-           margin-top: -40px;
-           margin-left:140px;
-           background: darkred;
-       }
+      }
+      .menu-bar ul li:hover  .sub-menu-1
+      {
+          display: block;
+          position: absolute;
+          background-color:darkred;
+          margin-top: 15px;
+          margin-left:-15px;
+          
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul
+      {
+          display: block;
+          margin:10px;
+          
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul li
+      {
+          width:150px;
+          padding:10px;
+          border-bottom: 1px dotted #fff;
+          background:transparent;
+          border-radius: 0;
+          text-align: left;
+          color: white;
+      }
       
-    </style>
-    </style>
+      .menu-bar ul li:hover  .sub-menu-1 ul li:last-child
+      {
+          border-bottom: none;
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul a:hover
+      {
+          color: white;
+      }
+      .sub-menu-2
+      {
+          display: none;
+      }
+      .hover-me:hover .sub-menu-2
+      {
+          position: absolute;
+          display: block;
+          margin-top: -40px;
+          margin-left:140px;
+          background: darkred;
+      }
+     
+       .own
+       {
+           font-weight: bolder;
+           font-size: large;
+           font-family: 'Lobster', cursive;
+           font-family: 'Merriweather', serif;
+           color: darkred;
+       }
+       .display
+       {
+           font-style: oblique;
+           font-size: medium;
+       }
+       .btn
+      {
+          color: #fff;
+          border-color:darkred;
+      }
+      .btn:hover
+      {
+          color: white;
+          font-weight: bold;
+          border-color: whitesmoke;
+
+      }
+   </style>
 </head><!--/head-->
 
 <body>
@@ -221,21 +213,7 @@
     <!--/#header-->
 
 
-    <section id="page-breadcrumb">
-        <div class="vertical-center sun">
-             <div class="container">
-                <div class="row">
-                    <div class="action">
-                        <div class="col-sm-12">
-                            <h1 class="title">Portfolio</h1>
-                            <p>Be Creative</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </section>
-    <!--/#action-->
+  
 
     <section id="portfolio-information" class="padding-top">
         <div class="container">
@@ -245,7 +223,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="project-info overflow">
-                        <h3 class="own">Meatball Blast</h3>
+                        <h3 class="own">Platter-5</h3>
                         <p>The movies just wouldn't be the same without an ice-cold, refreshing pepsi and freshly popped popcorn. Now, classics like Pop Chicken and candy are joined with more menu options than ever. </p>
                         <ul class="elements">
                             <li><i class="fa fa-angle-right"></i> 1 French Fries</li>
