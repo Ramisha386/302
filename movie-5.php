@@ -320,9 +320,17 @@
 
 
 
-                    <div class="live-preview">
-                        <a href="#" class="btn btn-common uppercase">Add to Cart</a>
+                    <form action="manage_cart.php" method="POST">
+    <div class="live-preview">
+                        <br>
+                        <br>
+                        
+                    <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
                     </div>
+                    <input type="hidden" name="Item_Name" value="Black Widow">
+                    <input type="hidden" name="Price" value="700">
+                    <input type="hidden" name="Type" value="Ticket">
+                    </form>
                 </div>
             </div>
         </div>

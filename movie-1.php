@@ -326,10 +326,11 @@
                         </ul>
                     </div>
     </b>
+    <form action="manage_cart.php" method="POST">
     <div class="live-preview">
                         <br>
                         <br>
-                        <form action="manage_cart.php" method="POST">
+                        
                     <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
                     </div>
                     <input type="hidden" name="Item_Name" value="Army of the Dead">
