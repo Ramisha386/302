@@ -309,7 +309,10 @@
       <td><input class='text-center' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> </td>
       <td>$value[Price] </td>
       <td>
+      <form action='manage_cart.php' method='POST'>
       <button name='Remove_Item' class='btn btn-outline-danger btn-sm'>Remove </button> </td>
+      <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
+      </form> 
       </tr>
       ";
   }
