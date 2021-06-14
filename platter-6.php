@@ -1,3 +1,6 @@
+<?php session_start(); 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -209,6 +212,7 @@
         </div>               
            
     </header>
+    </header>
     <!--/#header-->
 
 
@@ -219,21 +223,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/portfolio-details/16.jpg" class="img-responsive" alt="">
+                    <img src="images/portfolio-details/14.jpg" class="img-responsive" alt="">
                 </div>
                 <div class="col-sm-6">
                     <div class="project-info overflow">
-                        <h3 class="own">Platter-8</h3>
+                        <h3 class="own">Platter-6</h3>
                         <p>The movies just wouldn't be the same without an ice-cold, refreshing pepsi and freshly popped popcorn. Now, classics like Pop Chicken and candy are joined with more menu options than ever. </p>
                         <ul class="elements">
-                            <li><i class="fa fa-angle-right"></i> 2 Large Tacos</li>   
-                            <li><i class="fa fa-angle-right"></i> 1 Large French Fries</li>               
+                            <li><i class="fa fa-angle-right"></i> 4 Tacos</li>              
                         </ul>
                     </div>
+                    <form>
                     <div class="skills overflow">
                         <h3 class="own">Total Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">1100 BDT</h4>
+                            <h4 class="display">800 BDT</h4>
                         </ul>
                     </div>
                     <div class="client overflow">
@@ -243,8 +247,14 @@
                         </ul>
                     </div>
                     <div class="live-preview">
-                        <a href="#" class="btn btn-common uppercase">Add to Cart</a>
+                        <br>
+                        <br>
+                    <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
                     </div>
+                    <input type="hidden" name="Item_Name" value="Platter-6">
+                    <input type="hidden" name="Price" value="800">
+                    <input type="hidden" name="Type" value="Food">
+    </form>
                 </div>
             </div>
         </div>

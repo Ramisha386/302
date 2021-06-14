@@ -1,4 +1,6 @@
+<?php session_start(); 
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,133 +27,133 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <style>
-        .own
-        {
-            font-weight: bolder;
-            font-size: large;
-            font-family: 'Lobster', cursive;
-            font-family: 'Merriweather', serif;
-            color: darkred;
-        }
-        .display
-        {
-            font-style: oblique;
-            font-size: medium;
-        }
         *
-       {
-           padding: 0;
-           margin: 0;
-           box-sizing: border-box;
-       }
-       body
-       {
-           background-image: url("images/back.jpg");
-           background-size: cover;
-           background-position: center;
+      {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+      }
+      body
+      {
+          background-image: url("images/back.jpg");
+          background-size: cover;
+          background-position: center;
+         
+          font-family: 'Oswald', sans-serif;
+      }
+      .menu-bar
+      {
+          background:darkred;
+          text-align: center;
+          font-size: 15px;
+      }
+      .menu-bar ul
+      {
+          display: inline-flex;
+          list-style: none;
+          color: #fff;
+      }
+      .menu-bar ul li
+      {
+          width:120px;
+          margin:15px;
+          padding: 15px;
+      }
+      .menu-bar ul li a
+      {
+          text-decoration: none;
+          color: #fff;
+      }
+      .active , .menu-ar ul li:hover
+      {
+          background: #000;
+          border-radius: 2px;
+
+      }
+      .menu-bar fa
+      {
+          margin-left: 20px;
+          float: left;
+          padding-right: 5px;
+      }
+      .sub-menu-1
+      {
+          display:none;
+
+      }
+      .menu-bar ul li:hover  .sub-menu-1
+      {
+          display: block;
+          position: absolute;
+          background-color:darkred;
+          margin-top: 15px;
+          margin-left:-15px;
           
-           font-family: 'Oswald', sans-serif;
-       }
-       .menu-bar
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul
+      {
+          display: block;
+          margin:10px;
+          
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul li
+      {
+          width:150px;
+          padding:10px;
+          border-bottom: 1px dotted #fff;
+          background:transparent;
+          border-radius: 0;
+          text-align: left;
+          color: white;
+      }
+      
+      .menu-bar ul li:hover  .sub-menu-1 ul li:last-child
+      {
+          border-bottom: none;
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul a:hover
+      {
+          color: white;
+      }
+      .sub-menu-2
+      {
+          display: none;
+      }
+      .hover-me:hover .sub-menu-2
+      {
+          position: absolute;
+          display: block;
+          margin-top: -40px;
+          margin-left:140px;
+          background: darkred;
+      }
+     
+       .own
        {
-           background:darkred;
-           text-align: center;
-           font-size: 15px;
+           font-weight: bolder;
+           font-size: large;
+           font-family: 'Lobster', cursive;
+           font-family: 'Merriweather', serif;
+           color: darkred;
        }
-       .menu-bar ul
+       .display
        {
-           display: inline-flex;
-           list-style: none;
-           color: #fff;
-       }
-       .menu-bar ul li
-       {
-           width:120px;
-           margin:15px;
-           padding: 15px;
-       }
-       .menu-bar ul li a
-       {
-           text-decoration: none;
-           color: #fff;
-       }
-       .active , .menu-ar ul li:hover
-       {
-           background: #000;
-           border-radius: 2px;
-
-       }
-       .menu-bar fa
-       {
-           margin-left: 20px;
-           float: left;
-           padding-right: 5px;
-       }
-       .sub-menu-1
-       {
-           display:none;+
-
-       }
-       .menu-bar ul li:hover  .sub-menu-1
-       {
-           display: block;
-           position: absolute;
-           background-color:darkred;
-           margin-top: 15px;
-           margin-left:-15px;
-           
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul
-       {
-           display: block;
-           margin:10px;
-           
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul li
-       {
-           width:150px;
-           padding:10px;
-           border-bottom: 1px dotted #fff;
-           background:transparent;
-           border-radius: 0;
-           text-align: left;
-           color: white;
-       }
-       
-       .menu-bar ul li:hover  .sub-menu-1 ul li:last-child
-       {
-           border-bottom: none;
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul a:hover
-       {
-           color: white;
-       }
-       .sub-menu-2
-       {
-           display: none;
-       }
-       .hover-me:hover .sub-menu-2
-       {
-           position: absolute;
-           display: block;
-           margin-top: -40px;
-           margin-left:140px;
-           background: darkred;
+           font-style: oblique;
+           font-size: medium;
        }
        .btn
-       {
-           color: #fff;
-           border-color:darkred;
-       }
-       .btn:hover
-       {
-           color: white;
-           font-weight: bold;
-           border-color: whitesmoke;
+      {
+          color: #fff;
+          border-color:darkred;
+      }
+      .btn:hover
+      {
+          color: white;
+          font-weight: bold;
+          border-color: whitesmoke;
 
-       }
-      
-    </style>
+      }
+   </style>
 </head><!--/head-->
 
 <body>
@@ -212,31 +214,27 @@
     <!--/#header-->
 
 
-
     <!--/#action-->
 
     <section id="portfolio-information" class="padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/portfolio-details/15.jpg" class="img-responsive" alt="">
+                    <img src="images/portfolio-details/13.jpg" class="img-responsive" alt="">
                 </div>
                 <div class="col-sm-6">
                     <div class="project-info overflow">
-                        <h3 class="own">Platter-7</h3>
+                        <h3 class="own">Combo Offer</h3>
                         <p>The movies just wouldn't be the same without an ice-cold, refreshing pepsi and freshly popped popcorn. Now, classics like Pop Chicken and candy are joined with more menu options than ever. </p>
                         <ul class="elements">
-                            <li><i class="fa fa-angle-right"></i> 2 Small Wedges</li>   
-                            <li><i class="fa fa-angle-right"></i> 1 Packet of Chip</li>              
-                            <li><i class="fa fa-angle-right"></i> 1 Large Drink</li>   
-                            <li><i class="fa fa-angle-right"></i> 2 Chocolate Bars</li>
-                            <li><i class="fa fa-angle-right"></i> 4 Chicken Fries</li>   
+                            <li><i class="fa fa-angle-right"></i> 3 Hot Dogs</li>              
                         </ul>
                     </div>
+                    <form>
                     <div class="skills overflow">
                         <h3 class="own">Total Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">2000 BDT</h4>
+                            <h4 class="display">1100 BDT</h4>
                         </ul>
                     </div>
                     <div class="client overflow">
@@ -246,8 +244,14 @@
                         </ul>
                     </div>
                     <div class="live-preview">
-                        <a href="#" class="btn btn-common uppercase">Add to Cart</a>
+                        <br>
+                        <br>
+                    <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
                     </div>
+                    <input type="hidden" name="Item_Name" value="Combo Offer">
+                    <input type="hidden" name="Price" value="1100">
+                    <input type="hidden" name="Type" value="Food">
+    </form>
                 </div>
             </div>
         </div>

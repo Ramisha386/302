@@ -1,3 +1,6 @@
+<?php session_start(); 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +16,6 @@
     <link href="css/animate.min.css" rel="stylesheet"> 
 	<link href="css/main.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
-    <link href="css/image.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:wght@300&display=swap" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -26,138 +28,133 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <style>
-        .own
-        {
-            font-weight: bolder;
-            font-size: large;
-            font-family: 'Lobster', cursive;
-            font-family: 'Merriweather', serif;
-            color: darkred;
-        }
-        .display
-        {
-            font-style: oblique;
-            font-size: medium;
-        }
         *
-       {
-           padding: 0;
-           margin: 0;
-           box-sizing: border-box;
-       }
-       body
-       {
-           
+      {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+      }
+      body
+      {
+          background-image: url("images/back.jpg");
+          background-size: cover;
+          background-position: center;
+         
+          font-family: 'Oswald', sans-serif;
+      }
+      .menu-bar
+      {
+          background:darkred;
+          text-align: center;
+          font-size: 15px;
+      }
+      .menu-bar ul
+      {
+          display: inline-flex;
+          list-style: none;
+          color: #fff;
+      }
+      .menu-bar ul li
+      {
+          width:120px;
+          margin:15px;
+          padding: 15px;
+      }
+      .menu-bar ul li a
+      {
+          text-decoration: none;
+          color: #fff;
+      }
+      .active , .menu-ar ul li:hover
+      {
+          background: #000;
+          border-radius: 2px;
 
-        font-family: 'Varela Round', sans-serif;
-        background-image: url('images/platter.jpg');
-        background: rgba(76, 175, 100, 0.9)
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-        color: #fff;
-        
-       }
-       .menu-bar
-       {
-           background:darkred;
-           text-align: center;
-           font-size: 15px;
-       }
-       .menu-bar ul
-       {
-           display: inline-flex;
-           list-style: none;
-           color: #fff;
-       }
-       .menu-bar ul li
-       {
-           width:120px;
-           margin:15px;
-           padding: 15px;
-       }
-       .menu-bar ul li a
-       {
-           text-decoration: none;
-           color: #fff;
-       }
-       .active , .menu-ar ul li:hover
-       {
-           background: #000;
-           border-radius: 2px;
+      }
+      .menu-bar fa
+      {
+          margin-left: 20px;
+          float: left;
+          padding-right: 5px;
+      }
+      .sub-menu-1
+      {
+          display:none;
 
-       }
-       .menu-bar fa
+      }
+      .menu-bar ul li:hover  .sub-menu-1
+      {
+          display: block;
+          position: absolute;
+          background-color:darkred;
+          margin-top: 15px;
+          margin-left:-15px;
+          
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul
+      {
+          display: block;
+          margin:10px;
+          
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul li
+      {
+          width:150px;
+          padding:10px;
+          border-bottom: 1px dotted #fff;
+          background:transparent;
+          border-radius: 0;
+          text-align: left;
+          color: white;
+      }
+      
+      .menu-bar ul li:hover  .sub-menu-1 ul li:last-child
+      {
+          border-bottom: none;
+      }
+      .menu-bar ul li:hover  .sub-menu-1 ul a:hover
+      {
+          color: white;
+      }
+      .sub-menu-2
+      {
+          display: none;
+      }
+      .hover-me:hover .sub-menu-2
+      {
+          position: absolute;
+          display: block;
+          margin-top: -40px;
+          margin-left:140px;
+          background: darkred;
+      }
+     
+       .own
        {
-           margin-left: 20px;
-           float: left;
-           padding-right: 5px;
+           font-weight: bolder;
+           font-size: large;
+           font-family: 'Lobster', cursive;
+           font-family: 'Merriweather', serif;
+           color: darkred;
        }
-       .sub-menu-1
+       .display
        {
-           display:none;+
-
-       }
-       .menu-bar ul li:hover  .sub-menu-1
-       {
-           display: block;
-           position: absolute;
-           background-color:darkred;
-           margin-top: 15px;
-           margin-left:-15px;
-           
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul
-       {
-           display: block;
-           margin:10px;
-           
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul li
-       {
-           width:150px;
-           padding:10px;
-           border-bottom: 1px dotted #fff;
-           background:transparent;
-           border-radius: 0;
-           text-align: left;
-           color: white;
-       }
-       
-       .menu-bar ul li:hover  .sub-menu-1 ul li:last-child
-       {
-           border-bottom: none;
-       }
-       .menu-bar ul li:hover  .sub-menu-1 ul a:hover
-       {
-           color: white;
-       }
-       .sub-menu-2
-       {
-           display: none;
-       }
-       .hover-me:hover .sub-menu-2
-       {
-           position: absolute;
-           display: block;
-           margin-top: -40px;
-           margin-left:140px;
-           background: darkred;
+           font-style: oblique;
+           font-size: medium;
        }
        .btn
-       {
-           color: #fff;
-           border-color:darkred;
-       }
-       .btn:hover
-       {
-           color: white;
-           font-weight: bold;
-           border-color: whitesmoke;
+      {
+          color: #fff;
+          border-color:darkred;
+      }
+      .btn:hover
+      {
+          color: white;
+          font-weight: bold;
+          border-color: whitesmoke;
 
-       }
-      
-    </style>
+      }
+   </style>
 </head><!--/head-->
 
 <body>
@@ -216,41 +213,49 @@
            
     </header>
     <!--/#header-->
+    <!--/#header-->
 
 
-    <!--/#action-->
+  
 
     <section id="portfolio-information" class="padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/portfolio-details/1.jpg" class="img-responsive" alt="">
+                    <img src="images/portfolio-details/9.jpg" class="img-responsive" alt="">
                 </div>
                 <div class="col-sm-6">
                     <div class="project-info overflow">
-                        <h3 class="own">Platter-1</h3>
+                        <h3 class="own">Platter-5</h3>
                         <p>The movies just wouldn't be the same without an ice-cold, refreshing pepsi and freshly popped popcorn. Now, classics like Pop Chicken and candy are joined with more menu options than ever. </p>
                         <ul class="elements">
-                            <li><i class="fa fa-angle-right"></i> 2 King Size Burger</li>
-                            <li><i class="fa fa-angle-right"></i> 1 French Fries and 1 Chip</li>
-                            <li><i class="fa fa-angle-right"></i> 1 Large Drink</li>
+                            <li><i class="fa fa-angle-right"></i> 1 French Fries</li>
+                            <li><i class="fa fa-angle-right"></i> 1 Cold Drink</li>
+                            <li><i class="fa fa-angle-right"></i> 1 Meat Ball</li>
                         </ul>
                     </div>
+                    <form>
                     <div class="skills overflow">
                         <h3 class="own">Total Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">1200 BDT</h4>
+                            <h4 class="display">900 BDT</h4>
                         </ul>
                     </div>
                     <div class="client overflow">
                         <h3 class="own">Platter-Size:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li class="display"> Large</li>
+                            <li class="display"> Medium</li>
                         </ul>
                     </div>
                     <div class="live-preview">
-                        <a href="#" class="btn btn-common uppercase">Add to Cart</a>
+                        <br>
+                        <br>
+                    <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
                     </div>
+                    <input type="hidden" name="Item_Name" value="Platter-5">
+                    <input type="hidden" name="Price" value="900">
+                    <input type="hidden" name="Type" value="Food">
+    </form>
                 </div>
             </div>
         </div>
@@ -265,16 +270,16 @@
                     <div class="portfolio-wrapper">
                         <div class="portfolio-single">
                             <div class="portfolio-thumb">
-                                <img src="images/portfolio/8.jpg" class="img-responsive" alt="">
+                                <img src="images/portfolio/1.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="portfolio-view">
                                 <ul class="nav nav-pills">
-                                    <li><a href="platter-4.html"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="platter-1.html"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="portfolio-info ">
-                            <h2>Platter-4</h2>
+                            <h2>Platter-1</h2>
                         </div>
                     </div>
                 </div>
@@ -303,7 +308,7 @@
                             </div>
                             <div class="portfolio-view">
                                 <ul class="nav nav-pills">
-                                    <li><a href="platter-2.html"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="platter-3.html"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>
