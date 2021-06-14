@@ -235,7 +235,7 @@
                             <li><i class="fa fa-angle-right"></i> 4 Chicken Fries</li>   
                         </ul>
                     </div>
-                    <form>
+                    <form action="manage_cart.php" method="POST">
                     <div class="skills overflow">
                         <h3 class="own">Total Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
