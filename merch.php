@@ -276,7 +276,7 @@
 
                 } 
                 ?>
-                <a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart <?php echo $count; ?></a>
+                <a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart (<?php echo $count; ?>)</a>
                 
                 </li>
             </ul>
