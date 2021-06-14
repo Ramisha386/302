@@ -148,7 +148,7 @@
         .own
         {
             font-weight: bolder;
-            font: size 30px;
+            font-size:xx-large;
             font-family: 'Lobster', cursive;
             font-family: 'Merriweather', serif;
             color: whitesmoke;
@@ -348,22 +348,22 @@
               <div class="carousel-inner">
                 <div class="item active">
                     
-                  <div class="col-xs-4"><a href="#1"><img src="images/1.jpg" class="img-responsive"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/1n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 <div class="item">
-                  <div class="col-xs-4"><a href="#1"><img src="images/2.jpg" class="img-responsive"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/2n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 <div class="item">
-                  <div class="col-xs-4"><a href="#1"><img src="images/3.jpg" class="img-responsive"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/3n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 <div class="item">
-                  <div class="col-xs-4"><a href="#1"><img src="images/4.jpg" class="img-responsive"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/4n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 <div class="item">
-                  <div class="col-xs-4"><a href="#1"><img src="images/5.jpg" class="img-responsive"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/5n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 <div class="item">
-                  <div class="col-xs-4"><a href="#1"><img src="images/6.jpg" class="img-responsive"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/6n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
 
 
@@ -374,7 +374,7 @@
                 <!-- Example item start:  -->
                 
                 <div class="item">
-                  <div class="col-xs-4"><a href="#1"><img src="images/3.jpg" class="img-responsive"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/3n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 
                 <!--  Example item end -->
