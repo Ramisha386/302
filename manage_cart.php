@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $count=count($_SESSION['cart']);
             $_SESSION['cart'][$count]=array('Item_Name'=>$_POST['Item_Name'],'Price'=>$_POST['Price'],'Type'=>$_POST['Type'],'Quantity'=>1);
             echo "<script>alert('Item Added');
+                        
                        window.location.href='merch.php';
                        </script>";
             }

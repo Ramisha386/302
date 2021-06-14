@@ -181,6 +181,7 @@ exit();
                        $conn=oci_connect("dbms","dbms","localhost/XE");
 
                        //when you have to sign up you have to take all posted information.
+
                      
                        $f_name=$_POST["first_name"];
                        $l_name=$_POST["last_name"];
