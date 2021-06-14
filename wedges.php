@@ -246,7 +246,7 @@
                         <br>
                     <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
                     </div>
-                    <input type="hidden" name="Item_Name" value="Wedges>
+                    <input type="hidden" name="Item_Name" value="Wedges">
                     <input type="hidden" name="Price" value="200">
                     <input type="hidden" name="Type" value="Food">
     </form>
