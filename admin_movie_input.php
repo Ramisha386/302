@@ -301,11 +301,11 @@
                                             	
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="movie name" placeholder="movie name" required="required">
+                                    <input type="text" class="form-control" name="movie_name" placeholder="movie name" required="required">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="movie id" placeholder="movie id" required="required">
+                                    <input type="text" class="form-control" name="movie_id" placeholder="movie id" required="required">
                                 </div>
 
 
@@ -314,17 +314,18 @@
                                 </div>
 
                                 <div class="form-group">
+                                
                                     <input type="text" class="form-control" name="details" placeholder="details" required="required">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="release date" placeholder="release date" required="required">
+                                    <input type="text" class="form-control" name="release_date" placeholder="release date" required="required">
                                 </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="genre" placeholder="genre" required="required">
                                 </div>
-
+                                <!--
                                 <div class="form-group">
                                 <label for="myfile">Select an image file as movie poster:</label>
                                  <input type="file" id="myfile" name="myfile" required="required"><br><br>
@@ -334,6 +335,7 @@
                                 <label for="homepage">Enter Trailer URL:</label>
                                  <input type="url" id="homepage" name="homepage">
                                 </div>
+                                -->
                                 
                                 <div class="form-group">
                                     <button type="submit" name="button1"  value="button1" class="btn btn-success btn-lg btn-block">Enter information</button>
@@ -345,6 +347,47 @@
                             </form>
 
                     
+
+                            <?php
+                            session_start();
+                       $conn=oci_connect("dbms","dbms","localhost/XE");
+
+                       //when you have to sign up you have to take all posted information.
+                     
+                       $movie_name=$_POST["movie_name"];
+                       $movie_id=$_POST["movie_id"];
+                       $rating=$_POST["rating"];
+                       $details=$_POST["details"];
+                       $release_date=$_POST["release_date"];
+                       $genre=$_POST["genre"];
+
+                       
+
+
+                       if(!$conn)
+                       {
+                        echo "fail";
+                       }
+                       else
+                       {//echo "<h2 text-align: center> </h2>";
+                        
+
+                        
+                        $sql="insert into movie_info values ('$movie_name','$movie_id','$rating','$details','$release_date','$genre')";
+                       //$sql="delete from Sign_up where Email='Bolodna'";
+                        
+                        $compile=oci_parse($conn,$sql);
+                       
+                       
+                       /* oci_bind_by_name($compile, 'Email', $mail);
+                        oci_bind_by_name($compile, 'Name', $user);
+                        oci_bind_by_name($compile, 'Phone', $phone);
+                        oci_bind_by_name($compile, 'Password', $pass);*/
+                       
+                        oci_execute($compile);
+                       } 
+                       
+                       ?>
 
 
 
