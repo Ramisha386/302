@@ -297,7 +297,7 @@ if(isset($_POST['submit']))
         <div class="card card-signin my-5">
           <div class="card-body">
             <h3 class="card-title text-center">ADMIN</h3>
-            <form action="login2.php" method="POST" >
+            <form action="login_admin.php" method="POST" >
             <form class="form-signin">
               <div class="form-label-group">
                 <input type="email" id="inputEmail" class="form-control" name ="username" placeholder="Email address" required autofocus>

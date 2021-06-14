@@ -238,7 +238,14 @@
         <div class="menu-bar">
             <ul>
                 <li class="active"><a href='#'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href='#'><i class="fa fa-film"></i> All Movies</a></li>
+                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
+                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
+                    </ul>
+                </div>
+            </li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
