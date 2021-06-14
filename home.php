@@ -35,6 +35,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
    <link rel="shortcut icon" type="imagge/png" href="images/favicon/camera.png">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
   <style>
         * {
             padding: 0;
@@ -330,8 +332,8 @@
 
 
 
-
-        <center><h1 class="own">Upcoming Movies</h1></center>
+      <div style="text-align:center; "><h1 style="font-size: 50px;font-weight:bold; font-family: 'Oswald', sans-serif;">Upcoming Movies</h1></div>
+        
         <br>
         <br>
         <br>
@@ -385,9 +387,70 @@
         </div>
           </div>
         </div>
-      
+        <br>
+<br>
+<br>
+<br>
+<br>
         
+        <div style="text-align:center; "><h1 style="font-size: 50px;font-weight:bold; font-family: 'Oswald', sans-serif;">Checkout or new Products</h1></div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+            <!-----slider-->
+    <div class="container">
+        
+        
+       
+        <div class="row">       
+
+          <div class="col-md-12">
+            <div class="carousel slide multi-item-carousel" id="theCarousel">
+              <div class="carousel-inner">
+                <div class="item active">
+                    
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm1.jpg" class="img-responsive" width="400" height="200"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm2.jpg" class="img-responsive" width="400" height="200"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm3.webp" class="img-responsive" width="400" height="200"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm4.jpg" class="img-responsive" width="400" height="200"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm5.png" class="img-responsive" width="400" height="200"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm6.jpg" class="img-responsive" width="400" height="200"></a></div>
+                </div>
+
+
+
+
+
+                <!-- add  more items here -->
+                <!-- Example item start:  -->
+                
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm3.webp" class="img-responsive" width="400" height="200"></a></div>
+                </div>
+                
+                <!--  Example item end -->
+              </div>
+              <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+              <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+            </div>
+        </div>
+          </div>
+        </div>
        <!--Footer Starts-->
 
        <footer id="footer">
