@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>login| Signup</title>
+    <title>LOGIN | SIGNUP</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet"> 
@@ -26,6 +26,7 @@
  body {
 		font-family: 'Varela Round', sans-serif;
         background-image: url('images/index.jpg');
+        background: rgba(76, 175, 100, 0.3)
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
@@ -153,7 +154,7 @@
        }
        .sub-menu-1
        {
-           display:none;
+           display:none;+
 
        }
        .menu-bar ul li:hover  .sub-menu-1
@@ -209,9 +210,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
-
-<body><!------navbar-->
-	<header id="header">      
+<body>
+<header id="header">      
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
@@ -259,208 +259,127 @@
              </div>
             
             </li>
-            <li><a href='#'><i class="fa fa-sign-in"></i>   Sign Up</a></li>
+            <li><a href="#"  data-toggle="modal"><i class="fa fa-sign-in"></i> <br>  Sign up</a></li> 
+                  
+        
+                    
             <li><a href='#'><i class="fa fa-phone"></i>   Contact Us</a></li>
           </ul>
-        </div>               
+        </div> 
+
+        <br>
+        <br>
+        <br>
+        <br>
+                      
            
     </header>
-    <!--/#header-->
 
+    <!--/#header-->
     <section id="home-slider">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-
                 <div class="main-slider">
                     <div class="slide-text">
-                        <h1>Become a Member Partner of STAR CINEPLEX</h1>
-                        <p>STAR CINEPLEX Multi screen Theaters offers Membership schemes to its loyal customers who wish to pre-book their tickets and seats, get discounts for Movies, Free Refreshments, receive advance information of upcoming movies and get free invitations to special events.</p>
-                        <a href="#reg" class="btn btn-common">SIGN UP</a>
-                    </div>
-                    </div>
-                </div>
-                    <div class="col-lg-6">
-                        <div class="main-slider">
-                            <div class="slide-text">
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <img src="images/home/tick.jpg" class="slider-hill" alt="slider image">
-                    </div>
-                    </div>
-                    
-                   
-                </div>
-                </div>
-                    
-                
-            </div>
-        
-        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
-    </section>
-    <!--/#home-slider-->
-
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <img src="images/home/icon1.png" alt="">
-                         <h4><a href="#log" class="btn btn-common">Purchase Ticket</a></h4>   
-                           
-                           
-                        <p> through debit/credit card</p>
-                        </div>
+                        <h1>Instructions for Admin</h1>
+                        <p>In this page you can enter a new movie to the data base.The format of the movie id will be "MXYZ'year''month''date'" where year month date is the current year month date and xyz is the initials of the movie name.If the 
+                        movie is of 2 letters the place 0 on the place of x and fill y and z with the rest. If the movie is of 4 letters enter initials of the first 3 words only.The id must start with M. for example for the movie train to busan "MTTB20211106" will be the movie id.</p>
                         
                     </div>
-                </div>
-                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-                            <img src="images/home/icon2.png" alt="">
-                        </div>
-                       
-                        <h4><a href="#log" class="btn btn-common">Purchase Ticket</a></h4> 
-                        <p> through entertainment card</p>
                     </div>
-                </div>
-                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                            <img src="images/home/icon3.png" alt="">
-                        </div>
-                       
-                        <h4><a href="#log" class="btn btn-common">Purchase Ticket</a></h4>
-                        <p> through Bkash.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<<<<<<< HEAD
-  
-=======
-
-
->>>>>>> 8ce9e34ab7d2203465083f57f3a8c1edc2a83f83
-    <section id="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-                      
-                  <div class="text-center">
-                       
-                    <div id="log">    <a href="#myModal" class="trigger-btn" data-toggle="modal"><h1 class="title">Login</h1></a>
-                    </div>
-                    </div>
-                </div>
-                    <!-- Modal HTML -->
-                    <div id="myModal" class="modal fade">
-                        <div class="modal-dialog modal-login">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="avatar">
-                                        <img src="/examples/images/avatar.png" alt="Avatar">
-                                    </div>				
-                                    <h4 class="modal-title">Member Login</h4>	
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="/examples/actions/confirmation.php" method="post">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="username" placeholder="Username" required="required">		
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" name="password" placeholder="Password" required="required">	
-                                        </div>        
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#">Forgot Password?</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>     
-                    </body>
-                </div>
-            </div>
-        </div>
-     </section>
-    <!--/#clients-->
-
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center bottom-separator">
-                   
-                </div>
-                <div class="col-md-4 col-sm-6">
-                  
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="contact-info bottom">
-                     
-                       
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="contact-form bottom">
-                       <!------register----->
+                </div>                  
+                <div class="col-lg-6">
+                        <div class="main-slider">
+                            <div class="slide-text">
                        <div id=reg>
-                       <h2>Register</h2>
+                       <h2>Input Movie information</h2>
                         <div class="signup-form">
-                            <form action="/examples/actions/confirmation.php" method="post">
+                            <form action="login.php" method="POST">                            
+                                <p class="hint-text">Input all the movie information</p>                                  
+                                <div class="form-group">
+                                            	
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="movie name" placeholder="movie name" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="movie id" placeholder="movie id" required="required">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="rating" placeholder="rating" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="details" placeholder="details" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="release date" placeholder="release date" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="genre" placeholder="genre" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                <label for="myfile">Select an image file as movie poster:</label>
+                                 <input type="file" id="myfile" name="myfile" required="required"><br><br>
+                                </div>
+
+                                <div class="form-group">
+                                <label for="homepage">Enter Trailer URL:</label>
+                                 <input type="url" id="homepage" name="homepage">
+                                </div>
                                 
-                                <p class="hint-text">Create your account. It's free and only takes a minute.</p>
                                 <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
-                                        <div class="col-xs-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
-                                    </div>        	
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" placeholder="Email" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-                                </div>  
-                                <div class="form-group">
-                                    <input type="phone number" class="form-control" name="phone number" placeholder="phone number" required="required">
-                                </div>       
-                                <div class="form-group">
-                                    <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
-                                </div>
+                                    <button type="submit" name="button1"  value="button1" class="btn btn-success btn-lg btn-block">Enter information</button>
+
+                                 </div> 
+                                      
+                                
+                                
                             </form>
-                            <div class="text-center">Already have an account? <a href="#">Sign in</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="col-sm-12">
-                    <div class="copyright-text text-center">
-                        <p>&copy; Your Company 2014. All Rights Reserved.</p>
-                        <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+
+                    
+
+
+
+
+
+    
+                            <br> <br> <br>
+                             </div>
+                           </div>
+                         </div>
+                      </div>
+                   </div>
+                 </div>
+               </div>
+             </div>        
+            </div>       
+        
+    </section>
+
+   
+   
+
+
     <!--/#footer-->
 
-    <script type="text/javascript" src="js/jquery.js"></script>
+       
+
+
+
+
+ <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>   
 </body>
 </html>
+
