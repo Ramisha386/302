@@ -1,4 +1,4 @@
-<header id="header">      
+<!---<header id="header">      
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
@@ -49,13 +49,13 @@
             <li><a href="#myModal"  data-toggle="modal"><i class="fa fa-sign-in"></i> <br>  Sign up</a></li> 
                   
         
-                    <!-- Modal HTML -->
+                   -- Modal HTML --
                     <div id="myModal" class="modal fade">
                         <div class="modal-dialog modal-login">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <div class="avatar">
-                                       <!-- <img src="images/avatar.jpg" alt="Avatar">-->
+                                       -- <img src="images/avatar.jpg" alt="Avatar">--
                                     </div>				
                                     <h4 class="modal-title">Member Login</h4>	
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -84,13 +84,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>     <!----/sign up ---->
+                    </div>     ---/sign up ----
             <li><a href='#'><i class="fa fa-phone"></i>   Contact Us</a></li>
           </ul>
         </div>               
            
     </header>
-    <!--/#header-->
+    --/#header-->
  
    
 

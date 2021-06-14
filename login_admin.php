@@ -1,4 +1,45 @@
 <!DOCTYPE html>
+<?php
+$conn=oci_connect("dbms","dbms","localhost/XE");
+	$query = 'SELECT *from membership';
+	$stid = oci_parse($conn, $query);
+	oci_execute($stid);
+  if (!$conn){
+  echo "no connection";}
+  else{
+    echo " connection";
+  }
+
+if(isset($_POST['submit']))
+{
+ $u=$_POST['username'];
+ $p=$_POST['password'];
+ /*if($u=="nihon"&&$p=="12345")
+  {
+    header("Location: http://www.youtube.com");
+   //echo "TUi bolod na"; 
+   exit();
+  }
+ else
+  { 
+   echo "<h2 class="errors">Tui ghbolod</h2>";
+  }*/
+ 
+ while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
+  {   
+    if(($row["EMAIL_ID"]==$u)&&($row["PASSWORD"]==$p) && ($row["STATUS"]=='admin'))
+      {
+        header("Location: admin_view.php");
+		  //print "<a href='admin_view.php'></a>";
+      //require 'partials/_nav.php'
+      echo "hello";
+       exit();
+      }
+  }
+  echo "<p style='color:red' align-self:center>Tui bolod</p>";
+   
+}
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -11,46 +52,64 @@
     <link href="css/animate.min.css" rel="stylesheet"> 
     <link href="css/lightbox.css" rel="stylesheet"> 
 	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet"> 
+	<link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->   
     <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 <style>  
- body {
-		font-family: 'Varela Round', sans-serif;
-        background-image: url('download.jpg');
-        background: rgba(76, 175, 100, 0.3)
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-        color: #fff;
-        font-size: 15px;
-        font-style: bold;
-
-	}
-
-    .table{
- background: #212529 !important;
-  color: white !important;
+.myButton {
+	box-shadow:inset 3px 2px 3px 0px #bd2121;
+	background:linear-gradient(to bottom, #c12700 5%, #a72100 100%);
+	background-color:#c1001a;
+	border-radius:11px;
+	border:1px solid #771212;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:15px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #154682;
 }
-    
-    
-	.trigger-btn {
-		display: inline-block;
-		margin: 100px auto;
-	}
+.myButton:hover {
+	background:linear-gradient(to bottom, #a71300 5%, #c12700f1 100%);
+	background-color:#a72700;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
 
-    .title{
-        color: #fff;
-    }
-    .menu-bar
+
+
+
+    *
+       {
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+       }
+       body
+       {
+           background-image: url("images/index.jpg");
+           background-size: cover;
+           background-position: center;
+           font-family: 'Oswald', sans-serif;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-size: 100% 100%;
+           color: white;
+       }
+       
+       .menu-bar
        {
            background:darkred;
            text-align: center;
@@ -87,7 +146,7 @@
        }
        .sub-menu-1
        {
-           display:none;+
+           display:none;
 
        }
        .menu-bar ul li:hover  .sub-menu-1
@@ -97,6 +156,7 @@
            background-color:darkred;
            margin-top: 15px;
            margin-left:-15px;
+           z-index: 1000;
            
        }
        .menu-bar ul li:hover  .sub-menu-1 ul
@@ -136,6 +196,20 @@
            margin-left:140px;
            background: darkred;
        }
+       .header
+       {
+           padding-top: 0%;
+       }
+       .headings
+       {
+           font-size: xx-large;
+           color: #fff;
+       }
+       .description
+       {
+           font-size: large;
+           color: white;
+       }
 </style>  
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
@@ -143,6 +217,9 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
+<body>
+
+
 <header id="header">      
         <div class="container">
             <div class="row">
@@ -159,6 +236,9 @@
                 </div>
              </div>
         </div>
+
+
+
        
                
          <div class="menu-bar">
@@ -192,124 +272,82 @@
             
             </li>
             <li><a href="#myModal"  data-toggle="modal"><i class="fa fa-sign-in"></i> <br>  Sign up</a></li> 
-                  
-        
-                  
-                    <div id="myModal" class="modal fade">
-                        <div class="modal-dialog modal-login">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="avatar">
-                                       -- <img src="images/avatar.jpg" alt="Avatar">--
-                                    </div>				
-                                    <h4 class="modal-title">Member Login</h4>	
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="/examples/actions/confirmation.php" method="post">
-                                    <div class="form-group">
-                                    <label class="checkbox-inline"><input type="checkbox" required="required"> USER</label>
-                                    </div>
-                                    <div class="form-group">
-                                    <label class="checkbox-inline"><input type="checkbox" required="required"> ADMIN</label>
-                                    </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="username" placeholder="Username" required="required">		
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" name="password" placeholder="Password" required="required">	
-                                        </div>        
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#">Forgot Password?</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>    
             <li><a href='#'><i class="fa fa-phone"></i>   Contact Us</a></li>
           </ul>
         </div>               
-           
+
+   
+
+
+
     </header>
 
-<body>
-<br> <br>
-<h1>EMPLOYEE RECORDS</h1>
- <?php require 'd_emp.php' 
- ?>   
-  <br> <br>
- <h1>CUSTOMERS RECORDS</h1>
 
- <?php
-    //Oracle DB user name
-    $username = 'dbms';
-
-    // Oracle DB user password
-    $password = 'dbms';
-
-    // Oracle DB connection string
-    $connection_string = 'localhost/xe';
-
-    //Connect to an Oracle database
-    $connection = oci_connect(
-        $username,
-        $password,
-        $connection_string
-    );
-
-    if (!$connection)
-        echo 'Oops 🙁 connection failed';
-    else
-        
-    $query = "SELECT * from membership";
-    $result = oci_parse($connection, $query);
-    oci_execute($result);
-   /* print "<div class=\"container\">";
-	
-	print "<div class=\"table\">";
-	print  "<div class=\"table-header\">";
-	print	"<div class=\"header__item\">" . "Email_id" ."</div>";
-    print	"<div class=\"header__item\">". "First Name". "</div>";
-    print	"<div class=\"header__item\">" . "Last Name" ."</div>";
-    print	"<div class=\"header__item\">". "Status". "</div>";
-    print	"<div class=\"header__item\">". "Password". "</div>";
-    print	"<div class=\"header__item\">" . "Mobile Number" ."</div>";
-    print	"<div class=\"header__item\">". "Number of booking". "</div>";
-	"</div>\n"; 
-    "</div>\n"; 
-    "</div>\n"; */
     
-    print "<table class = \"table table-bordered table-dark \">\n";
-    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) {
-        print "<tr>\n";
-        foreach ($row as $item) {
-            print "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") . "</td>\n";
-        }
-        print "</tr>\n";
-    }
-    print "</table>\n";
-    //print '</table>';
 
-   /* while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) {
+
+    <!--/#header-->
+    <body>
+  <div class="container">
+    <div class="row">
+    <div class="col-lg-4">
+    </div>
+    
+      <div class="col-lg-4">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h3 class="card-title text-center">ADMIN</h3>
+            <form action="login2.php" method="POST" >
+            <form class="form-signin">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" name ="username" placeholder="Email address" required autofocus>
+                <label for="inputEmail"></label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control"  name ="password" placeholder="Password" required>
+                <label for="inputPassword"></label>
+              </div>
+
+              
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="submit">Sign in</button>
+              <hr class="my-4">
+              
+            </form>
+          </div>
+        </div>
+      </div><div class="col-lg-4">
+    </div>
+    </div>
+  </div>
+</body>
+
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+              
+                    <div class="copyright-text text-center">
+                        <p>&copy; Your Company 2014. All Rights Reserved.</p>
+                        <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
        
-        foreach ($row as $item) {
-            print  ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") ;}
-        }*/
-    
- ?> 
-
-
-
-
- <script type="text/javascript" src="js/jquery.js"></script>
+    </footer>
+    <!--/#footer-->
+    <script>
+function myFunction() {
+  document.getElementById("demo").style.color = "red";
+}
+</script>
+<script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>   
 </body>
 </html>
-
