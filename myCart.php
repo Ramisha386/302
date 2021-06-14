@@ -326,7 +326,7 @@
       <form action='manage_cart.php' method='POST'>
       <button name='Remove_Item' class='btn btn-outline-danger btn-sm'>Remove </button> </td>
       <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
-      </form>
+      </form> 
       </tr>
       ";
       $sr=$sr+1;
