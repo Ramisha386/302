@@ -145,7 +145,14 @@
         }
 
         
-      
+        .own
+        {
+            font-weight: bolder;
+            font: size 30px;
+            font-family: 'Lobster', cursive;
+            font-family: 'Merriweather', serif;
+            color: whitesmoke;
+        }
 
         
         .container
@@ -316,6 +323,69 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+
+        <center><h1 class="own">Upcoming Movies</h1></center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-----slider-->
+    <div class="container">
+        
+        
+       
+        <div class="row">       
+
+          <div class="col-md-12">
+            <div class="carousel slide multi-item-carousel" id="theCarousel">
+              <div class="carousel-inner">
+                <div class="item active">
+                    
+                  <div class="col-xs-4"><a href="#1"><img src="images/1.jpg" class="img-responsive"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/2.jpg" class="img-responsive"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/3.jpg" class="img-responsive"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/4.jpg" class="img-responsive"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/5.jpg" class="img-responsive"></a></div>
+                </div>
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/6.jpg" class="img-responsive"></a></div>
+                </div>
+
+
+
+
+
+                <!-- add  more items here -->
+                <!-- Example item start:  -->
+                
+                <div class="item">
+                  <div class="col-xs-4"><a href="#1"><img src="images/3.jpg" class="img-responsive"></a></div>
+                </div>
+                
+                <!--  Example item end -->
+              </div>
+              <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+              <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+            </div>
+        </div>
+          </div>
+        </div>
+      
         
 
        <!--Footer Starts-->
@@ -408,7 +478,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
     integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
     crossorigin="anonymous"></script>
-
+  <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="js/gmaps.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/booking.js"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/lightbox.min.js"></script>
