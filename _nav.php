@@ -50,7 +50,7 @@
             <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
                 <div class="sub-menu-1">
                     <ul>
-                        <li><a href="https://localhost/dbms/login2.php"><i class="fa fa-check" ></i> Admin</a></li>
+                        <li><a href="https://localhost/dbms/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
                         <li><a href="https://localhost/dbms/login2.php"><i class="fa fa-check" ></i> Customer</a></li>
                     </ul>
                 </div>
