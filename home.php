@@ -420,7 +420,7 @@
                   <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm2.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 <div class="item">
-                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm3.webp" class="img-responsive" width="400" height="200"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm7.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 <div class="item">
                   <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm4.jpg" class="img-responsive" width="400" height="200"></a></div>
@@ -440,7 +440,7 @@
                 <!-- Example item start:  -->
                 
                 <div class="item">
-                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm3.webp" class="img-responsive" width="400" height="200"></a></div>
+                  <div class="col-xs-4"><a href="#1"><img src="images/merchandise/mm7.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 
                 <!--  Example item end -->
