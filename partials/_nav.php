@@ -14,6 +14,9 @@
                 </div>
              </div>
         </div>
+
+
+
        
                
          <div class="menu-bar">
@@ -55,19 +58,14 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <div class="avatar">
-                                       <!-- <img src="images/avatar.jpg" alt="Avatar">-->
+                                        <img src="/examples/images/avatar.png" alt="Avatar">
                                     </div>				
                                     <h4 class="modal-title">Member Login</h4>	
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="/examples/actions/confirmation.php" method="post">
-                                    <div class="form-group">
-                                    <label class="checkbox-inline"><input type="checkbox" required="required"> USER</label>
-                                    </div>
-                                    <div class="form-group">
-                                    <label class="checkbox-inline"><input type="checkbox" required="required"> ADMIN</label>
-                                    </div>
+                                    <form action="login.php" method="post">
+                                     
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="username" placeholder="Username" required="required">		
                                         </div>
@@ -75,7 +73,7 @@
                                             <input type="password" class="form-control" name="password" placeholder="Password" required="required">	
                                         </div>        
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" name="submit">Login</button>
                                         </div>
                                     </form>
                                 </div>
@@ -88,8 +86,48 @@
             <li><a href='#'><i class="fa fa-phone"></i>   Contact Us</a></li>
           </ul>
         </div>               
-           
+
+   
+
+
+
     </header>
+
+
+    <?php
+
+$conn=oci_connect("dbms","dbms","localhost/XE");
+	$query = 'SELECT *from userTable';
+	$stid = oci_parse($conn, $query);
+	oci_execute($stid);
+
+
+if(isset($_POST['submit']))
+{
+ $u=$_POST['username'];
+ $p=$_POST['password'];
+ 
+ 
+ while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
+  {
+    if(($row['user_name']==$u)&&($row['password']==$p))
+      {header("Location: http://www.youtube.com");
+       exit();
+      }
+  }
+ 
+  include 'partials/_nav1.php';
+				exit();
+                
+   
+}
+
+exit();
+
+
+?>
+
+
     <!--/#header-->
     <section id="home-slider">
         <div class="container">
@@ -122,10 +160,10 @@
                                     <input type="text" class="form-control" name="email" placeholder="Email" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                                    <input type="text" class="form-control" name="password" placeholder="Password" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+                                    <input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
                                 </div>  
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="phone_number" placeholder="phone number" required="required">
@@ -233,7 +271,20 @@
     </section>
    
 
-
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+              
+                    <div class="copyright-text text-center">
+                        <p>&copy; Your Company 2014. All Rights Reserved.</p>
+                        <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+       
+    </footer>
     <!--/#footer-->
 
     
