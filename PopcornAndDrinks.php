@@ -1,4 +1,6 @@
+<?php session_start(); 
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +27,20 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <style>
-         *
+        .own
+        {
+            font-weight: bolder;
+            font-size: large;
+            font-family: 'Lobster', cursive;
+            font-family: 'Merriweather', serif;
+            color: darkred;
+        }
+        .display
+        {
+            font-style: oblique;
+            font-size: medium;
+        }
+        *
        {
            padding: 0;
            margin: 0;
@@ -125,21 +140,7 @@
            margin-left:140px;
            background: darkred;
        }
-      
-        .own
-        {
-            font-weight: bolder;
-            font-size: large;
-            font-family: 'Lobster', cursive;
-            font-family: 'Merriweather', serif;
-            color: darkred;
-        }
-        .display
-        {
-            font-style: oblique;
-            font-size: medium;
-        }
-        .btn
+       .btn
        {
            color: #fff;
            border-color:darkred;
@@ -151,9 +152,10 @@
            border-color: whitesmoke;
 
        }
+      
     </style>
 </head><!--/head-->
-
+<header>
 <body>
 	<header id="header">      
         <div class="container">
@@ -212,38 +214,46 @@
     <!--/#header-->
 
 
- 
+
     <!--/#action-->
 
     <section id="portfolio-information" class="padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/portfolio-details/6.jpg" class="img-responsive" alt="">
+                    <img src="images/portfolio-details/11.jpg" class="img-responsive" alt="">
                 </div>
                 <div class="col-sm-6">
                     <div class="project-info overflow">
-                        <h3 class="own">Popcorn</h3>
+                        <h3 class="own">Popcorn and Drinks</h3>
                         <p>The movies just wouldn't be the same without an ice-cold, refreshing pepsi and freshly popped popcorn. Now, classics like Pop Chicken and candy are joined with more menu options than ever. </p>
                         <ul class="elements">
-                            <li><i class="fa fa-angle-right"></i> 1 Small Popcorn</li>
+                            <li><i class="fa fa-angle-right"></i> 1 Large Popcorn</li>
+                            <li><i class="fa fa-angle-right"></i> 1 Cold Drink</li>
                         </ul>
                     </div>
+                    <form>
                     <div class="skills overflow">
                         <h3 class="own">Total Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">200 BDT</h4>
+                            <h4 class="display">400 BDT</h4>
                         </ul>
                     </div>
                     <div class="client overflow">
                         <h3 class="own">Platter-Size:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li class="display"> Small</li>
+                            <li class="display"> Medium</li>
                         </ul>
                     </div>
                     <div class="live-preview">
-                        <a href="#" class="btn btn-common uppercase">Add to Cart</a>
+                        <br>
+                        <br>
+                    <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
                     </div>
+                    <input type="hidden" name="Item_Name" value="Popcorn and Drinks">
+                    <input type="hidden" name="Price" value="400">
+                    <input type="hidden" name="Type" value="Food">
+    </form>
                 </div>
             </div>
         </div>
@@ -296,7 +306,7 @@
                             </div>
                             <div class="portfolio-view">
                                 <ul class="nav nav-pills">
-                                    <li><a href="platter-3.html"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="platter-2.html"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>

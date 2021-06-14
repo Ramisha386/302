@@ -1,3 +1,6 @@
+<?php session_start(); 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -209,42 +212,50 @@
         </div>               
            
     </header>
-    </header>
     <!--/#header-->
 
 
-  
+
     <!--/#action-->
 
     <section id="portfolio-information" class="padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/portfolio-details/14.jpg" class="img-responsive" alt="">
+                    <img src="images/portfolio-details/4.jpg" class="img-responsive" alt="">
                 </div>
                 <div class="col-sm-6">
                     <div class="project-info overflow">
-                        <h3 class="own">Platter-6</h3>
+                        <h3 class="own">Platter-3</h3>
                         <p>The movies just wouldn't be the same without an ice-cold, refreshing pepsi and freshly popped popcorn. Now, classics like Pop Chicken and candy are joined with more menu options than ever. </p>
                         <ul class="elements">
-                            <li><i class="fa fa-angle-right"></i> 4 Tacos</li>              
+                            <li><i class="fa fa-angle-right"></i> 2 Club Sandwitch</li>
+                            <li><i class="fa fa-angle-right"></i> 1 French Fries</li>
+                            <li><i class="fa fa-angle-right"></i> 1 Large Drink</li>
                         </ul>
                     </div>
+                    <form action="manage_cart.php" method="POST">
                     <div class="skills overflow">
                         <h3 class="own">Total Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">800 BDT</h4>
+                            <h4 class="display">1000 BDT</h4>
                         </ul>
                     </div>
                     <div class="client overflow">
                         <h3 class="own">Platter-Size:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li class="display"> Medium</li>
+                            <li class="display"> Large</li>
                         </ul>
                     </div>
                     <div class="live-preview">
-                        <a href="#" class="btn btn-common uppercase">Add to Cart</a>
+                        <br>
+                        <br>
+                    <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
                     </div>
+                    <input type="hidden" name="Item_Name" value="Platter-3">
+                    <input type="hidden" name="Price" value="1000">
+                    <input type="hidden" name="Type" value="Food">
+    </form>
                 </div>
             </div>
         </div>
@@ -259,16 +270,16 @@
                     <div class="portfolio-wrapper">
                         <div class="portfolio-single">
                             <div class="portfolio-thumb">
-                                <img src="images/portfolio/1.jpg" class="img-responsive" alt="">
+                                <img src="images/portfolio/8.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="portfolio-view">
                                 <ul class="nav nav-pills">
-                                    <li><a href="platter-1.html"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="platter-4.html"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="portfolio-info ">
-                            <h2>Platter-1</h2>
+                            <h2>Platter-4</h2>
                         </div>
                     </div>
                 </div>
@@ -293,16 +304,16 @@
                     <div class="portfolio-wrapper">
                         <div class="portfolio-single">
                             <div class="portfolio-thumb">
-                                <img src="images/portfolio/3.jpg" class="img-responsive" alt="">
+                                <img src="images/portfolio/1.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="portfolio-view">
                                 <ul class="nav nav-pills">
-                                    <li><a href="platter-3.html"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="platter-1.html"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="portfolio-info ">
-                            <h2>Platter-2</h2>
+                            <h2>Platter-1</h2>
                         </div>
                     </div>
                 </div>
@@ -310,16 +321,16 @@
                     <div class="portfolio-wrapper">
                         <div class="portfolio-single">
                             <div class="portfolio-thumb">
-                                <img src="images/portfolio/4.jpg" class="img-responsive" alt="">
+                                <img src="images/portfolio/3.jpg" class="img-responsive" alt="">
                             </div>
                             <div class="portfolio-view">
                                 <ul class="nav nav-pills">
-                                    <li><a href="platter-3.html"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="platter-2.html"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="portfolio-info ">
-                            <h2>Platter-3</h2>
+                            <h2>Platter-2</h2>
                         </div>
                     </div>
                 </div>
