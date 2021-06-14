@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $_SESSION['cart'][0]=array('Item_Name'=>$_POST['Item_Name'],'Price'=>$_POST['Price'],'Type'=>$_POST['Type'],'Quantity'=>1);
             echo "<script>alert('Item Added');
                        window.location.href='merch.php';
-                       </script>";
+                       </script>";  
 
         }
     }
