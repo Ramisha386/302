@@ -250,7 +250,39 @@
                 
             </div>
             <div class="person-info col-sm-6">
-                <h1 class="headings">Army of the Dead</h1>
+                <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='MAOT20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
+                
+                
+                
                 <div class="description">
                 <p>2021 ‧ Horror/Action ‧ 2h 28m</p>
             
@@ -281,7 +313,36 @@
                 <img src="images/movies/thebox.jpg" class="img-responsive" alt="" width="300" height="100">
             </div>
             <div class="person-info col-sm-6">
-                <h2 class="headings">The Box</h2>
+            <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='M0TB20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
                 <div class="description">
                 <p>2021 ‧ Musical/Music ‧ 1h 34m</p>
             
@@ -302,7 +363,7 @@
                 </div>
                     <br>
                     <br>
-                    <a href="#" class="myButton">Buy Ticket</a>
+                    <a href="movie-2.php" class="myButton">Buy Ticket</a>
                     <a href="https://www.youtube.com/watch?v=gjSXRO1AcnQ" class="myButton">Trailer</a>
             </div>
         </div>
@@ -313,7 +374,36 @@
                 <img src="images/movies/conjuring3.png" class="img-responsive" alt="" width="300" height="100">
             </div>
             <div class="person-info col-sm-6">
-                <h2 class="headings">The Conjuring: The Devil Made Me Do It</h2>
+            <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='MTCT20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
                 <div class="description">
                 <p>2021 ‧ Horror/Thriller ‧ 1h 52m</p>
             
@@ -340,7 +430,7 @@
                 </div>
                     <br>
                     <br>
-                    <a href="#" class="myButton">Buy Ticket</a>
+                    <a href="movie-3.php" class="myButton">Buy Ticket</a>
                     <a href="https://www.youtube.com/watch?v=h9Q4zZS2v1k" class="myButton">Trailer</a>
                 
             </div>
@@ -354,7 +444,36 @@
         <img src="images/movies/avengers.jpg" class="img-responsive" alt="" width="300" height="100">
     </div>
     <div class="person-info col-sm-6">
-        <h2 class="headings">Avengers: Endgame</h2>
+    <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='M0AE20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
         <div class="description">
         <p>2019 ‧ Action/Sci-fi ‧ 3h 2m</p>
     
@@ -386,7 +505,7 @@
         </div>
 <br>
                     <br>
-                    <a href="#" class="myButton">Buy Ticket</a>
+                    <a href="movie-4.php" class="myButton">Buy Ticket</a>
                     <a href="https://www.youtube.com/watch?v=lHw-6AZvZ7I" class="myButton">Trailer</a>
         
     </div>
@@ -400,7 +519,36 @@
         <img src="images/movies/blackwidow.jpg" class="img-responsive" alt="" width="300" height="100">
     </div>
     <div class="person-info col-sm-6">
-        <h2 class="headings">Black Widow</h2>
+    <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='M0BW20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
         <div class="description">
         <p>2019 ‧ Action/Sci-fi ‧ 3h 2m</p>
     
@@ -424,7 +572,7 @@ Scarlett Johansson . Florence Pugh . David Harbour
         </div>
 <br>
                     <br>
-                    <a href="#" class="myButton">Buy Ticket</a>
+                    <a href="movie-5.php" class="myButton">Buy Ticket</a>
                     <a href="https://www.youtube.com/watch?v=ybji16u608U" class="myButton">Trailer</a>
         
     </div>
@@ -441,7 +589,36 @@ Scarlett Johansson . Florence Pugh . David Harbour
         <img src="images/movies/godzillavskong.jpg" class="img-responsive" alt="" width="300" height="100">
     </div>
     <div class="person-info col-sm-6">
-        <h2 class="headings">Kong vs Godzilla </h2>
+    <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='MGVK20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
         <div class="description">
         <p>2021 ‧ Sci-fi/Action ‧ 1h 53m</p>
     
@@ -472,7 +649,7 @@ Alexander Skarsgård . Millie Bobby Brown . Rebecca Hall
 
 <br>
                     <br>
-                    <a href="#" class="myButton">Buy Ticket</a>
+                    <a href="movie-6.php" class="myButton">Buy Ticket</a>
                     <a href="https://www.youtube.com/watch?v=odM92ap8_c0" class="myButton">Trailer</a>
         
     </div>

@@ -229,17 +229,18 @@
                 <div class="col-sm-6">
                     <div class="project-info overflow">
                         <h1 class="own">Army Of The Dead</h1>
-                        <h3>Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble, venturing into the quarantine zone to pull off the greatest heist ever attempted. </h3>
+                       <b> <h3>Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble, venturing into the quarantine zone to pull off the greatest heist ever attempted. </h3>
                         <ul class="elements">
                             <li><i class="fa fa-angle-right"></i>2021 ‧ Horror/Action ‧ 2h 28m</li>
                             
                             <li><i class="fa fa-angle-right"></i>Dave Bautista . Ella Purnell . Ana de la Reguera</li>
                         </ul>
+                      
                     </div>
                     <div class="skills overflow">
                         <h3 class="own">Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">400 BDT</h4>
+                            <h4 >400 BDT</h4>
                         </ul>
                     </div>
                     <div class="client overflow">
@@ -248,6 +249,83 @@
                             <li class="display"> 3D/2D</li>
                         </ul>
                     </div>
+                    <div class="skills overflow">
+                        <h3 class="own">Seats Available</h3>
+                        <ul class="nav navbar-nav navbar-default">
+                            <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT availability from showtime where showtime_id='SAOT20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                              }
+                            }
+
+                           
+               ?>
+                        </ul>
+                    </div>
+
+
+
+
+
+
+                    <div class="skills overflow">
+                        <h3 class="own">Showtime (in hours)</h3>
+                        <ul class="nav navbar-nav navbar-default">
+                            <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT start_time from showtime where showtime_id='SAOT20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                              }
+                            }
+
+                           
+               ?>
+                        </ul>
+                    </div>
+    </b>
                     <div class="live-preview">
                         <a href="#" class="btn btn-common uppercase">Add to Cart</a>
                     </div>

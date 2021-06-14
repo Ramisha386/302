@@ -229,7 +229,7 @@
                 <div class="col-sm-6">
                     <div class="project-info overflow">
                         <h1 class="own">Kong vs Godzilla</h1>
-                        <h3>Kong and his protectors undertake a perilous journey to find his true home. Along for the ride is Jia, an orphaned girl who has a unique and powerful bond with the mighty beast. However, they soon find themselves in the path of an enraged Godzilla as he cuts a swath of destruction across the globe. The initial confrontation between the two titans -- instigated by unseen forces -- is only the beginning of the mystery that lies deep within the core of the planet.</h3>
+                        <b> <h3>Kong and his protectors undertake a perilous journey to find his true home. Along for the ride is Jia, an orphaned girl who has a unique and powerful bond with the mighty beast. However, they soon find themselves in the path of an enraged Godzilla as he cuts a swath of destruction across the globe. The initial confrontation between the two titans -- instigated by unseen forces -- is only the beginning of the mystery that lies deep within the core of the planet.</h3>
                         <ul class="elements">
                             <li><i class="fa fa-angle-right"></i>2021 ‧ Sci-fi/Action ‧ 1h 53m</li>
                             
@@ -237,7 +237,7 @@
                         </ul>
                     </div>
                     <div class="skills overflow">
-                        <h3 class="own">Price:</h3>
+                        <h3 >Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
                             <h4 class="display">400 BDT</h4>
                         </ul>
@@ -248,6 +248,83 @@
                             <li class="display"> 3D/2D</li>
                         </ul>
                     </div>
+
+                    <div class="skills overflow">
+                        <h3 class="own">Seats Available</h3>
+                        <ul class="nav navbar-nav navbar-default">
+                            <?php
+                            
+                            //Oracle DB user name
+                                  $username = 'dbms';
+
+                                    // Oracle DB user password
+                                              $password = 'dbms';
+
+                                               // Oracle DB connection string
+                                 $connection_string = 'localhost/xe';
+                                         $connection = oci_connect(
+                                                      $username,
+                                                        $password,
+                                                         $connection_string
+                                                         );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT availability from showtime where showtime_id='SGVK20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                              }
+                            }
+               ?>
+                        </ul>
+                    </div>
+
+
+
+
+
+                    
+                    <div class="skills overflow">
+                        <h3 class="own">Showtime (in hours)</h3>
+                        <ul class="nav navbar-nav navbar-default">
+                            <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT start_time from showtime where showtime_id='SGVK20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                              }
+                            }
+
+                           
+               ?>
+                        </ul>
+                    </div>
+                        </b>
+                    
                     <div class="live-preview">
                         <a href="#" class="btn btn-common uppercase">Add to Cart</a>
                     </div>
