@@ -265,7 +265,18 @@
                 </li>
                 <li><a href='#'><i class="fa fa-user-plus"></i> Sign Up</a></li>
                 <li><a href='#'><i class="fa fa-phone"></i> Contact Us</a></li>
-                <li><a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart(0)</a></li>
+                <li>
+                <?php
+                $count=0;
+                if(isset($_SESSION['cart']))
+                {
+                    $count=count($_SESSION['cart']);
+
+                } 
+                ?>
+                <a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart (<?php echo $count; ?>)</a>
+                
+                </li>
             </ul>
         </div>
 
@@ -296,6 +307,7 @@
   $total=0;
    if(isset($_SESSION['cart']))
   {
+      $sr=1;
 
   foreach($_SESSION['cart'] as $key => $value)
   {
@@ -303,15 +315,19 @@
     $total=$total+$value['Price'];
       echo "
       <tr>
-      <td>1</td>
+      <td>$sr</td>
       <td>$value[Item_Name]</td>
       <td>$value[Type]</td>
       <td><input class='text-center' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> </td>
       <td>$value[Price] </td>
       <td>
+      <form action='manage_cart.php' method='POST'>
       <button name='Remove_Item' class='btn btn-outline-danger btn-sm'>Remove </button> </td>
+      <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
+      </form>
       </tr>
       ";
+      $sr=$sr+1;
   }
   }
   ?>
