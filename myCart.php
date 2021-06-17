@@ -215,6 +215,9 @@
     </style>
 </head>
 <body>
+    <!--/head-->
+
+<body>
     <header id="header">
         <div class="container">
             <div class="row">
@@ -235,13 +238,20 @@
 
         <div class="menu-bar">
             <ul>
-                <li class="active"><a href='#'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href='#'><i class="fa fa-film"></i> All Movies</a></li>
+                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
+                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
+                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
+                    </ul>
+                </div>
+            </li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="Ticket2d.html"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="Ticket3d.html"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
@@ -257,14 +267,14 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="Food.html"><i class="fa fa-apple"></i> Refreshments</a></li>
-                            <li><a href="merchandise.html"><i class="fa fa-coffee"></i> Merchandise</a></li>
+                            <li><a href="portfolio.html"><i class="fa fa-apple"></i> Refreshments</a></li>
+                            <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
                         </ul>
                     </div>
 
                 </li>
-                <li><a href='#'><i class="fa fa-user-plus"></i> Sign Up</a></li>
-                <li><a href='#'><i class="fa fa-phone"></i> Contact Us</a></li>
+                <li><a href='http://localhost/302/registration.php'><i class="fa fa-user-plus"></i> Sign Up</a></li>
+                <li><a href='http://localhost/302/contact%20us.php'><i class="fa fa-phone"></i> Contact Us</a></li>
                 <li>
                 <?php
                 $count=0;
@@ -281,7 +291,7 @@
         </div>
 
     </header>
-
+    <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
     <body>
       
         <div class="container">
