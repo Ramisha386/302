@@ -237,7 +237,7 @@
 
         <div class="menu-bar">
             <ul>
-                <li class="active"><a href='#'><i class="fa fa-home"></i></i> Home</a></li>
+                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
                 <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
                 <div class="sub-menu-1">
                     <ul>
@@ -290,6 +290,7 @@
         </div>
 
     </header>
+    <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
 
     <body>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
