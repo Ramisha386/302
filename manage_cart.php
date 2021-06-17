@@ -35,21 +35,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         }
     }
 
-       // if(isset($_POST['Remove_Item']))
-    // {
-    //     foreach($_SESSION['cart'] as $key => $value)
-    //     {
-    //         if($value['Item_Name']==$_POST['Item_Name'])
-    //         {
-    //             unset($_SESSION['cart'][$key]);
-    //             $_SESSION['cart']=array_values($_SESSION['cart']);
-    //             echo"<script> 
-    //             alert('Item Removed');
-    //             window.location.href='myCart.php';
-    //             </script>";
-    //         }
-    //     }
-    // }
+  
     
     if(isset($_POST['Remove_Item']))
     {
@@ -65,6 +51,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                </script>";
            }
         }
+     }
+     if(isset($_POST['Mod_Quantity']))
+     {
+        foreach($_SESSION['cart'] as $key => $value)
+        {
+              if($value['Item_Name']==$_POST['Item_Name'])
+              {
+                  $_SESSION['cart'][$key]['Quantity']=$_POST['Mod_Quantity'];
+                  echo"<script> 
+                  window.location.href='myCart.php';
+                 </script>";
+             }
+          }
      }
 }
 
