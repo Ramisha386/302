@@ -301,7 +301,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='MAOT20210614'";
+    $query = "SELECT movie_name from movie_info where movie_id='1'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -364,7 +364,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='M0TB20210614'";
+    $query = "SELECT movie_name from movie_info where movie_id='2'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -425,7 +425,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='MTCT20210614'";
+    $query = "SELECT movie_name from movie_info where movie_id='3'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -495,7 +495,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='M0AE20210614'";
+    $query = "SELECT movie_name from movie_info where movie_id='4'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -570,7 +570,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='M0BW20210614'";
+    $query = "SELECT movie_name from movie_info where movie_id='5'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -640,7 +640,7 @@ Scarlett Johansson . Florence Pugh . David Harbour
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='MGVK20210614'";
+    $query = "SELECT movie_name from movie_info where movie_id='6'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
