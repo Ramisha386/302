@@ -162,7 +162,7 @@ session_start();
             
             
           
-            
+            font-size:small;
             color: whitesmoke;
         }
 
