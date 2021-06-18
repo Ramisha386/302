@@ -45,6 +45,14 @@
            margin: 0;
            box-sizing: border-box;
        }
+       .ownn
+        {
+            
+            
+          
+            font-size:small;
+            color: whitesmoke;
+        }
        body
        {
            
@@ -359,8 +367,7 @@
     </section>
      <!--/#portfolio-information-->
 
-    
-     <footer id="footer">
+     <footer id="footer" >
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center bottom-separator">
@@ -368,23 +375,23 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="testimonial bottom">
-                        <h2>Testimonial</h2>
+                        <h2>Quotes</h2>
                         <div class="media">
                             <div class="pull-left">
-                                <a href="#"><img src="images/home/profile1.png" alt=""></a>
+                                <a href="#"><img src="images/kung-fu-panda.jpg" alt="" ></a>
                             </div>
                             <div class="media-body">
-                                <blockquote>Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.</blockquote>
-                                <h3><a href="#">- Jhon Kalis</a></h3>
+                                <div class="ownn"><blockquote>Your story may not have such a happy beginning but that does not make you who you are, it is the rest of it- who you choose to be</blockquote></div>
+                                <h3><a href="#">- Master Oogway</a></h3>
                             </div>
                          </div>
                         <div class="media">
                             <div class="pull-left">
-                                <a href="#"><img src="images/home/profile2.png" alt=""></a>
+                                <a href="#"><img src="images/pursuit_of_happiness.jpg" alt=""></a>
                             </div>
                             <div class="media-body">
-                                <blockquote>Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison eiusmod.</blockquote>
-                                <h3><a href="">- Abraham Josef</a></h3>
+                            <div class="ownn">   <blockquote>You got a dream... You gotta protect it. People can't do somethin' themselves, they wanna tell you you can't do it. If you want somethin', go get it. Period.</blockquote></div>
+                                <h3><a href="">- Christopher Gardner</a></h3>
                             </div>
                         </div>   
                     </div> 
@@ -392,38 +399,28 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="contact-info bottom">
                         <h2>Contacts</h2>
+                        <div class="ownn">
                         <address>
                         E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br> 
                         Phone: +1 (123) 456 7890 <br> 
                         Fax: +1 (123) 456 7891 <br> 
                         </address>
-
+                        </div>
                         <h2>Address</h2>
+                        <div class="ownn">
                         <address>
-                        Unit C2, St.Vincent's Trading Est., <br> 
-                        Feeder Road, <br> 
-                        Bristol, BS2 0UY <br> 
-                        United Kingdom <br> 
+                        Army Officer's Club,Nirjhor Residential area, <br> 
+                        Dhaka Cantonment, <br> 
+                        Dhaka-1216, <br> 
+                        Bangladesh <br> 
                         </address>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="contact-form bottom">
-                        <h2>Send a message</h2>
-                        <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
-                            </div>                        
-                            <div class="form-group">
-                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
-                            </div>
-                        </form>
+                        <h2>Our Location</h2>
+                        <div class="mapouter"><div class="gmap_canvas"><iframe width="413" height="372" id="gmap_canvas" src="https://maps.google.com/maps?q=Officer's%20Club,Nirjhar,Dhaka%20Cantonment%20,Dhaka,Bangladesh&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies se</a><br><style>.mapouter{position:relative;text-align:right;height:372px;width:413px;}</style><a href="https://www.embedgooglemap.net">google map embed generator</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:372px;width:413px;}</style></div></div>
                     </div>
                 </div>
                 <div class="col-sm-12">
