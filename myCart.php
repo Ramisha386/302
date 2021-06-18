@@ -403,37 +403,12 @@ if(isset($_POST['submit']))
       <td>
       <form action='manage_cart.php' method='POST'>
       <input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> 
-      <input type='hidden' name='Item_Name' value='$value[Item_Name]'>";
+      <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
       
-      $conn=oci_connect("dbms","dbms","localhost/XE");
-	  $query = 'SELECT *from membership';
-	  $stid = oci_parse($conn, $query);
-	  oci_execute($stid);
-      if (!$conn){
-      echo "no connection";}
-     else{
-     echo " connection";
-     }
-
-     if(isset($_POST['submit']))
-      {
-      $u=$_POST['username'];
-       $pas=$_POST['password'];
-         if ($_POST['Item_Name'] == "Ticket"){
-          $q=$value['Quantity'];
-          $f=$row["FIRST_NAME"];
-          $l=$row["LAST_NAME"];
-          $p=$row["MOBILE_NO"];
-          $sql="insert into membership values ('$u','$f','$l','customer','$pas','$p','$q')
-          where EMAIL_ID='$u"';
-
-          $compile=oci_parse($conn,$sql);
-          oci_execute($compile);}
-      }
+      
         
 
-      
-      echo "</from>
+     </from>
       </td>
       <td class='itotal'></td>
       <td>
