@@ -215,6 +215,9 @@
     </style>
 </head>
 <body>
+    <!--/head-->
+
+<body>
     <header id="header">
         <div class="container">
             <div class="row">
@@ -235,13 +238,20 @@
 
         <div class="menu-bar">
             <ul>
-                <li class="active"><a href='#'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href='#'><i class="fa fa-film"></i> All Movies</a></li>
+                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
+                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
+                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
+                    </ul>
+                </div>
+            </li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="Ticket2d.html"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="Ticket3d.html"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
@@ -257,14 +267,14 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="Food.html"><i class="fa fa-apple"></i> Refreshments</a></li>
-                            <li><a href="merchandise.html"><i class="fa fa-coffee"></i> Merchandise</a></li>
+                            <li><a href="portfolio.html"><i class="fa fa-apple"></i> Refreshments</a></li>
+                            <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
                         </ul>
                     </div>
 
                 </li>
-                <li><a href='#'><i class="fa fa-user-plus"></i> Sign Up</a></li>
-                <li><a href='#'><i class="fa fa-phone"></i> Contact Us</a></li>
+                <li><a href='http://localhost/302/registration.php'><i class="fa fa-user-plus"></i> Sign Up</a></li>
+                <li><a href='http://localhost/302/contact%20us.php'><i class="fa fa-phone"></i> Contact Us</a></li>
                 <li>
                 <?php
                 $count=0;
@@ -281,7 +291,7 @@
         </div>
 
     </header>
-
+    <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
     <body>
       
         <div class="container">
@@ -313,14 +323,19 @@
   foreach($_SESSION['cart'] as $key => $value)
   {
       
-   
+      $sr=$key+1;
       echo "
       <tr>
       <td>$sr</td>
       <td>$value[Item_Name]</td>
       <td>$value[Type]</td>
       <td>$value[Price]<input type='hidden' class='iprice' value='$value[Price]'> </td>
-      <td><input class='text-center iquantity' onchange='subTotal()' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> </td>
+      <td>
+      <form action='manage_cart.php' method='POST'>
+      <input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> 
+      <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
+      </from>
+      </td>
       <td class='itotal'></td>
       <td>
       <form action='manage_cart.php' method='POST'>
@@ -329,7 +344,7 @@
       </form> 
       </tr>
       ";
-      $sr=$sr+1;
+      
   }
   }
   ?>
@@ -342,31 +357,49 @@
         <h4>Grand Total:</h4>
         <h5 class="text-right" id="gtotal"></h5>
         <br>
-        <form action="">
+        <?php
+          if(isset($_SESSION['cart']) && count($_SESSION['cart'])>0)
+          {
+
+
+        ?>
+        <form action="purchase.php" method="POST">
+        <div class="form-group">
+        <input type="text" class="form-control" name="first_name" placeholder="First Name" required="required" values="0">
+        </div>
+        <div class="form-group">
+        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required">
+        </div>
+        <div class="form-group">
+        <input type="text" class="form-control" name="address" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+        <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+        <input type="text" class="form-control" name="phone_no" placeholder="Phone number" required="required">
+        </div>
+        <p style="font-weigh:bold; color:white; font-size:larger;">Status</p>
         <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-    Mobile-Banking
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-  <label class="form-check-label" for="flexRadioDefault2">
-    Internet-Banking
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  checked>
-  <label class="form-check-label" for="flexRadioDefault2">
-    <p>Card</p>
-  </label>
-</div>
-        <button class="btn btn-danger btn-block">Make Purchase</button>
+         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+         <label class="form-check-label" for="flexRadioDefault1"  style="color:white; font-size:larger;">
+          Admin
+         </label>
+        </div>
+        <div class="form-check">
+         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+         <label class="form-check-label" for="flexRadioDefault2" style="color:white; font-size:larger;">
+          Client
+        </label>
+        </div>
+        <button class="btn btn-danger btn-block" name="purchase">Make Purchase</button>
         </form>
+        <?php
+          }
+          ?>
         </div>
         </div>
-        </div>
-        </div>
+        
 <script>
     var gt=0;
     var iprice=document.getElementsByClassName('iprice');
