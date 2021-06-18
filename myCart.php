@@ -1,4 +1,67 @@
-<?php session_start(); 
+<?php
+ session_start(); 
+
+$conn=oci_connect("dbms","dbms","localhost/XE");
+	$query = 'SELECT *from membership';
+	$stid = oci_parse($conn, $query);
+	oci_execute($stid);
+  if (!$conn){
+  echo "no connection";}
+  else{
+    echo " connection";
+  }
+
+if(isset($_POST['submit']))
+{
+ $u=$_POST['username'];
+ $pas=$_POST['password'];
+ 
+ 
+  $_SESSION['mevalid'] = false;
+ while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
+  {  
+     
+    if(($row["EMAIL_ID"]==$u)&&($row["PASSWORD"]==$pas)&&($row["STATUS"]=='customer'))
+      {
+        
+        $f=$row["FIRST_NAME"];
+        $l=$row["LAST_NAME"];
+        $p=$row["MOBILE_NO"];
+        
+
+       
+
+        $_SESSION['mevalid'] = true;
+        $_SESSION['myid'] = $u;
+        $_SESSION['myFirstName'] = $f;
+        $_SESSION['myLastName'] = $l;
+        $_SESSION['myPhone'] = $p;
+
+
+        
+        
+        
+       //header("Location: admin_view.php?id=$u");
+        
+       header("Location:payment.php");
+
+	  //print "<a href='admin_view.php?id=$u'>HELLO WASIF </a>";
+      //require 'partials/_nav.php'
+      
+     // echo  $_SESSION['myid'];
+       exit();}
+      }
+     
+        echo "<script>alert('Error Message');
+                           window.location.href='merch.php';
+                           </script>";
+    
+  }
+  
+
+  
+   
+
 
 ?>
 <!DOCTYPE html>
@@ -217,6 +280,10 @@
             color: white;
         }
 
+
+        form text{
+            text-align: center;
+        }
      
 
    
@@ -323,15 +390,18 @@
   </thead>
   <tbody class="text-center">
   <?php
-  
+    
    if(isset($_SESSION['cart']))
   {
+
+    
       $sr=1;
 
   foreach($_SESSION['cart'] as $key => $value)
   {
       
       $sr=$key+1;
+    
       echo "
       <tr>
       <td>$sr</td>
@@ -341,8 +411,37 @@
       <td>
       <form action='manage_cart.php' method='POST'>
       <input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> 
-      <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
-      </from>
+      <input type='hidden' name='Item_Name' value='$value[Item_Name]'>";
+      
+      $conn=oci_connect("dbms","dbms","localhost/XE");
+	  $query = 'SELECT *from membership';
+	  $stid = oci_parse($conn, $query);
+	  oci_execute($stid);
+      if (!$conn){
+      echo "no connection";}
+     else{
+     echo " connection";
+     }
+
+     if(isset($_POST['submit']))
+      {
+      $u=$_POST['username'];
+       $pas=$_POST['password'];
+         if ($_POST['Item_Name'] == "Ticket"){
+          $q=$value['Quantity'];
+          $f=$row["FIRST_NAME"];
+          $l=$row["LAST_NAME"];
+          $p=$row["MOBILE_NO"];
+          $sql="insert into membership values ('$u','$f','$l','customer','$pas','$p','$q')
+          where EMAIL_ID='$u"';
+
+          $compile=oci_parse($conn,$sql);
+          oci_execute($compile);}
+      }
+        
+
+      
+      echo "</from>
       </td>
       <td class='itotal'></td>
       <td>
@@ -371,42 +470,29 @@
 
 
         ?>
-        <form action="purchase.php" method="POST">
+        <form action="myCart.php" method="POST">
         <div class="form-group">
-        <input type="text" class="form-control" name="first_name" placeholder="First Name" required="required" values="0">
-        </div>
-        <div class="form-group">
-        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required">
-        </div>
-        <div class="form-group">
-        <input type="text" class="form-control" name="address" placeholder="Email" required="required">
+        <h4 >LOGIN to make the purchase</h4><br>
+        <h4 >Dont have an account?</h4>
+        <h4><a href='http://localhost/302/registration.php'>Register now.</a></h4>
+        <br>
+        <input type="text" class="form-control" name="username" placeholder="Email" required="required" values="username">
         </div>
         <div class="form-group">
-        <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+        <input type="text" class="form-control" name="password" placeholder="Password" required="required" values="password">
         </div>
-        <div class="form-group">
-        <input type="text" class="form-control" name="phone_no" placeholder="Phone number" required="required">
-        </div>
-        <p style="font-weigh:bold; color:white; font-size:larger;">Status</p>
-        <div class="form-check">
-         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-         <label class="form-check-label" for="flexRadioDefault1"  style="color:white; font-size:larger;">
-          Admin
-         </label>
-        </div>
-        <div class="form-check">
-         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-         <label class="form-check-label" for="flexRadioDefault2" style="color:white; font-size:larger;">
-          Client
-        </label>
-        </div>
-        <button class="btn btn-danger btn-block" name="purchase">Make Purchase</button>
+        <button class="btn btn-danger btn-block" name="submit" type="submit">Log in</button>
         </form>
         <?php
           }
           ?>
         </div>
         </div>
+
+
+
+        
+
         <footer id="footer" >
         <div class="container">
             <div class="row">
@@ -478,6 +564,7 @@
     var iquantity=document.getElementsByClassName('iquantity');
     var itotal=document.getElementsByClassName('itotal');
     var gtotal=document.getElementById('gtotal');
+    
     function subTotal()
     {
         gt=0;
@@ -489,6 +576,7 @@
         gtotal.innerText=gt;
     }
     subTotal();
+    
 </script>
 
 
@@ -512,3 +600,4 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         </body>
         </html>
+        
