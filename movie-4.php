@@ -276,7 +276,7 @@
                     <div class="client overflow">
                         <h3 class="own">Available in:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li class="display"> 3D/2D</li>
+                            <li class="display"> 3D</li>
                         </ul>
                     </div>
                     <div class="skills overflow">
@@ -337,7 +337,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT start_time from showtime where showtime_id='S0AE20210614'";
+    $query = "SELECT start_time from showtime where showtime_id='4'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
