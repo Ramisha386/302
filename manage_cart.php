@@ -11,20 +11,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $myitems=array_column($_SESSION['cart'],'Item_Name');
             if(in_array($_POST['Item_Name'],$myitems))
             {
-                if($_SESSION['cart'][$count]['Type']=='Ticket')
+                $myidx=array_column($_SESSION['cart'],'Type');
+                $idx=array_search($_POST['Type'],$myidx);
+                if($_SESSION['cart'][$idx]['Type']=='Ticket')
                 {
                     echo "<script>alert('Item Already Added');
                          window.location.href='movies.php';
                          </script>";
     
                 }
-                else if($_SESSION['cart'][$count]['Type']=='Food')
+                else if($_SESSION['cart'][$idx]['Type']=='Food')
                 {
                     echo "<script>alert('Item Already Added');
                          window.location.href='portfolio.php';
                          </script>";
                 }
-                else if($_SESSION['cart'][$count]['Type']=='Merchandise Product')
+                else if($_SESSION['cart'][$idx]['Type']=='Merchandise Product')
                 {
                     echo "<script>alert('Item Already Added');
                          window.location.href='merch.php';
