@@ -397,6 +397,9 @@ session_start();
 
 
 <body>
+    <!--/head-->
+
+
 
     <header id="header">
         <div class="container">

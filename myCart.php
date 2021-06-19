@@ -402,18 +402,15 @@ if(isset($_POST['submit']))
       <form action='manage_cart.php' method='POST'>
       <input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> 
       <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
-<<<<<<< HEAD
         
 
       
       </from>
-=======
       
       
         
 
      </from>
->>>>>>> d3cd0bd56ab74c187d7026086aad54b3242a9184
       </td>
       <td class='itotal'></td>
       <td>
