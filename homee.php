@@ -233,6 +233,13 @@ session_start();
 <!--/head-->
 
 
+<<<<<<< HEAD
+<body>
+    <!--/head-->
+
+
+=======
+>>>>>>> d3cd0bd56ab74c187d7026086aad54b3242a9184
 
     <header id="header">
         <div class="container">
@@ -293,6 +300,7 @@ session_start();
         </div>
 
     </header>
+    <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
 
     <body>
