@@ -1,6 +1,7 @@
 <?php
 session_start(); 
 
+
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     if(isset($_POST['add_to_cart']))
@@ -10,22 +11,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $myitems=array_column($_SESSION['cart'],'Item_Name');
             if(in_array($_POST['Item_Name'],$myitems))
             {
-                $myidx=array_column($_SESSION['cart'],'Type');
-                $idx=array_search($_POST['Type'],$myidx);
-                if($_SESSION['cart'][$idx]['Type']=='Ticket')
+                if($_SESSION['cart'][$count]['Type']=='Ticket')
                 {
                     echo "<script>alert('Item Already Added');
                          window.location.href='movies.php';
                          </script>";
     
                 }
-                else if($_SESSION['cart'][$idx]['Type']=='Food')
+                else if($_SESSION['cart'][$count]['Type']=='Food')
                 {
                     echo "<script>alert('Item Already Added');
-                         window.location.href='portfolio.php';
+                         window.location.href='portfolio.html';
                          </script>";
                 }
-                else if($_SESSION['cart'][$idx]['Type']=='Merchandise Product')
+                else if($_SESSION['cart'][$count]['Type']=='Merchandise Product')
                 {
                     echo "<script>alert('Item Already Added');
                          window.location.href='merch.php';
@@ -46,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             else if($_SESSION['cart'][$count]['Type']=='Food')
             {
                 echo "<script>alert('Item Added');
-                     window.location.href='portfolio.php';
+                     window.location.href='portfolio.html';
                      </script>";
             }
             else if($_SESSION['cart'][$count]['Type']=='Merchandise Product')
@@ -69,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             else if($_SESSION['cart'][0]['Type']=='Food')
             {
             echo "<script>alert('Item Added');
-                       window.location.href='portfolio.php';
+                       window.location.href='portfolio.html';
                        </script>";  
             }
             else if($_SESSION['cart'][0]['Type']=='Merchandise Product')
