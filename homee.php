@@ -484,9 +484,6 @@ session_start();
        <br>
        <br>
        <br>
-<<<<<<< HEAD
-       <br><br>
-=======
        <br>
        <br>
        <br>
@@ -498,7 +495,6 @@ session_start();
        <br>
        <br>
        <br>
->>>>>>> 56bc9c19db1e66b297d8da19794d25c5bc8be885
        <h2>Here we do not think.We are thought...</h2>
        <br>
        <br>
