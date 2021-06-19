@@ -343,13 +343,71 @@
                     <form action="manage_cart.php" method="POST">
                         <div class="product-1 align-items-center p-2 text-center">
                             <img src="images/merchandise/mm4.jpg" alt="" class="rounded" width="160">
-                            <h5>Key Chain Set</h5>
+                            <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='Key-Chain'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                             <div class="mt-3 info">
                                 <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                                 <span class="text1">Lorem, ipsum dolor.</span>
                             </div>
                             <div class="cost mt-3 text-dark">
-                                <span>650 BDT</span>
+                            <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='Key-Chain'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                                 <div class="star mt-3 align-items-center">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -377,13 +435,71 @@
                 <form action="manage_cart.php" method="POST">
                     <div class="product-1 align-items-center p-2 text-center">
                         <img src="images/merchandise/mm5.png" alt="" class="rounded" width="160">
-                        <h5>Phone Cover</h5>
+                        <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='Phone Cover'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                         <div class="mt-3 info">
                             <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                             <span class="text1">Lorem, ipsum dolor.</span>
                         </div>
                         <div class="cost mt-3 text-dark">
-                            <span>900 BDT</span>
+                        <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='Phone Cover'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                             <div class="star mt-3 align-items-center">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -409,13 +525,71 @@
                 <form action="manage_cart.php" method="POST">
                     <div class="product-1 align-items-center p-2 text-center">
                         <img src="images/merchandise/mm6.jpg" alt="" class="rounded" width="160">
-                        <h5>Compass</h5>
+                        <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='Compass'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                         <div class="mt-3 info">
                             <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                             <span class="text1">Lorem, ipsum dolor.</span>
                         </div>
                         <div class="cost mt-3 text-dark">
-                            <span>500 BDT</span>
+                        <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='Compass'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                             <div class="star mt-3 align-items-center">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -446,13 +620,71 @@
                                  <form action="manage_cart.php" method="POST">
                                  <div class="product-1 align-items-center p-2 text-center">
                                      <img src="images/merchandise/mm1.jpg" alt="" class="rounded" width="160">
-                                     <h5>Mug</h5>
+                                     <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='Mug'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                                      <div class="mt-3 info">
                                          <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                                          <span class="text1">Lorem, ipsum dolor.</span>
                                      </div>
                                      <div class="cost mt-3 text-dark">
-                                         <span>150 BDT</span>
+                                     <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='Mug'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                                          <div class="star mt-3 align-items-center">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -478,13 +710,71 @@
                              <form action="manage_cart.php" method="POST">
                              <div class="product-1 align-items-center p-2 text-center">
                                  <img src="images/merchandise/mm2.jpg" alt="" class="rounded" width="160">
-                                 <h5>T-Shirt</h5>
+                                 <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='T-Shirt'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                                  <div class="mt-3 info">
                                      <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                                      <span class="text1">Lorem, ipsum dolor.</span>
                                  </div>
                                  <div class="cost mt-3 text-dark">
-                                     <span>300 BDT</span>
+                                 <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='T-Shirt'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                                      <div class="star mt-3 align-items-center">
                                          <i class="fa fa-star"></i>
                                          <i class="fa fa-star"></i>
@@ -509,13 +799,71 @@
                              <form action="manage_cart.php" method="POST">
                              <div class="product-1 align-items-center p-2 text-center">
                                  <img src="images/merchandise/mm3.webp" alt="" class="rounded" width="160">
-                                 <h5>Double Mugs</h5>
+                                 <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='Double Mug'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                                  <div class="mt-3 info">
                                      <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                                      <span class="text1">Lorem, ipsum dolor.</span>
                                  </div>
                                  <div class="cost mt-3 text-dark">
-                                     <span>450 BDT</span>
+                                 <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='Double Mug'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                                      <div class="star mt-3 align-items-center">
                                          <i class="fa fa-star"></i>
                                          <i class="fa fa-star"></i>
@@ -544,13 +892,71 @@
                          <form action="manage_cart.php" method="POST">
                          <div class="product-1 align-items-center p-2 text-center">
                              <img src="images/merchandise/mm7.jpg" alt="" class="rounded" width="160">
-                             <h5>Iron Man Fist</h5>
+                             <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='Iron Man Fist'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                              <div class="mt-3 info">
                                  <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                                  <span class="text1">Lorem, ipsum dolor.</span>
                              </div>
                              <div class="cost mt-3 text-dark">
-                                 <span>1500 BDT</span>
+                             <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='Iron Man Fist'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                                  <div class="star mt-3 align-items-center">
                                      <i class="fa fa-star"></i>
                                      <i class="fa fa-star"></i>
@@ -577,13 +983,71 @@
                      <form action="manage_cart.php" method="POST">
                      <div class="product-1 align-items-center p-2 text-center">
                          <img src="images/merchandise/mm8.png" alt="" class="rounded" width="160">
-                         <h5>Avengers Case</h5>
+                         <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='Avengers Case'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                          <div class="mt-3 info">
                              <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                              <span class="text1">Lorem, ipsum dolor.</span>
                          </div>
                          <div class="cost mt-3 text-dark">
-                             <span>800 BDT</span>
+                         <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='Avengers Case'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                              <div class="star mt-3 align-items-center">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
@@ -608,13 +1072,71 @@
                      <form action="manage_cart.php" method="POST">
                      <div class="product-1 align-items-center p-2 text-center">
                          <img src="images/merchandise/mm9.jpg" alt="" class="rounded" width="160">
-                         <h5>Hoodie</h5>
+                         <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT title from merchandise where title='Hoodie'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h2 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h2>" ;
+                              }
+                            }
+
+                           
+               ?>
                          <div class="mt-3 info">
                              <span class="text1 d-block">Lorem ipsum dolor sit amet consectetur adip</span>
                              <span class="text1">Lorem, ipsum dolor.</span>
                          </div>
                          <div class="cost mt-3 text-dark">
-                             <span>1200 BDT</span>
+                         <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from merchandise where title='Hoodie'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<span >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</span>" ;
+                              }
+                            }
+
+                           
+               ?>
                              <div class="star mt-3 align-items-center">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
