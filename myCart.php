@@ -291,71 +291,69 @@ if(isset($_POST['submit']))
 </head>
 <body>
     <!--/head-->
+    <body>
 
-<body>
-    <!--/head-->
-
-
-
-    <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 overflow">
-                    <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 overflow">
+                <div class="social-icons pull-right">
+                    <ul class="nav nav-pills">
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-google"></i></a></li>
+                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="logo pull-left">
+                <h2>Lights Camera Action</h2>
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="menu-bar">
-            <ul>
-                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check"></i> Admin Login</a>
+    <div class="menu-bar">
+        <ul>
+            <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
+            <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Admin</a></li>
+            <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                        <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
+                    </ul>
+                </div>
             </li>
-                <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
-                    <div class="sub-menu-1">
-                        <ul>
-                            <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
-                    <div class="sub-menu-1">
-                        <ul>
-                           
-                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
-                            <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
-                        </ul>
-                    </div>
+            <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
+                <div class="sub-menu-1">
+                    <ul>
+                       
+                        <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
+                        <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
+                    </ul>
+                </div>
 
-                </li>
-                <li><a href='http://localhost/302/registration.php'><i class="fa fa-user-plus"></i> Sign Up</a></li>
-                <li><a href='http://localhost/302/contact%20us.php'><i class="fa fa-phone"></i> Contact Us</a></li>
-                <li>
-                <?php
-                $count=0;
-                if(isset($_SESSION['cart']))
-                {
-                    $count=count($_SESSION['cart']);
+            </li>
+            <li><a href='http://localhost/302/registration.php'><i class="fa fa-user-plus"></i> Sign Up</a></li>
+            <li><a href='http://localhost/302/contact%20us.php'><i class="fa fa-phone"></i> Contact Us</a></li>
+            <li>
+            <?php
+            $count=0;
+            if(isset($_SESSION['cart']))
+            {
+                $count=count($_SESSION['cart']);
 
-                } 
-                ?>
-                <a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart (<?php echo $count; ?>)</a>
-                
-                </li>
-            </ul>
-        </div>
+            } 
+            ?>
+            <a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart (<?php echo $count; ?>)</a>
+            
+            </li>
+        </ul>
+    </div >
 
-    </header>
+</header>
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
     <body>
       
@@ -402,10 +400,6 @@ if(isset($_POST['submit']))
       <form action='manage_cart.php' method='POST'>
       <input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> 
       <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
-        
-
-      
-      </from>
       
       
         

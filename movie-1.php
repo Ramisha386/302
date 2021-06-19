@@ -176,11 +176,7 @@
 	<!--/head-->
 
 <body>
-   <!--/head-->
-
-
-
-   <header id="header">
+    <header id="header">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
@@ -201,21 +197,35 @@
         <div class="menu-bar">
             <ul>
                 <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check"></i> Admin Login</a>
+                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
+                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
+                    </ul>
+                </div>
             </li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
                     <div class="sub-menu-1">
                         <ul>
-                           
-                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
+                            <li class="hover-me"><a href="Ticket.html"><i class="fa fa-credit-card"></i> Purchase Ticket</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="Food.html"><i class="fa fa-mobile"></i> Mobile-Banking</a></li>
+                                        <li><a href="merchandise.html"><i class="fa fa-address-card"></i> Internet-Banking</a></li>
+                                        <li><a href="merchandise.html"><i class="fa fa-credit-card"></i> Card</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="portfolio.html"><i class="fa fa-apple"></i> Refreshments</a></li>
                             <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
                         </ul>
                     </div>
@@ -271,7 +281,7 @@
                     <div class="client overflow">
                         <h3 class="own">Available in:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li class="display"> 2D</li>
+                            <li class="display"> 3D/2D</li>
                         </ul>
                     </div>
                     <div class="skills overflow">
@@ -296,7 +306,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT availability from showtime where showtime_id='1'";
+    $query = "SELECT availability from showtime where showtime_id='SAOT20210614'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -337,7 +347,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT start_time from showtime where showtime_id='1'";
+    $query = "SELECT start_time from showtime where showtime_id='SAOT20210614'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
