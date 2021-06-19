@@ -11,20 +11,23 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $myitems=array_column($_SESSION['cart'],'Item_Name');
             if(in_array($_POST['Item_Name'],$myitems))
             {
-                if($_SESSION['cart'][$count]['Type']=='Ticket')
+                $myidx=array_column($_SESSION['cart'],'Type');
+                $idx=array_search($_POST['Type'],$myidx);
+                $count=count($_SESSION['cart']);
+                if($_SESSION['cart'][$idx]['Type']=='Ticket')
                 {
                     echo "<script>alert('Item Already Added');
-                         window.location.href='movies.php';
+                         window.location.href='movies_2D.php';
                          </script>";
     
                 }
-                else if($_SESSION['cart'][$count]['Type']=='Food')
+                else if($_SESSION['cart'][$idx]['Type']=='Food')
                 {
                     echo "<script>alert('Item Already Added');
-                         window.location.href='portfolio.html';
+                         window.location.href='portfolio.php';
                          </script>";
                 }
-                else if($_SESSION['cart'][$count]['Type']=='Merchandise Product')
+                else if($_SESSION['cart'][$idx]['Type']=='Merchandise Product')
                 {
                     echo "<script>alert('Item Already Added');
                          window.location.href='merch.php';
@@ -38,14 +41,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             if($_SESSION['cart'][$count]['Type']=='Ticket')
             {
                 echo "<script>alert('Item Added');
-                     window.location.href='movies.php';
+                     window.location.href='movies_2D.php';
                      </script>";
 
             }
             else if($_SESSION['cart'][$count]['Type']=='Food')
             {
                 echo "<script>alert('Item Added');
-                     window.location.href='portfolio.html';
+                     window.location.href='portfolio.php';
                      </script>";
             }
             else if($_SESSION['cart'][$count]['Type']=='Merchandise Product')
@@ -62,13 +65,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             if($_SESSION['cart'][0]['Type']=='Ticket')
             {
             echo "<script>alert('Item Added');
-                       window.location.href='movies.php';
+                       window.location.href='movies_2D.php';
                        </script>";  
             }
             else if($_SESSION['cart'][0]['Type']=='Food')
             {
             echo "<script>alert('Item Added');
-                       window.location.href='portfolio.html';
+                       window.location.href='portfolio.php';
                        </script>";  
             }
             else if($_SESSION['cart'][0]['Type']=='Merchandise Product')
