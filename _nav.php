@@ -183,67 +183,7 @@
         
     </section>
 
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <img src="images/home/icon3.png" alt="">
-                         <h4><a href="#log" class="btn btn-common">Purchase Ticket</a></h4>   
-                           
-                           
-                        <p> through debit/credit card</p>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-                            <img src="images/home/icon2.png" alt="">
-                        </div>
-                       
-                        <h4><a href="#log" class="btn btn-common">Purchase Ticket</a></h4> 
-                        <p> through entertainment card</p>
-                    </div>
-                </div>
-                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                         <img src="images/home/icon1.png" alt="">
-                        </div>
-                       
-                        <h4><a href="#log" class="btn btn-common">Purchase Ticket</a></h4>
-                        <p> through Bkash.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
    
-
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-              
-                    <div class="copyright-text text-center">
-                        <p>&copy; Your Company 2014. All Rights Reserved.</p>
-                        <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-       
-    </footer>
-    <!--/#footer-->
-    <script>
-function myFunction() {
-  document.getElementById("demo").style.color = "red";
-}
-</script>
+    
 
     
