@@ -397,9 +397,6 @@ session_start();
 
 
 <body>
-    <!--/head-->
-
-
 
     <header id="header">
         <div class="container">
@@ -424,8 +421,8 @@ session_start();
 
         <div class="menu-bar">
             <ul>
-                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check"></i> Admin Login</a> </li>
+                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
+                <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Admin</a></li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
@@ -474,6 +471,27 @@ session_start();
     <br>
     <div class="banner-area">
        <div class="banner-text">
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
        <br>
        <br>
        <br>

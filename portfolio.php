@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Portfolio Default | Triangle</title>
+    <title>Light Camrea Action</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/lightbox.css" rel="stylesheet">  
@@ -27,7 +27,7 @@
 <style>
     body {
 		font-family: 'Varela Round', sans-serif;
-        background-image: url('images/food.jpg');
+        background-image: url('images/foodplatter.jpg');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
@@ -137,20 +137,20 @@
            border-color: whitesmoke;
 
        }
+       text{
+           color: white;
+           font-weight: bold;
+       }
 </style>
 </head><!--/head-->
 
 <body>
 	<!------navbar-->
-<!--/head-->
-
-
-
-<header id="header">
+	<header id="header">      
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
-                    <div class="social-icons pull-right">
+                   <div class="social-icons pull-right">
                         <ul class="nav nav-pills">
                             <li><a href=""><i class="fa fa-facebook"></i></a></li>
                             <li><a href=""><i class="fa fa-twitter"></i></a></li>
@@ -158,54 +158,47 @@
                             <li><a href=""><i class="fa fa-dribbble"></i></a></li>
                             <li><a href=""><i class="fa fa-linkedin"></i></a></li>
                         </ul>
-                    </div>
+                    </div> 
                 </div>
-            </div>
+             </div>
         </div>
-
-
-        <div class="menu-bar">
-            <ul>
-                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check"></i> Admin Login</a>
+              
+         <div class="menu-bar">
+        <ul>
+            <li class="active"><a href='#'><i class="fa fa-home" ></i></i>    Home</a></li>
+            <li><a href='#'><i class="fa fa-film" ></i>    All Movies</a></li>
+            <li><a href='#'><i class="fa fa-youtube-play"></i>    Showtime</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="Ticket2d.html"><i class="fa fa-check" ></i>    2D</a></li>
+                        <li><a href="Ticket3d.html"><i class="fa fa-check" ></i>    3D</a></li>
+                    </ul>
+                </div>
             </li>
-                <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
-                    <div class="sub-menu-1">
+            <li><a href='#'><i class="fa fa-shopping-cart"></i>     Concession</a>
+             <div class="sub-menu-1">
+                 <ul>
+                     <li class="hover-me"><a href="Ticket.html"><i class="fa fa-ticket" ></i>   Purchase Ticket</a>
+                    <div class="sub-menu-2">
                         <ul>
-                            <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="Food.html"><i class="fa fa-mobile"></i>   Mobile-Banking</a></li>
+                            <li><a href="merchandise.html"><i class="fa fa-address-card"></i>   Internet-Banking</a></li>
+                            <li><a href="merchandise.html"><i class="fa fa-credit-card"></i>   Card</a></li>
                         </ul>
-                    </div>
-                </li>
-                <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
-                    <div class="sub-menu-1">
-                        <ul>
-                           
-                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
-                            <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
-                        </ul>
-                    </div>
-
-                </li>
-                <li><a href='http://localhost/302/registration.php'><i class="fa fa-user-plus"></i> Sign Up</a></li>
-                <li><a href='http://localhost/302/contact%20us.php'><i class="fa fa-phone"></i> Contact Us</a></li>
-                <li>
-                <?php
-                $count=0;
-                if(isset($_SESSION['cart']))
-                {
-                    $count=count($_SESSION['cart']);
-
-                } 
-                ?>
-                <a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart (<?php echo $count; ?>)</a>
-                
-                </li>
-            </ul>
-        </div>
-
+                    </div>                   
+                    </li>
+                     <li><a href="Food.html"><i class="fa fa-cutlery"></i>   Refreshments</a></li>
+                     <li><a href="merchandise.html"><i class="fa fa-coffee"></i>   Merchandise</a></li>
+                 </ul>
+             </div>
+            
+            </li>
+            <li><a href='#'><i class="fa fa-sign-in"></i>   Sign Up</a></li>
+            <li><a href='#'><i class="fa fa-phone"></i>   Contact Us</a></li>
+          </ul>
+        </div>               
+           
     </header>
-    <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
    <!--/#header-->
 
    <br>
@@ -239,7 +232,7 @@
                                 </div>
                             </div>
                             <div class="portfolio-info ">
-                                <h2>Platter-1</h2>
+                                <h2 class ="text">Platter-1</h2>
                             </div>
                         </div>
                     </div>

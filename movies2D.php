@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,40 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Movie-1 | Triangle</title>
+    
+    <title>Movies</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/lightbox.css" rel="stylesheet"> 
     <link href="css/animate.min.css" rel="stylesheet"> 
 	<link href="css/main.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
-    <link href="css/image.css" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:wght@300&display=swap" rel="stylesheet">
-    <!--[if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">    
+  
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pattaya&disp">
+    
     <style>
-        .own
-        {
-            font-weight: bolder;
-           
-            font-family: 'Lobster', cursive;
-            font-family: 'Merriweather', serif;
-            color: darkred;
-        }
-        .display
-        {
-            font-style: oblique;
-            font-size: medium;
-        }
-        *
+        .myButton {
+	box-shadow:inset 3px 2px 3px 0px #bd2121;
+	background:linear-gradient(to bottom, #c12700 5%, #a72100 100%);
+	background-color:#c1001a;
+	border-radius:11px;
+	border:1px solid #771212;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:15px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #154682;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #a71300 5%, #c12700f1 100%);
+	background-color:#a72700;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+    *
        {
            padding: 0;
            margin: 0;
@@ -47,17 +58,15 @@
        }
        body
        {
-           
-
-        font-family: 'Varela Round', sans-serif;
-        background-image: url('images/back.jpg');
-        background: rgba(76, 175, 100, 0.9)
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-        color: #fff;
-        
+           background-image: url("images/back.jpg");
+           background-size: cover;
+           background-position: center;
+           font-family: 'Oswald', sans-serif;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-size: 100% 100%;
        }
+
        .ownn
         {
             
@@ -66,6 +75,7 @@
             font-size:small;
             color: whitesmoke;
         }
+       
        .menu-bar
        {
            background:darkred;
@@ -103,7 +113,7 @@
        }
        .sub-menu-1
        {
-           display:none;+
+           display:none;
 
        }
        .menu-bar ul li:hover  .sub-menu-1
@@ -113,6 +123,7 @@
            background-color:darkred;
            margin-top: 15px;
            margin-left:-15px;
+           z-index: 1000;
            
        }
        .menu-bar ul li:hover  .sub-menu-1 ul
@@ -152,27 +163,45 @@
            margin-left:140px;
            background: darkred;
        }
-       .btn
+       .header
        {
+           padding-top: 0%;
+       }
+       .headings
+       {
+           font-size: xx-large;
            color: #fff;
-           border-color:darkred;
        }
-       .btn:hover
+       .description
        {
-           color: white;
-           font-weight: bold;
-           border-color: whitesmoke;
-
+           font-size: large;
+           color: #fff;
        }
-      
     </style>
+    
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body>
-	<!--/head-->
+    
+
+  <!--/head-->
 
 <body>
-    <header id="header">
+   <!--/head-->
+
+
+
+   <header id="header">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
@@ -193,35 +222,21 @@
         <div class="menu-bar">
             <ul>
                 <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
-                <div class="sub-menu-1">
-                    <ul>
-                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
-                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
-                    </ul>
-                </div>
+                <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check"></i> Admin Login</a>
             </li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li class="hover-me"><a href="Ticket.html"><i class="fa fa-credit-card"></i> Purchase Ticket</a>
-                                <div class="sub-menu-2">
-                                    <ul>
-                                        <li><a href="Food.html"><i class="fa fa-mobile"></i> Mobile-Banking</a></li>
-                                        <li><a href="merchandise.html"><i class="fa fa-address-card"></i> Internet-Banking</a></li>
-                                        <li><a href="merchandise.html"><i class="fa fa-credit-card"></i> Card</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="portfolio.html"><i class="fa fa-apple"></i> Refreshments</a></li>
+                           
+                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
                             <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
                         </ul>
                     </div>
@@ -246,45 +261,22 @@
 
     </header>
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
-    <!--/#header-->
 
 
-    <!--/#action-->
 
-    <section id="portfolio-information" class="padding-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <img src="images/movies/thebox.jpg" class="img-responsive" alt="" width="400" height="200">
-                </div>
-                <div class="col-sm-6">
-                    <div class="project-info overflow">
-                        <h1 class="own">The Box</h1>
-                        <h3>A music producer fallen from grace finds an artist - Ji Hoon who has everything needed to make it big and discovers the one thing holding him back, paralyzing stage fright. </h3>
-                        <ul class="elements">
-                            <li><i class="fa fa-angle-right"></i>2021 ‧ Musical/Music ‧ 1h 34m</li>
-                            
-                            <li><i class="fa fa-angle-right"></i>Dal Hwan Cho . Chan-Yeol Park</li>
-                        </ul>
-                    </div>
-                    <div class="skills overflow">
-                        <h3 class="own">Price:</h3>
-                        <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">400 BDT</h4>
-                        </ul>
-                    </div>
-                    <div class="client overflow">
-                        <h3 class="own">Available in:</h3>
-                        <ul class="nav navbar-nav navbar-default">
-                            <li class="display"> 3D/2D</li>
-                        </ul>
-                    </div>
-                    <div class="skills overflow">
-                        <h3 class="own">Seats Available</h3>
-                        <ul class="nav navbar-nav navbar-default">
-                            <?php
-                            
-                            //Oracle DB user name
+    <div style="text-align:center; "><h1 style="font-size: 50px;font-weight:bold; font-family: 'Oswald', sans-serif;">2D Movies</h1></div>
+   <section id="company-information" class="padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                
+                <img src="images/movies/armyofthedead.jpg" class="img-responsive" alt="" width="300" height="100"  >
+                
+            </div>
+            <div class="person-info col-sm-6">
+                <?php
+                 
+                 //Oracle DB user name
     $username = 'dbms';
 
     // Oracle DB user password
@@ -301,72 +293,182 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT availability from showtime where showtime_id='S0TB20210614'";
+    $query = "SELECT movie_name from movie_info where movie_id='1'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
                             foreach ($row as $item) {
-                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
-                              }
-                            }
-               ?>
-                        </ul>
-                    </div>
-
-
-                    <div class="skills overflow">
-                        <h3 class="own">Showtime (in hours)</h3>
-                        <ul class="nav navbar-nav navbar-default">
-                            <?php
-                            
-                            //Oracle DB user name
-    $username = 'dbms';
-
-    // Oracle DB user password
-    $password = 'dbms';
-
-    // Oracle DB connection string
-    $connection_string = 'localhost/xe';
- $connection = oci_connect(
-        $username,
-        $password,
-        $connection_string
-    );
-
-    if (!$connection)
-        echo 'Oops 🙁 connection failed';
-    else
-    $query = "SELECT start_time from showtime where showtime_id='S0TB20210614'";
-    $result = oci_parse($connection, $query);
-    oci_execute($result);
-    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
-                            foreach ($row as $item) {
-                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
                               }
                             }
 
                            
                ?>
-                        </ul>
-                    </div>
-                    <form action="manage_cart.php" method="POST">
-    <div class="live-preview">
-                        <br>
-                        <br>
-                        
-                    <button type="submit" name="add_to_cart"  class="btn btn-outline-danger"><span class="text-uppercase" style="color:darkred; font-weight:bold;">Add To Cart</span></button>
-                    </div>
-                    <input type="hidden" name="Item_Name" value="The Box">
-                    <input type="hidden" name="Price" value="700">
-                    <input type="hidden" name="Type" value="Ticket">
-                    </form>
+                
+                
+                
+                <div class="description">
+                <p>2021 ‧ Horror/Action ‧ 2h 28m</p>
+            
+                <p>Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble, venturing into the quarantine zone to pull off the greatest heist ever attempted.
+                    <br>
+                    <br>
+                    <br>
+                    <b>Director:</b>
+                    Zack Snyder
+                    <br>
+                   <b>
+                    Writers:
+                   </b>
+                    Zack Snyder(story by)Shay Hatten(screenplay by)Joby Harold(screenplay by)
+                    <br>
+                    <b>Stars:</b>
+                    Dave Bautista . Ella Purnell . Ana de la Reguera</p>
                 </div>
+                    <br>
+                    <br>
+                    <a href="movie-1.php" class="myButton">Buy Ticket</a>
+                    <a href="https://www.youtube.com/watch?v=tI1JGPhYBS8" class="myButton">Trailer</a>
             </div>
         </div>
-    </section>
-     <!--/#portfolio-information-->
+             <br>
+        <div class="row">
+            <div class="col-sm-5">
+                <img src="images/movies/thebox.jpg" class="img-responsive" alt="" width="300" height="100">
+            </div>
+            <div class="person-info col-sm-6">
+            <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
 
-     <footer id="footer" >
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='2'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
+                <div class="description">
+                <p>2021 ‧ Musical/Music ‧ 1h 34m</p>
+            
+                <p>A music producer fallen from grace finds an artist - Ji Hoon who has everything needed to make it big and discovers the one thing holding him back, paralyzing stage fright.
+
+                    
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <b>Director:</b>
+                    Yang Jeong-Woong
+                    <br>
+                   
+                    
+                    <b>Stars:</b>
+                    Dal Hwan Cho . Chan-Yeol Park</p>
+                </div>
+                    <br>
+                    <br>
+                    <a href="movie-2.php" class="myButton">Buy Ticket</a>
+                    <a href="https://www.youtube.com/watch?v=gjSXRO1AcnQ" class="myButton">Trailer</a>
+            </div>
+        </div>
+
+<br>
+        <div class="row">
+            <div class="col-sm-5">
+                <img src="images/movies/conjuring3.png" class="img-responsive" alt="" width="300" height="100">
+            </div>
+            <div class="person-info col-sm-6">
+            <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='3'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
+                <div class="description">
+                <p>2021 ‧ Horror/Thriller ‧ 1h 52m</p>
+            
+                <p>Paranormal investigators Ed and Lorraine Warren try to uncover the truth behind a murderer's claim of demonic possession.
+
+                    
+                    
+                   <br>
+                   <br>
+                   <br>
+                    <b>Director:</b>
+                    Michael Chaves
+
+                    <br>
+                    <b>Writers:</b>
+                    James Wan . David Leslie . Johnson-McGoldrick
+                    <br>
+                  
+                    
+                    <b>Stars:</b>
+                    Patrick Wilson . Vera Farmiga . Ruairi O'Connor
+
+                    </p>
+                </div>
+                    <br>
+                    <br>
+                    <a href="movie-3.php" class="myButton">Buy Ticket</a>
+                    <a href="https://www.youtube.com/watch?v=h9Q4zZS2v1k" class="myButton">Trailer</a>
+                
+            </div>
+        </div>
+
+<br>
+
+
+
+
+    </div>
+</section>
+  
+<footer id="footer" >
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center bottom-separator">
@@ -432,13 +534,11 @@
         </div>
     </footer>
 
-
-
-
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>  
+    <script type="text/javascript" src="js/main.js"></script>   
 </body>
 </html>
+

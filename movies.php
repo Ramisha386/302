@@ -197,11 +197,7 @@
   <!--/head-->
 
 <body>
-   <!--/head-->
-
-
-
-   <header id="header">
+    <header id="header">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
@@ -222,21 +218,35 @@
         <div class="menu-bar">
             <ul>
                 <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check"></i> Admin Login</a>
+                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
+                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
+                    </ul>
+                </div>
             </li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
                     <div class="sub-menu-1">
                         <ul>
-                           
-                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
+                            <li class="hover-me"><a href="Ticket.html"><i class="fa fa-credit-card"></i> Purchase Ticket</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="Food.html"><i class="fa fa-mobile"></i> Mobile-Banking</a></li>
+                                        <li><a href="merchandise.html"><i class="fa fa-address-card"></i> Internet-Banking</a></li>
+                                        <li><a href="merchandise.html"><i class="fa fa-credit-card"></i> Card</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="portfolio.html"><i class="fa fa-apple"></i> Refreshments</a></li>
                             <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
                         </ul>
                     </div>
@@ -263,8 +273,6 @@
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
 
 
-
-    <div style="text-align:center; "><h1 style="font-size: 50px;font-weight:bold; font-family: 'Oswald', sans-serif;">2D Movies</h1></div>
    <section id="company-information" class="padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
     <div class="container">
         <div class="row">
@@ -293,7 +301,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='1'";
+    $query = "SELECT movie_name from movie_info where movie_id='MAOT20210614'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -356,7 +364,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='2'";
+    $query = "SELECT movie_name from movie_info where movie_id='M0TB20210614'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -417,7 +425,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT movie_name from movie_info where movie_id='3'";
+    $query = "SELECT movie_name from movie_info where movie_id='MTCT20210614'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -463,7 +471,221 @@
 <br>
 
 
+<div class="row">
+    <div class="col-sm-5">
+        <img src="images/movies/avengers.jpg" class="img-responsive" alt="" width="300" height="100">
+    </div>
+    <div class="person-info col-sm-6">
+    <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
 
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='M0AE20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
+        <div class="description">
+        <p>2019 ‧ Action/Sci-fi ‧ 3h 2m</p>
+    
+        <p>After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.
+
+            
+            
+           <br>
+           <br>
+           <br>
+            <b>Director:</b>
+            Joe Russo . Anthony Russo
+
+            <br>
+            <b>Writers:</b>
+            Christopher Markus(screenplay by) . Stephen McFeely(screenplay by) . Stan Lee(based on the Marvel comics by)
+
+
+            <br>
+          
+            
+            <b>Stars:</b>
+           
+               Robert Downey . Jr.Chris Evans . Mark Ruffalo
+
+
+
+</p>
+        </div>
+<br>
+                    <br>
+                    <a href="movie-4.php" class="myButton">Buy Ticket</a>
+                    <a href="https://www.youtube.com/watch?v=lHw-6AZvZ7I" class="myButton">Trailer</a>
+        
+    </div>
+</div>
+
+<br>
+
+
+<div class="row">
+    <div class="col-sm-5">
+        <img src="images/movies/blackwidow.jpg" class="img-responsive" alt="" width="300" height="100">
+    </div>
+    <div class="person-info col-sm-6">
+    <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='M0BW20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
+        <div class="description">
+        <p>2019 ‧ Action/Sci-fi ‧ 3h 2m</p>
+    
+        <p>At birth the Black Widow (aka Natasha Romanova) is given to the KGB, which grooms her to become its ultimate operative. When the U.S.S.R. breaks up, the government tries to kill her as the action moves to present-day New York, where she is a freelance operative.
+            <br>
+            <br>
+            <br>
+            <b>Director:</b>
+            Cate Shortland
+            <br>
+           <b>
+            Writers:
+           </b>
+           Jac Schaeffer .  Ned Benson
+            <br>
+            <b>Stars:</b>
+            
+Scarlett Johansson . Florence Pugh . David Harbour
+
+</p>
+        </div>
+<br>
+                    <br>
+                    <a href="movie-5.php" class="myButton">Buy Ticket</a>
+                    <a href="https://www.youtube.com/watch?v=ybji16u608U" class="myButton">Trailer</a>
+        
+    </div>
+</div>
+
+
+
+
+<br>
+
+
+<div class="row">
+    <div class="col-sm-5">
+        <img src="images/movies/godzillavskong.jpg" class="img-responsive" alt="" width="300" height="100">
+    </div>
+    <div class="person-info col-sm-6">
+    <?php
+                 
+                 //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT movie_name from movie_info where movie_id='MGVK20210614'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 class=\"headings\">". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
+        <div class="description">
+        <p>2021 ‧ Sci-fi/Action ‧ 1h 53m</p>
+    
+        <p>Kong and his protectors undertake a perilous journey to find his true home. Along for the ride is Jia, an orphaned girl who has a unique and powerful bond with the mighty beast. However, they soon find themselves in the path of an enraged Godzilla as he cuts a swath of destruction across the globe. The initial confrontation between the two titans -- instigated by unseen forces -- is only the beginning of the mystery that lies deep within the core of the planet.
+
+            
+            
+           <br>
+           <br>
+           <br>
+            <b>Director:</b>
+            Adam Wingard
+
+            <br>
+            <b>Writers:</b>
+            Terry Rossio . Michael Dougherty . Zach Shields
+            <br>
+          
+            
+            <b>Stars:</b>
+            
+Alexander Skarsgård . Millie Bobby Brown . Rebecca Hall
+
+
+
+</p>
+        </div>
+
+<br>
+                    <br>
+                    <a href="movie-6.php" class="myButton">Buy Ticket</a>
+                    <a href="https://www.youtube.com/watch?v=odM92ap8_c0" class="myButton">Trailer</a>
+        
+    </div>
+</div>
 
     </div>
 </section>
