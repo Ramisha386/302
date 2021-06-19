@@ -13,10 +13,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             {
                 $myidx=array_column($_SESSION['cart'],'Type');
                 $idx=array_search($_POST['Type'],$myidx);
-<<<<<<< HEAD
-                $count=count($_SESSION['cart']);
-=======
->>>>>>> 56bc9c19db1e66b297d8da19794d25c5bc8be885
                 if($_SESSION['cart'][$idx]['Type']=='Ticket')
                 {
                     echo "<script>alert('Item Already Added');
