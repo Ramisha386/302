@@ -27,7 +27,7 @@
 <style>
     body {
 		font-family: 'Varela Round', sans-serif;
-        background-image: url('images/food.jpg');
+        background-image: url('images/foodplatter.jpg');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
@@ -137,6 +137,10 @@
            border-color: whitesmoke;
 
        }
+       text{
+           color: white;
+           font-weight: bold;
+       }
 </style>
 </head><!--/head-->
 
@@ -228,7 +232,7 @@
                                 </div>
                             </div>
                             <div class="portfolio-info ">
-                                <h2>Platter-1</h2>
+                                <h2 class ="text">Platter-1</h2>
                             </div>
                         </div>
                     </div>

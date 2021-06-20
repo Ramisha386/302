@@ -234,6 +234,11 @@ session_start();
 
 
 
+   
+
+    <body>
+
+
     <header id="header">
         <div class="container">
             <div class="row">
@@ -294,8 +299,6 @@ session_start();
 
     </header>
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
-
-    <body>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -582,9 +585,8 @@ session_start();
         </div>
     </footer>
         
-    </body>
-</body>
-</body>
+ >
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>

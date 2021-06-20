@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 else if($_SESSION['cart'][$count]['Type']=='Food')
                 {
                     echo "<script>alert('Item Already Added');
-                         window.location.href='portfolio.html';
+                         window.location.href='portfolio.php';
                          </script>";
                 }
                 else if($_SESSION['cart'][$count]['Type']=='Merchandise Product')
@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             else if($_SESSION['cart'][$count]['Type']=='Food')
             {
                 echo "<script>alert('Item Added');
-                     window.location.href='portfolio.html';
+                     window.location.href='portfolio.php';
                      </script>";
             }
             else if($_SESSION['cart'][$count]['Type']=='Merchandise Product')
@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             else if($_SESSION['cart'][0]['Type']=='Food')
             {
             echo "<script>alert('Item Added');
-                       window.location.href='portfolio.html';
+                       window.location.href='portfolio.php';
                        </script>";  
             }
             else if($_SESSION['cart'][0]['Type']=='Merchandise Product')
