@@ -24,12 +24,9 @@
     oci_execute($result);
 
     print "<table class = \"table table-bordered table-light\">\n";
-<<<<<<< HEAD
-=======
     print "    <th>" . 'Name' . "</th>\n";
     print "    <th>" . 'Email Id' . "</th>\n";
     print "    <th>" . 'Phone Number' . "</th>\n";
->>>>>>> e9ab778213c8d09177f64ca36b57d33248bd0c2d
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) {
         print "<tr>\n";
         foreach ($row as $item) {
