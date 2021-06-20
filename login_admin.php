@@ -14,29 +14,22 @@ if(isset($_POST['submit']))
 {
  $u=$_POST['username'];
  $p=$_POST['password'];
- /*if($u=="nihon"&&$p=="12345")
-  {
-    header("Location: http://www.youtube.com");
-   //echo "TUi bolod na"; 
-   exit();
-  }
- else
-  { 
-   echo "<h2 class="errors">Tui ghbolod</h2>";
-  }*/
+ $_SESSION['mevalid']=false;
  
  while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
   {   
     if(($row["EMAIL_ID"]==$u)&&($row["PASSWORD"]==$p) && ($row["STATUS"]=='admin'))
       {
-        header("Location: admin_view.php");
-		  //print "<a href='admin_view.php'></a>";
-      //require 'partials/_nav.php'
-      echo "hello";
+        
+       
+        $_SESSION['mevalid']=true;
+        header("Location: new admin view.php");
        exit();
       }
   }
-  echo "<p style='color:red' align-self:center>Tui bolod</p>";
+  echo "<script>alert('Oops! Wrong password.');
+  window.location.href='login_admin.php';
+  </script>";
    
 }
 ?>
