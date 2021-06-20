@@ -1,7 +1,39 @@
 <?php
+ session_start(); 
+ 
+$conn=oci_connect("dbms","dbms","localhost/XE");
+	$query = 'SELECT *from membership';
+	$stid = oci_parse($conn, $query);
+	oci_execute($stid);
+  if (!$conn){
+  echo "no connection";}
+  else{
+    echo " connection";
+  }
 
-session_start();
+if(isset($_POST['confirm']))
+{
+$u=$_SESSION['myid'];
+echo "hi";
+ while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
+  {  
+    if($row["EMAIL_ID"]==$u){
+        $b=$row["NO_OF_BOOKING"];
+        $b=$b+1;
+        $u=$_SESSION['myid'];
+        echo $u;
+        $sql="update membership set no_of_booking=".$b." where email_id='".$u."'";
+        echo $sql;             
+        $compile=oci_parse($conn,$sql);
+        oci_execute($compile);
+        echo "<script>alert('Record added');
+            window.location.href='payment.php';
+            </script>";}
+  }echo "hi";
+}
 ?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -215,6 +247,7 @@ span.price {
          $PRO="PROFILE";
          $NAME="Name :";
          $MOB="Mobile number :";
+         $booking="Points:";
          
          print "<table class = \"table table-bordered table-dark \">\n";
          print "<tr>\n";
@@ -222,7 +255,7 @@ span.price {
          print "<tr>\n";
          print "    <td>" . $NAME . "</td>\n";
          print "<tr>\n";
-         print "    <td>" . $f=$_SESSION['myFirstName'].  $l=$_SESSION['myLastName']. "</td>\n";
+         print "    <td>" . $f=$_SESSION['myFirstName']." ". $l=$_SESSION['myLastName']. "</td>\n";
          
          
          print "<tr>\n";
@@ -230,12 +263,20 @@ span.price {
          print "<tr>\n";
          print "    <td>" . $p=$_SESSION['myPhone'] . "</td>\n";
          print "<tr>\n";
-         
+
+         print "    <td>" . $booking . "</td>\n";
+         print "<tr>\n";
+
+         print "    <td>" . $b=$_SESSION['booking'] . "</td>\n";
+         print "<tr>\n";
+
          print "</table>\n";
-         ?>
+        
+	    
+        ?>
       <div class="row"> 
           <div class="col-md-6">
-          <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary py-2 px-4">Proceed to make the purchase</button> 
+          <button type="submit" data-toggle="modal" data-target="#myModal" name="proceed" class="btn btn-primary py-2 px-4">Proceed to make the purchase</button> 
           </div>
           <div class="col-md-6">
           <a href='http://localhost/302/myCart.php'><button type="button"  class="btn btn-primary py-2 px-4">LOGOUT</button></a>
@@ -262,50 +303,54 @@ span.price {
                       </div>
                       <div class="line"></div>
                       <div class="modal-body p-0">
+                      <form method="POST">
                           <fieldset id="tab011">
                               <div class="bg-light">
                                   <h3 class="text-center mb-4 mt-0 pt-4">Mobile Banking</h3>
                                   <br>
                                   <ol class="pb-4">
                                       <a href='https://payment.bkash.com/redirect/tokenized/?paymentID=TR0011UR1624019924510&hash=qoTzSj4Xf(vh-E6Dl9qpUQ1Ic3SNWn-10mKsV(wQhkm8u*FZaQfS3VwFwXcGDNm7UhIVthFaeDcN_pdLGIJ9a2.l-lIYuu.!!naQ1624019924547&mode=0011&apiVersion=v1.2.0-beta'><img src="images/bkash.jpg" alt="" class="rounded" width="160"></a>
-                                      <a href='https://payment.mynagad.com:30000/check-out/MDYxODE4Mzk0MDE4NS42ODkwNzQ4NjI5MzU3MzQuTkcyNzY2MjAyMTA2MTg4MzczOS44MDFiNDBjM2VlYTNhMzczZmZhNg=='><img src="images/nogod.png" alt="" class="rounded" width="160"></a>
-                                      <a href='https://ecom1.dutchbanglabank.com/ecomm2/ClientHandler?card_type=6&trans_id=j4y0t%2Fg6qbHUCdXR60kCJB5ZNpc%3D'><img src="images/rocket.png" alt="" class="rounded" width="160"></a>
+                                      <a href='https://nagad.com.bd/en/login/'><img src="images/nogod.png" alt="" class="rounded" width="160"></a>
+                                      <a href='https://ibfcat1.dutchbanglabank.com/B001/ENULogin.jsp'><img src="images/rocket.png" alt="" class="rounded" width="160"></a>
                                       
                                   </ol>
                                   <div class="modal-footer d-flex flex-column justify-content-center border-0">
-                          <p class="text-muted">Can't find what you're looking for?</p><a href='http://localhost/302/contact%20us.php'> <button type="button" class="btn btn-primary">Contact Support Team</button></a>
-                      </div>
+                                  <div class="modal-footer d-flex flex-column justify-content-center border-0">
+                           <button type="submit" class="btn btn-primary" name="confirm">Confirm checkout</button>
+                     
                               </div>
                              
                           </fieldset>
+                          </form>
+                          <form method="POST">
                           <fieldset class="show" id="tab021">
                               <div class="bg-light">
                                   <h3 class="text-center mb-4 mt-0 pt-4">Internet Banking</h3><br>
                                   <ol class="pb-4">
-                                    <a href='https://www.citytouch.com.bd/ibs_payment/billLogin'><img src="images/city touch.png" alt="" class="rounded" width="160"></a>
+                                    <a href='https://www.citytouch.com.bd/login#!'><img src="images/city touch.png" alt="" class="rounded" width="160"></a>
                                     <a href='https://abdirect.abbl.com/merchant/login#!'><img src="images/ab bank.png" alt="" class="rounded" width="160"></a>
-                                    <a href='https://app.ipay.com.bd/checkout/pay/FQDLZ21-524EC49762A340'><img src="images/ipay.png" alt="" class="rounded" width="160"></a>
+                                    <a href='https://app.ipay.com.bd/login'><img src="images/ipay.png" alt="" class="rounded" width="160"></a>
                                     
                                 </ol>
                               </div>
                               <div class="px-3">
                               <div class="modal-footer d-flex flex-column justify-content-center border-0">
-                          <p class="text-muted">Can't find what you're looking for?</p><a href='http://localhost/302/contact%20us.php'> <button type="button" class="btn btn-primary">Contact Support Team</button></a>
-                      </div>
+                              <div class="modal-footer d-flex flex-column justify-content-center border-0">
+                           
+                           <button type="submit" class="btn btn-primary" name="confirm">Confirm checkout</button>
+                         
                               </div>
                           </fieldset>
+                          </form>
                           <fieldset id="tab031">
                               <div class="bg-dark">
 
                                   <div class="row">
                                     <div class="col-75">
                                       <div >
-                                        <form action="/action_page.php">
+                                      <form method="POST">
                                             <div class="row">
                                             
-
-                                            
-                                                
                                             <div class="col-50">
                                               
                                               <label for="fname">Accepted Cards</label>
@@ -349,7 +394,8 @@ span.price {
                                             
                                           </div>
                                          
-                                          <input type="submit" value="Continue to checkout" class="btn">
+                                          <input type="submit" value="Continue to checkout" class="btn" name="confirm">
+                                          
                                         </form>
                                       </div>
                                     </div>
@@ -358,9 +404,7 @@ span.price {
                
                       </div>
                       <div class="line"></div>
-                      <div class="modal-footer d-flex flex-column justify-content-center border-0">
-                          <p class="text-muted">Can't find what you're looking for?</p><a href='http://localhost/302/contact%20us.php'> <button type="button" class="btn btn-primary">Contact Support Team</button></a>
-                      </div>
+                     
                   </div>
               </div>
           </div>
