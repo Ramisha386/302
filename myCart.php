@@ -43,10 +43,7 @@ if(isset($_POST['submit']))
         $_SESSION['myLastName'] = $l;
         $_SESSION['myPhone'] = $p;
         $_SESSION['booking'] = $b;
-        /*$sql="update membership set no_of_booking=".$b." where email_id='".$u."'";
-        echo $sql;             
-        $compile=oci_parse($conn,$sql);
-        oci_execute($compile);*/
+        
         
      
         
