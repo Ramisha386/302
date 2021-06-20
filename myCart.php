@@ -1,6 +1,6 @@
 <?php
  session_start(); 
-
+ 
 $conn=oci_connect("dbms","dbms","localhost/XE");
 	$query = 'SELECT *from membership';
 	$stid = oci_parse($conn, $query);
@@ -13,6 +13,14 @@ $conn=oci_connect("dbms","dbms","localhost/XE");
 
 if(isset($_POST['submit']))
 {
+
+ $flag=false;
+ for ($i=0;$i<count($_SESSION['cart']);$i++){
+     if($_SESSION['cart'][$i]['Type']=='Ticket'){
+         $flag=true;
+     }
+ }
+ 
  $u=$_POST['username'];
  $pas=$_POST['password'];
  
@@ -21,40 +29,40 @@ if(isset($_POST['submit']))
  while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
   {  
      
-    if(($row["EMAIL_ID"]==$u)&&($row["PASSWORD"]==$pas)&&($row["STATUS"]=='customer'))
+    if(($row["EMAIL_ID"]==$u)&&($row["PASSWORD"]==$pas)&&($row["STATUS"]=='customer')&& ($flag==true))
       {
         
         $f=$row["FIRST_NAME"];
         $l=$row["LAST_NAME"];
         $p=$row["MOBILE_NO"];
-        
-
-       
-
+        $b=$row["NO_OF_BOOKING"];
+        //$b=$b+1;
         $_SESSION['mevalid'] = true;
         $_SESSION['myid'] = $u;
         $_SESSION['myFirstName'] = $f;
         $_SESSION['myLastName'] = $l;
         $_SESSION['myPhone'] = $p;
-
-
+        $_SESSION['booking'] = $b;
+        /*$sql="update membership set no_of_booking=".$b." where email_id='".$u."'";
+        echo $sql;             
+        $compile=oci_parse($conn,$sql);
+        oci_execute($compile);*/
         
-        
-        
-       //header("Location: admin_view.php?id=$u");
+     
         
        header("Location:payment.php");
 
-	  //print "<a href='admin_view.php?id=$u'>HELLO WASIF </a>";
-      //require 'partials/_nav.php'
-      
-     // echo  $_SESSION['myid'];
        exit();}
-      }
+      
+      else if ($flag==false && ($row["EMAIL_ID"]==$u)&&($row["PASSWORD"]==$pas)&&($row["STATUS"]=='customer') )
      
-        echo "<script>alert('Error Message');
+       { echo "<script>alert('Book a ticket first!');
                            window.location.href='merch.php';
-                           </script>";
+                           </script>";}
+       }
+      echo "<script>alert('Wrong password!');
+            window.location.href='movies2D.php';
+            </script>";
     
   }
   
@@ -389,7 +397,7 @@ if(isset($_POST['submit']))
   {
       
       $sr=$key+1;
-    
+      
       echo "
       <tr>
       <td>$sr</td>
@@ -400,11 +408,7 @@ if(isset($_POST['submit']))
       <form action='manage_cart.php' method='POST'>
       <input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> 
       <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
-      
-      
-        
-
-     </from>
+      </from>
       </td>
       <td class='itotal'></td>
       <td>
@@ -413,10 +417,10 @@ if(isset($_POST['submit']))
       <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
       </form> 
       </tr>
-      ";
+      ";}
       
   }
-  }
+  
   ?>
    
   </tbody>
@@ -425,7 +429,9 @@ if(isset($_POST['submit']))
         <div class="col-lg-3">
         <div class="border bg-dark rounded p-4">
         <h4>Grand Total:</h4>
+        <input type="hidden" id="btnClickedValue" name="btnClickedValue" value="gtotal" />
         <h5 class="text-right" id="gtotal"></h5>
+        </form>
         <br>
         <?php
           if(isset($_SESSION['cart']) && count($_SESSION['cart'])>0)
@@ -539,6 +545,7 @@ if(isset($_POST['submit']))
         gtotal.innerText=gt;
     }
     subTotal();
+
     
 </script>
 
