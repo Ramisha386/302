@@ -177,7 +177,7 @@
         <div class="menu-bar">
             <ul>
                 <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check"></i> Admin Login</a>
+                <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check"></i> Admin Logged in</a>
             </li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
@@ -250,37 +250,27 @@
     $query = "SELECT * from membership";
     $result = oci_parse($connection, $query);
     oci_execute($result);
-   /* print "<div class=\"container\">";
-	
-	print "<div class=\"table\">";
-	print  "<div class=\"table-header\">";
-	print	"<div class=\"header__item\">" . "Email_id" ."</div>";
-    print	"<div class=\"header__item\">". "First Name". "</div>";
-    print	"<div class=\"header__item\">" . "Last Name" ."</div>";
-    print	"<div class=\"header__item\">". "Status". "</div>";
-    print	"<div class=\"header__item\">". "Password". "</div>";
-    print	"<div class=\"header__item\">" . "Mobile Number" ."</div>";
-    print	"<div class=\"header__item\">". "Number of booking". "</div>";
-	"</div>\n"; 
-    "</div>\n"; 
-    "</div>\n"; */
+  
     
     print "<table class = \"table table-bordered table-dark \">\n";
+    print "    <th>" . 'Email id' . "</th>\n";
+    print "    <th>" . 'First Name' . "</th>\n";
+    print "    <th>" . 'Last Name' . "</th>\n";
+    print "    <th>" . 'Status' . "</th>\n";
+    print "    <th>" . 'Password' . "</th>\n";
+    print "    <th>" . 'Phone Number' . "</th>\n";
+    print "    <th>" . 'No of booking' . "</th>\n";
+    
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) {
         print "<tr>\n";
+        
         foreach ($row as $item) {
             print "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") . "</td>\n";
         }
         print "</tr>\n";
     }
     print "</table>\n";
-    //print '</table>';
 
-   /* while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) {
-       
-        foreach ($row as $item) {
-            print  ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") ;}
-        }*/
     
  ?> 
 
