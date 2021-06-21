@@ -420,8 +420,8 @@ header a{
 }
 
 .container {
-	width: 100%;
-	max-width: 1000px;
+	width: 120%;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -495,6 +495,10 @@ header a{
 	left: 80%;
 }
 
+#tab-6, #tab-6 + span {
+	left: 100%;
+}
+
 .tab-content {
 	padding: 80px 20px 20px;
 	width: 100%;
@@ -502,7 +506,7 @@ header a{
 }
 
 .tab-content section {
-	width: 100%;
+	width: 120%;
 	display: none;
 }
 
@@ -530,6 +534,10 @@ header a{
 }
 
 #tab-5:checked ~ .tab-content #tab-item-5  {
+	display: block;
+}
+
+#tab-6:checked ~ .tab-content #tab-item-6  {
 	display: block;
 }
 
@@ -579,6 +587,9 @@ header a{
 
 #tab-5:checked ~ .line {
 	left: 80%;
+}
+#tab-6:checked ~ .line {
+	left: 100%;
 }
 
 
@@ -696,8 +707,11 @@ header a{
 
 			<input type="radio" id="tab-4" name="tab-effect-3">
 			<span>Membership Record</span>
+
+            <input type="radio" id="tab-5" name="tab-effect-3" >
+			<span>Purchase Orders</span>
 			
-			<input type="radio" id="tab-5" name="tab-effect-3">
+			<input type="radio" id="tab-6" name="tab-effect-3">
 			<span>Logout</span>
 
 			<div class="line ease"></div>
@@ -863,18 +877,112 @@ header a{
    
 ?> 
 				</section>
+
+
+                <section id="tab-item-5">
+                <h4>Purchase Orders</h4>
+                <?php
+                $username = 'dbms';
+                $password = 'dbms';
+                $connection_string = 'localhost/xe';
+
+                //Connect to an Oracle database
+                $connection = oci_connect(
+                    $username,
+                    $password,
+                    $connection_string
+                );
+             
+                if (!$connection)
+                    echo 'Oops 🙁 connection failed';
+                else
+                    
+                $query = "SELECT payment_id,m_email_id,system,purchase_date,name,type,price from payment";
+                $result = oci_parse($connection, $query);
+                oci_execute($result);
+                
+                echo "<table class='table table-bordered table-dark text-center'>";
+                echo "<thead>";
+                echo "    <th> Order ID</th>";
+                echo "    <th> Email Address </th>";
+                echo "    <th> Payment System</th>";
+                echo "    <th>Purchase Date. </th>";
+                echo "    <th>Orders</th>";
+                echo " </thead>";
+                echo " <tbody>";
+                
+                $pd=0;
+
+                while ($row = oci_fetch_array($result, OCI_BOTH))
+                {
+                    if($pd!=$row[0])
+                    {
+                    
+                    echo "
+                    <tr>
+                    <td>$row[0]</td>
+                    <td>$row[1]</td>
+                    <td>$row[2]</td>
+                    <td>$row[3]</td>
+                    <td>
+                   <table class='table table-bordered table-dark text-center'>
+                   <thead class='text-center' >
+                   <tr>
+                        <th class='text-center' scope='col'> Item Name</th>
+                       <th class='text-center' scope='col'> Type </th>
+                        <th class='text-center' scope='col'> Price </th>
+                      </tr>
+                      </thead>
+                       <tbody>
+                    ";
+                 
+               $query1 = "SELECT payment_id,name,type,price from payment";
+                $result1 = oci_parse($connection, $query1);
+                oci_execute($result1);
+                $rd=0;
+                while ($row1 = oci_fetch_array($result1, OCI_BOTH))
+                {
+                    if($row1[0]==$row[0])
+                    {
+
+                    echo "
+                    <tr>
+                    <td>$row1[1]</td>
+                    <td>$row1[2]</td>
+                    <td>$row1[3]</td>
+                    </tr>
+                    ";
+                    }
+                }
+                 echo "   
+                    </tbody>
+                    </table>
+                    </td>
+                    </tr>
+                    ";
+                    $pd=$pd+1;
+                    
+                }
+            }
+                echo "</tbody>";
+                echo "</table>";
+                   
+
+                          ?>
+                </section>
+
                 
 
 
-				<section id="tab-item-5">
+				<section id="tab-item-6">
 					<h3>ARE YOU SURE?</h3>
                     <a href='https://localhost/302/login_admin.php'><button type="button"  class="btn btn-primary py-2 px-4">LOGOUT</button></a>
           
-          </div>
+          
 				</section>
 			</div>
 		</div>
-				<div class="tabs effect-4">
+				
 			
 
 	
