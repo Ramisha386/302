@@ -224,7 +224,36 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="project-info overflow">
-                        <h3 class="own">Fries and Drinks</h3>
+                    <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT food_name from food where food_name='Fries and Drinks'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
                         <p>The movies just wouldn't be the same without an ice-cold, refreshing pepsi and freshly popped popcorn. Now, classics like Pop Chicken and candy are joined with more menu options than ever. </p>
                         <ul class="elements">
                             <li><i class="fa fa-angle-right"></i> 1 French Fries</li>
@@ -235,13 +264,71 @@
                     <div class="skills overflow">
                         <h3 class="own">Total Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">400 BDT</h4>
+                        <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from food where food_name='Fries and Drinks'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                              }
+                            }
+
+                           
+               ?>
                         </ul>
                     </div>
                     <div class="client overflow">
                         <h3 class="own">Platter-Size:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li class="display"> Medium</li>
+                        <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT platter_size from food where food_name='Fries and Drinks'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                              }
+                            }
+
+                           
+               ?>
                         </ul>
                     </div>
                     <div class="live-preview">

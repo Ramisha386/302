@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             if($_SESSION['cart'][$count]['Type']=='Ticket')
             {
                 echo "<script>alert('Item Added');
-                     window.location.href='movies.php';
+                     window.location.href='movies_2D.php';
                      </script>";
 
             }
@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             if($_SESSION['cart'][0]['Type']=='Ticket')
             {
             echo "<script>alert('Item Added');
-                       window.location.href='movies.php';
+                       window.location.href='movies_2D.php';
                        </script>";  
             }
            }

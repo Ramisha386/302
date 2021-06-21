@@ -1,4 +1,6 @@
+<?php session_start(); 
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -301,7 +303,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT availability from showtime where showtime_id='S0AE20210614'";
+    $query = "SELECT availability from showtime where showtime_id='4'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -337,7 +339,7 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
-    $query = "SELECT start_time from showtime where showtime_id='S0AE20210614'";
+    $query = "SELECT start_time from showtime where showtime_id='4'";
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
