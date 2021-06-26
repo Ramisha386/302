@@ -1,53 +1,24 @@
-<header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 overflow">
-                    <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+<header id="header">      
+        
 
-
+               
         <div class="menu-bar">
             <ul>
-                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
-                <div class="sub-menu-1">
-                    <ul>
-                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
-                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
-                    </ul>
-                </div>
-            </li>
+                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
+                <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Admin</a></li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies3D.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li class="hover-me"><a href="Ticket.html"><i class="fa fa-credit-card"></i> Purchase Ticket</a>
-                                <div class="sub-menu-2">
-                                    <ul>
-                                        <li><a href="Food.html"><i class="fa fa-mobile"></i> Mobile-Banking</a></li>
-                                        <li><a href="merchandise.html"><i class="fa fa-address-card"></i> Internet-Banking</a></li>
-                                        <li><a href="merchandise.html"><i class="fa fa-credit-card"></i> Card</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="portfolio.html"><i class="fa fa-apple"></i> Refreshments</a></li>
+                           
+                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
                             <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
                         </ul>
                     </div>
@@ -68,8 +39,9 @@
                 
                 </li>
             </ul>
-        </div>
-
+        </div >
+         
+           
     </header>
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
 
@@ -106,16 +78,17 @@
                                 </div>        	
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="email" placeholder="Email" required="required">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+                                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+                                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
                                 </div>  
+                                
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="phone_number" placeholder="phone number" required="required">
+                                    <input type="tel" pattern="[0][1][0-9]{9}"class="form-control" name="phone_number" placeholder="phone number" required="required">
                                 </div>       
                                 <div class="form-group">
                                     <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
@@ -140,30 +113,36 @@
                        $c_pass=$_POST["confirm_password"];
                        $phone=$_POST["phone_number"];
 
-
+                       $temp=true;
+                                
+                                $binary=strcmp($pass,$c_pass);
+                                if($binary!=0){
+                                    $temp=false;
+                                }
+ 
                        if(!$conn)
                        {
                         echo "fail";
                        }
                        else
                        {//echo "<h2 text-align: center> </h2>";
+                       
+                        if($temp==true){
+                            echo "true";
+                        $message = 'http://localhost/302/inbetween.php?firstname='.$f_name.'&lastname='.$l_name.'&email='.$email.'&phone='.$phone.'&pass='.$pass;
+                        $message="<a href='".$message."'>Click here to verify account</a>";
+                        $receiver=$email;
+                        include 'sendmail.php';
                         
-
-                        
-                        $sql="insert into membership values ('$email','$f_name','$l_name','customer','$c_pass','$phone','2')";
-                       //$sql="delete from Sign_up where Email='Bolodna'";
-                        
-                        $compile=oci_parse($conn,$sql);
+                           
+                       }
+                       else{
+                       echo "<script>alert('Password and Confirm password dont match!');
+                           window.location.href='registration.php';
+                           </script>";}
                        
                        
-                       /* oci_bind_by_name($compile, 'Email', $mail);
-                        oci_bind_by_name($compile, 'Name', $user);
-                        oci_bind_by_name($compile, 'Phone', $phone);
-                        oci_bind_by_name($compile, 'Password', $pass);*/
-                       
-                        oci_execute($compile);
-
-                       } }?>
+                       }}?>
 
 
 

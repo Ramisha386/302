@@ -38,7 +38,10 @@ session_start();
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
   <style>
         * {
             padding: 0;
@@ -147,7 +150,13 @@ session_start();
             padding: 2px;
             padding-top: 5px;
         }
-
+        .logo h2
+        {
+            padding:20px 0;
+            width:100%;
+            font-size:50px;
+            font-family: 'Lobster', cursive;
+        }
         
         .own
         {
@@ -398,27 +407,10 @@ session_start();
 
 <body>
 
-    <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 overflow">
-                    <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="logo pull-left">
-                    <h2>Lights Camera Action</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+<header id="header">      
+        
+       
+               
         <div class="menu-bar">
             <ul>
                 <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
@@ -426,8 +418,8 @@ session_start();
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies3D.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
@@ -457,7 +449,8 @@ session_start();
                 </li>
             </ul>
         </div >
-
+         
+           
     </header>
     <br>
     <br>
@@ -480,29 +473,27 @@ session_start();
        <br>
        <br>
        <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <br>
-       <h2>Here we do not think.We are thought...</h2>
+       
+       <h2 style="font-family: 'Lobster', cursive;">Lights Camera Action</h2>
        <br>
        <br>
        <p>For Us, there is nothing more valuable than how people feel in a movie theater about a movie.If you are in a movie theater, you can look two people down and they are laughing while you are laughing or you can look three people down and they love that song that you love. It is living proof that you are not alone.</p>
-       <a href="">Know About Us</a>
-       <a href="">Our Movies</a>
+       <a href="http://localhost/302/contact%20us.php">Know About Us</a>
+       <a href="http://localhost/302/movies2D.php">Our Movies</a>
 
-       
+       <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
        
        </div>
        </div>
@@ -515,6 +506,15 @@ session_start();
         <br>
         <br>
         <br>
+        <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
         <!-----slider-->
     <div class="container">
         
@@ -545,18 +545,12 @@ session_start();
                   <div class="col-xs-4"><a href="#1"><img src="images/6n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
 
-
-
-
-
-                <!-- add  more items here -->
-                <!-- Example item start:  -->
                 
                 <div class="item">
                   <div class="col-xs-4"><a href="#1"><img src="images/3n.jpg" class="img-responsive" width="400" height="200"></a></div>
                 </div>
                 
-                <!--  Example item end -->
+               
               </div>
               <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
               <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
@@ -601,11 +595,7 @@ session_start();
       </div>
       </div>
  
-        
-        
 
-
-<!--Footer Starts-->
 
        <footer id="footer" >
         <div class="container">
@@ -673,9 +663,8 @@ session_start();
         </div>
     </footer>
         
-    </body>
-</body>
-</body>
+    
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"

@@ -452,6 +452,7 @@ header a{
 	background: #f0f0f0;
 	text-align: center;
 	overflow: hidden;
+    
 }
 
 .tabs > span i,
@@ -495,8 +496,10 @@ header a{
 	left: 80%;
 }
 
+
+
 .tab-content {
-	padding: 80px 20px 20px;
+	padding: 80px 10px 20px 20px;
 	width: 100%;
 	min-height: 340px;
 }
@@ -533,10 +536,14 @@ header a{
 	display: block;
 }
 
+
+
 /* effect-1 */
 
 .effect-1 > input:checked + span {
 	background: maroon;
+    /*width:100%;*/
+   
 }
 
 
@@ -555,7 +562,7 @@ header a{
 
 .effect-3 .line{
 	background: #3498DB;
-	width: 20%;
+	width: 10%;
 	height: 4px;
 	position: absolute;
 	top: 56px;
@@ -580,6 +587,7 @@ header a{
 #tab-5:checked ~ .line {
 	left: 80%;
 }
+
 
 
 /* effect-4 */
@@ -611,42 +619,23 @@ header a{
 .effect-5 > input:hover + span i {
 	font-size: 25px;
 }
+
+
 </style>
 <body>
+<header id="header">      
+        
 
-
-
-
-<header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 overflow">
-                    <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="logo pull-left">
-                    <h2>Lights Camera Action</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+               
         <div class="menu-bar">
             <ul>
                 <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
-                <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Admin</a></li>
+                <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Logged In</a></li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies3D.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
@@ -676,7 +665,8 @@ header a{
                 </li>
             </ul>
         </div >
-
+         
+           
     </header>
     <br>
     <br>
@@ -692,13 +682,15 @@ header a{
 			<span>Insert Employee Record</span>
 
 			<input type="radio" id="tab-3" name="tab-effect-3">
-			<span>Member</span>
+			<span>Delete Employee Record</span>
 
 			<input type="radio" id="tab-4" name="tab-effect-3">
 			<span>Membership Record</span>
+
+            <input type="radio" id="tab-5" name="tab-effect-3" >
+			<span>Purchase Orders</span>
 			
-			<input type="radio" id="tab-5" name="tab-effect-3">
-			<span>Logout</span>
+			
 
 			<div class="line ease"></div>
 
@@ -712,7 +704,7 @@ header a{
 				</section>
 				<section id="tab-item-2">
 					<h4>Insert Employee Record</h4>
-                    <form action="new admin view.php" method="POST">                            
+                    <form action="final admin view.php" method="POST">                            
                                                                 
                                 <div class="form-group">
                                 <h5>Enter Full Name</h5>
@@ -723,12 +715,12 @@ header a{
                                 </div>
                                 <div class="form-group">
                                     <h5>Enter Email Address</h5>
-                                    <input type="text" class="form-control" name="email" placeholder="Email" required="required" value="  ">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" required="required" value="  ">
                                 </div>
                                  
                                 <div class="form-group">
                                     <h5>Enter phone number</h5>
-                                    <input type="text" class="form-control" name="phone_number" placeholder="phone number" required="required" value="  ">
+                                    <input type="tel" pattern="[0][1][0-9]{9}"class="form-control" name="phone_number" placeholder="phone number" required="required" value=" ">
                                 </div>       
                                 
                                 <div class="form-group">
@@ -741,9 +733,7 @@ header a{
                       if (isset($_POST['button1'])){
                          
                        $conn=oci_connect("dbms","dbms","localhost/XE");
-
-                       //when you have to sign up you have to take all posted information.
-                     
+                       
                        $f_name=$_POST["first_name"];        
                        $email=$_POST["email"];
                        $phone=$_POST["phone_number"];
@@ -756,16 +746,14 @@ header a{
                        else
                        {
                         
-
-                        
-                        $sql="insert into Duty_Employee values ('$f_name','$email','$phone')";
-                       //$sql="delete from Sign_up where Email='Bolodna'";
-                        
+///********************************date************************************************/
+                        $da=date("d-M-y");
+///********************************employee************************************************/                      
+                        $sql="declare
+                        begin
+                        employee_proc('$f_name','$email','$phone','$da');
+                        end;";
                         $compile=oci_parse($conn,$sql);
-                       
-                       
-                       
-                       
                         oci_execute($compile);
 
                        } }?>
@@ -773,7 +761,7 @@ header a{
                 <section id="tab-item-3">
                 <h4>Enter Email Address</h4>
 
-                <form action="new admin view.php" method="POST">                            
+                <form action="final admin view.php" method="POST">                            
                                                                 
                                                                 
                                                                 <div class="form-group">
@@ -800,10 +788,10 @@ header a{
                                                        else
                                                        {    
                                 
-                                                        echo $email;
+                                                      
                                                         //$sql="insert into Duty_Employee values ('$f_name','$email','$phone')";
                                                        $sql="delete from Duty_Employee where email_id='".$email."'";
-                                                       echo $sql;
+                                                      
                                                        //$sql="update membership set no_of_booking=".$b." where email_id='".$u."'"; 
                                                         $compile=oci_parse($conn,$sql);
                                                        
@@ -812,7 +800,14 @@ header a{
                                                        } }?>
                 </section>
 				<section id="tab-item-4">
-                <h4>CUSTOMERS RECORDS</h4>
+                <h4>MEMBERSHIP RECORDS</h4>
+                <form action="final admin view.php" method="POST">
+                <div class="topnav">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit" name="ss"><i class="fa fa-search"></i></button>
+                <br> <br> 
+                </div>
+                </form>
 
 <?php
    
@@ -839,8 +834,35 @@ header a{
    $query = "SELECT * from membership";
    $result = oci_parse($connection, $query);
    oci_execute($result);
- 
    
+if(isset($_POST["ss"])){
+   $s=$_POST["search"];
+   $query2= "SELECT * FROM membership  WHERE email_id='".$s."'";
+   $result2 = oci_parse($connection, $query2);
+   oci_execute($result2);
+  
+   
+   print "<table class = \"table table-bordered  \">\n";
+   print "    <th>" . 'Email id' . "</th>\n";
+   print "    <th>" . 'First Name' . "</th>\n";
+   print "    <th>" . 'Last Name' . "</th>\n";
+   print "    <th>" . 'Status' . "</th>\n";
+   print "    <th>" . 'Password' . "</th>\n";
+   print "    <th>" . 'Phone Number' . "</th>\n";
+   print "    <th>" . 'No of booking' . "</th>\n";
+   
+   while ($row = oci_fetch_array($result2, OCI_ASSOC + OCI_RETURN_NULLS)) {
+       print "<tr>\n";
+       
+       foreach ($row as $item) {
+           print "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") . "</td>\n";
+       }
+       print "</tr>\n";
+   }
+   print "</table>\n";
+} 
+
+   print "<br><br><h3><center> <b>ALL MEMBERSHIP RECORDS </b></center></h3>\n";
    print "<table class = \"table table-bordered table-dark \">\n";
    print "    <th>" . 'Email id' . "</th>\n";
    print "    <th>" . 'First Name' . "</th>\n";
@@ -863,28 +885,134 @@ header a{
    
 ?> 
 				</section>
+
+
+                <section id="tab-item-5">
+                <h4>Purchase Orders</h4>
+                
+                <?php
+                $username = 'dbms';
+                $password = 'dbms';
+                $connection_string = 'localhost/xe';
+
+                //Connect to an Oracle database
+                $connection = oci_connect(
+                    $username,
+                    $password,
+                    $connection_string
+                );
+             
+                if (!$connection)
+                    echo 'Oops 🙁 connection failed';
+                else 
+
+                
+                    
+                $query = "SELECT payment_id,m_email_id,system,purchase_date,name,type,price from payment";
+                $result = oci_parse($connection, $query);
+                oci_execute($result);
+                
+                echo "<table class='table table-bordered table-dark text-center'>";
+                echo "<thead>";
+                echo "    <th> Order ID</th>";
+                echo "    <th> Email Address </th>";
+                echo "    <th> Payment System</th>";
+                echo "    <th>Purchase Date. </th>";
+                echo "    <th>Orders</th>";
+                echo " </thead>";
+                echo " <tbody>";
+                
+                $pd=0;
+
+                while ($row = oci_fetch_array($result, OCI_BOTH))
+                {   
+                    
+                    if($pd!=$row[0])
+                    {
+                      $pd=$row[0];
+                    echo "
+                    <tr>
+                    <td>$row[0]</td>
+                    <td>$row[1]</td>
+                    <td>$row[2]</td>
+                    <td>$row[3]</td>
+                    <td>
+                   <table class='table table-bordered table-dark text-center'>
+                   <thead class='text-center' >
+                   <tr>
+                        <th class='text-center' scope='col'> Item Name</th>
+                       <th class='text-center' scope='col'> Type </th>
+                        <th class='text-center' scope='col'> Price </th>
+                      </tr>
+                      </thead>
+                       <tbody>
+                    ";
+                 
+               $query1 = "SELECT payment_id,name,type,price from payment";
+                $result1 = oci_parse($connection, $query1);
+                oci_execute($result1);
+               
+                while ($row1 = oci_fetch_array($result1, OCI_BOTH))
+                {
+
+                    
+                    if($row1[0]==$row[0])
+                    {
+
+                    echo "
+                    <tr>
+                    <td>$row1[1]</td>
+                    <td>$row1[2]</td>
+                    <td>$row1[3]</td>
+                    </tr>
+                    ";
+                    }
+                }
+                 echo "   
+                    </tbody>
+                    </table>
+                    </td>
+                    </tr>
+                    ";
+                   // $pd=$pd+1;
+                    
+                }
+            }
+                echo "</tbody>";
+                echo "</table>";
+                   
+
+                          ?>
+                </section>
+
                 
 
-
-				<section id="tab-item-5">
-					<h3>ARE YOU SURE?</h3>
-                    <a href='https://localhost/302/login_admin.php'><button type="button"  class="btn btn-primary py-2 px-4">LOGOUT</button></a>
-          
-          </div>
-				</section>
 			</div>
 		</div>
-				<div class="tabs effect-4">
-			
+        <form action="final admin view.php" method="POST">
+        <button type="submit" name="logout"class="btn btn-danger">Logout</button>		
+        <?php
+        if(isset($_POST['logout'])){
+            //$_SESSION['mevalid'] = false;
+
+            $_SESSION['mevalid']=false;
+            echo"<script> 
+            
+            alert('Logged out');
+            window.location.href='login_admin.php';
+           </script>";
+            
+          }
+          ?>
+        </form>	
 
 	
 	<footer class="footer">
 		<div class="container">
 			<div class="copyright">
-				<span>Designed By</span>
-				<a href="http://www.weibo.com/518501269" target="_blank">@Clear</a>
-				<a href="https://github.com/SoClear" target="_blank">Github</a>
-				<a href="http://www.cleardesign.me" target="_blank">WebSite</a>
+            
+           
+		
 			</div>
 		</div>
 	</footer>

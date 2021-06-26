@@ -1,7 +1,6 @@
 <?php
 session_start(); 
-
-
+$conn=oci_connect("dbms","dbms","localhost/XE");
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     if(isset($_POST['add_to_cart']))
@@ -9,6 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         
         if(isset($_SESSION['cart']))
         {   
+
             $myitems=array_column($_SESSION['cart'],'Item_Name');
             if(in_array($_POST['Item_Name'],$myitems))
             {
@@ -62,23 +62,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         }
         else
         {
-            if ($_POST['Type']!='Ticket')   
-            {
-
-                echo "<script>alert('First you need to book a ticket');
-                window.location.href='movies2D.php';
-                </script>"; 
-
-            }
-            else{
+            
             $_SESSION['cart'][0]=array('Item_Name'=>$_POST['Item_Name'],'Price'=>$_POST['Price'],'Type'=>$_POST['Type'],'Quantity'=>1);
             
-            if($_SESSION['cart'][0]['Type']=='Ticket')
-            {
+           
             echo "<script>alert('Item Added');
                        window.location.href='movies_2D.php';
                        </script>";  
-            }
+            
            }
 
         }
@@ -118,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
              }
           }
      }
-}
+
 
 
 ?>

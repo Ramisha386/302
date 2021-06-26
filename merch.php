@@ -35,6 +35,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
    <link rel="shortcut icon" type="imagge/png" href="images/favicon/camera.png">
+
+
+
+
+   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
   <style>
         * {
             padding: 0;
@@ -219,63 +227,48 @@
         }
 
      
-
+        .logo h2
+        {
+            padding:20px 0;
+            width:100%;
+            font-size:50px;
+            font-family: 'Lobster', cursive;
+        }
    
     </style>
 </head>
 <!--/head-->
 
 <body>
-    <header id="header">
-        <div class="container">
+<header id="header">      
+        
+<div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
-                    <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                    <div class="logo pull-left">
+                    <h2>Lights Camera Action</h2>
                     </div>
                 </div>
             </div>
         </div>
-
-
+               
         <div class="menu-bar">
             <ul>
-                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
-                <div class="sub-menu-1">
-                    <ul>
-                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
-                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
-                    </ul>
-                </div>
-            </li>
+                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
+                <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Admin</a></li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies3D.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li class="hover-me"><a href="Ticket.html"><i class="fa fa-credit-card"></i> Purchase Ticket</a>
-                                <div class="sub-menu-2">
-                                    <ul>
-                                        <li><a href="Food.html"><i class="fa fa-mobile"></i> Mobile-Banking</a></li>
-                                        <li><a href="merchandise.html"><i class="fa fa-address-card"></i> Internet-Banking</a></li>
-                                        <li><a href="merchandise.html"><i class="fa fa-credit-card"></i> Card</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="portfolio.html"><i class="fa fa-apple"></i> Refreshments</a></li>
+                           
+                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
                             <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
                         </ul>
                     </div>
@@ -296,8 +289,9 @@
                 
                 </li>
             </ul>
-        </div>
-
+        </div >
+         
+           
     </header>
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
 
@@ -362,7 +356,11 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
+<<<<<<< HEAD
     $query = "SELECT title from merchandise where title='Key-Chain'";
+=======
+    $query = "SELECT title from merchandise where title='Key Chain Set'";
+>>>>>>> Riyadil-master
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -397,7 +395,11 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
+<<<<<<< HEAD
     $query = "SELECT price from merchandise where title='Key-Chain'";
+=======
+    $query = "SELECT price from merchandise where title='Key Chain Set'";
+>>>>>>> Riyadil-master
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -818,7 +820,11 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
+<<<<<<< HEAD
     $query = "SELECT title from merchandise where title='Double Mug'";
+=======
+    $query = "SELECT title from merchandise where title='Double Mugs'";
+>>>>>>> Riyadil-master
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
@@ -853,7 +859,11 @@
     if (!$connection)
         echo 'Oops 🙁 connection failed';
     else
+<<<<<<< HEAD
     $query = "SELECT price from merchandise where title='Double Mug'";
+=======
+    $query = "SELECT price from merchandise where title='Double Mugs'";
+>>>>>>> Riyadil-master
     $result = oci_parse($connection, $query);
     oci_execute($result);
     while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
