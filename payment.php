@@ -1,35 +1,109 @@
 <?php
  session_start(); 
- 
-$conn=oci_connect("dbms","dbms","localhost/XE");
+
+  $conn=oci_connect("dbms","dbms","localhost/XE");
 	$query = 'SELECT *from membership';
 	$stid = oci_parse($conn, $query);
 	oci_execute($stid);
-  if (!$conn){
-  echo "no connection";}
-  else{
-    echo " connection";
-  }
 
-if(isset($_POST['confirm']))
+  $query22 = 'SELECT *from payment';
+	$stid22 = oci_parse($conn, $query22);
+	oci_execute($stid22);
+
+ 
+
+if(isset($_POST['confirm_mob']))
 {
+  
 $u=$_SESSION['myid'];
-echo "hi";
+$id=$_SESSION['myP_ID'];
+
+ while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
+  {  
+    if($row["EMAIL_ID"]==$u){
+      ///********************************no of booking ************************************************/
+        $b=$row["NO_OF_BOOKING"];
+        $b=$b+1;
+        $u=$_SESSION['myid'];
+                                          
+        $sql="update membership set no_of_booking=".$b." where email_id='".$u."'";
+        $compile=oci_parse($conn,$sql);
+        oci_execute($compile);
+        echo "<script>alert('Payment Record Added');
+            window.location.href='payment.php';
+    </script>";}
+  }
+  while ($row = oci_fetch_array($stid22, OCI_RETURN_NULLS+OCI_ASSOC))
+  {  
+    if($row["PAYMENT_ID"]==$id){
+        
+        $sql2="update payment set system='Mobile Banking' where payment_ID='".$id."'";
+        $compile=oci_parse($conn,$sql2);
+        oci_execute($compile);
+       }
+  }
+}
+
+
+else if(isset($_POST['confirm_int']))
+{
+  
+$u=$_SESSION['myid'];
+$id=$_SESSION['myP_ID'];
+
  while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
   {  
     if($row["EMAIL_ID"]==$u){
         $b=$row["NO_OF_BOOKING"];
         $b=$b+1;
         $u=$_SESSION['myid'];
-        echo $u;
+        
         $sql="update membership set no_of_booking=".$b." where email_id='".$u."'";
-        echo $sql;             
         $compile=oci_parse($conn,$sql);
         oci_execute($compile);
-        echo "<script>alert('Record added');
+        echo "<script>alert('Payment Record Added');
             window.location.href='payment.php';
-            </script>";}
-  }echo "hi";
+    </script>";}
+  }
+  while ($row = oci_fetch_array($stid22, OCI_RETURN_NULLS+OCI_ASSOC))
+  {  
+    if($row["PAYMENT_ID"]==$id){
+        
+        $sql2="update payment set system='Internet Banking' where payment_ID='".$id."'";
+        $compile=oci_parse($conn,$sql2);
+        oci_execute($compile);
+       }
+  }
+}
+if(isset($_POST['confirm_card']))
+{
+  
+$u=$_SESSION['myid'];
+$id=$_SESSION['myP_ID'];
+
+ while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
+  {  
+    if($row["EMAIL_ID"]==$u){
+        $b=$row["NO_OF_BOOKING"];
+        $b=$b+1;
+        $u=$_SESSION['myid'];
+      
+        $sql="update membership set no_of_booking=".$b." where email_id='".$u."'";
+        $compile=oci_parse($conn,$sql);
+        oci_execute($compile);
+        echo "<script>alert('Payment Record Added');
+            window.location.href='payment.php';
+    </script>";}
+  }
+  while ($row = oci_fetch_array($stid22, OCI_RETURN_NULLS+OCI_ASSOC))
+  {  
+    if($row["PAYMENT_ID"]==$id){
+        
+        $sql2="update payment set system='Via Card' where payment_ID='".$id."'";
+        $compile=oci_parse($conn,$sql2);
+        oci_execute($compile);
+       }
+  }
 }
 ?>
 
@@ -105,7 +179,9 @@ input:focus {
     outline-width: 0 !important;
     font-weight: 400
 }
-
+p{
+  text-align:center;
+}
 button:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
@@ -233,7 +309,9 @@ a {
 hr {
   border: 1px solid lightgrey;
 }
-
+h6{
+  text-align:center;
+}
 span.price {
   float: right;
   color: grey;
@@ -243,44 +321,211 @@ span.price {
   <body>
     <div class="container">
     <?php
-         
+         $Adsgt="After Discount";
          $PRO="PROFILE";
          $NAME="Name :";
          $MOB="Mobile number :";
          $booking="Points:";
-         
+         $itemName="Item Name";
+         $Price="Price";
+         $Quantity="Quantity";
+         $type="Type";
+         $gt="Grand Total";
+         $dis="Discount";
+         $freepop="Free Popcorn";
+         $yes="You have earned 2 free popcorns!!!";
+         $no="Sorry! Better luck next time.";
          print "<table class = \"table table-bordered table-dark \">\n";
          print "<tr>\n";
          print "    <td><span>" . $PRO . "</span></td>\n";
          print "<tr>\n";
          print "    <td>" . $NAME . "</td>\n";
-         print "<tr>\n";
          print "    <td>" . $f=$_SESSION['myFirstName']." ". $l=$_SESSION['myLastName']. "</td>\n";
-         
+         print "</tr>\n";
          
          print "<tr>\n";
          print "    <td>" . $MOB . "</td>\n";
-         print "<tr>\n";
          print "    <td>" . $p=$_SESSION['myPhone'] . "</td>\n";
+         print "</tr>\n";
+         
+         //points
          print "<tr>\n";
-
          print "    <td>" . $booking . "</td>\n";
+         print "    <td>" . $b=$_SESSION['booking'] . "</td>\n";
+         print "</tr>\n";
+
+         print "<tr>\n";
+         $flag=0;
+
+         for ($i=0;$i<count($_SESSION['cart']);$i++){
+         
+          print "<tr>\n";
+          print "    <td>" . $type . "</td>\n";
+          print "    <td>" . $_SESSION['cart'][$i]['Type'] . "</td>\n";
+          print "</tr>\n";
+
+
+         print "    <td>" . $itemName . "</td>\n";
+         print "    <td>" . $_SESSION['cart'][$i]['Item_Name'] . "</td>\n";
+         print "</tr>\n";
+
+         print "<tr>\n";
+         print "    <td>" . $Price . "</td>\n";
+         print "    <td>" . $_SESSION['cart'][$i]['Price'] . "</td>\n";
+         print "</tr>\n";
+
+         print "<tr>\n";
+         
+         print "    <td>" . $Quantity . "</td>\n";
+         print "    <td>" . $_SESSION['cart'][$i]['Quantity'] . "</td>\n";
+         print "</tr>\n";
+         
+        
+         if(isset($_POST['confirm_mob']) || isset($_POST['confirm_int']) || isset($_POST['confirm_card'])   ){
+          
+         if ($_SESSION['cart'][$i]['Type']=='Merchandise Product'){
+         $q5="select available from merchandise where title='".$_SESSION['cart'][$i]['Item_Name']."'";
+      
+         $stmt5=oci_parse($conn,$q5);
+         oci_execute($stmt5);
+
+         $row = oci_fetch_array($stmt5, OCI_RETURN_NULLS+OCI_ASSOC);
+         ///********************************quantity availbility************************************************/
+         $somethingMERCH=$row["AVAILABLE"];
+         
+
+         $newM=$_SESSION['cart'][$i]['Quantity'];
+         
+
+         $newW=$somethingMERCH-$newM;
+        
+
+
+         $query51="update merchandise set available =".$newW." where title= '".$_SESSION['cart'][$i]['Item_Name']."'";
+         
+         $stmt51=oci_parse($conn,$query51);
+         oci_execute($stmt51);
+         }
+
+         if ($_SESSION['cart'][$i]['Type']=='Food'){
+          $q="select available from food where food_name='".$_SESSION['cart'][$i]['Item_Name']."'";
+          $stmt2=oci_parse($conn,$q);
+          oci_execute($stmt2);
+ 
+          $row = oci_fetch_array($stmt2, OCI_RETURN_NULLS+OCI_ASSOC);
+          $somethingFOOD=$row["AVAILABLE"];
+          
+ 
+          $newQ=$_SESSION['cart'][$i]['Quantity'];
+          
+ 
+          $new=$somethingFOOD-$newQ;
+          
+ 
+ 
+          $query31="update food set available =".$new." where food_name= '".$_SESSION['cart'][$i]['Item_Name']."'";
+         
+          $stmt23=oci_parse($conn,$query31);
+          oci_execute($stmt23);
+          }
+          
+          if ($_SESSION['cart'][$i]['Type']=='Ticket'){
+            $qTT = "select availability from showtime s,movie_info m where s.showtime_id=m.movie_id and m.movie_name='".$_SESSION['cart'][$i]['Item_Name']."'";
+      
+            $stmt2TT=oci_parse($conn,$qTT);
+            oci_execute($stmt2TT);
+   
+            $row = oci_fetch_array($stmt2TT, OCI_RETURN_NULLS+OCI_ASSOC);
+            $somethingTT=$row["AVAILABILITY"];
+            
+   
+            $newQT=$_SESSION['cart'][$i]['Quantity'];
+            
+   
+            $newT=$somethingTT-$newQT;
+            
+            
+         
+              $qTT12="update showtime s set availability=".$newT." where showtime_id=(select s.showtime_id from showtime s inner join  
+              movie_info m on s.movie_id=m.movie_id
+                   where movie_name='".$_SESSION['cart'][$i]['Item_Name']."')";
+            $stmt2TT12=oci_parse($conn,$qTT12);
+            oci_execute($stmt2TT12);
+   
+            
+            }
+
+
+         }
+         if($_SESSION['cart'][$i]['Type']=='Ticket') {
+                 $flag=$flag+$_SESSION['cart'][$i]['Quantity'];
+         }
+        }
+          
+///********************************Discount************************************************/
+         $dis_var=(int)$b/5;
+         $dv=ceil($dis_var);
+         $adv=(int)$dv/100;
+         $grt_total=$_SESSION['gt'] ;
+         $Final_Aft_Dis=$grt_total*$adv;
+
+         //discount
+         print "<tr>\n";
+         print "    <td>" . $dis . "</td>\n";
+         print "    <td><b>" . $dv . "%</b></td>\n";
          print "<tr>\n";
 
-         print "    <td>" . $b=$_SESSION['booking'] . "</td>\n";
          print "<tr>\n";
+         print "    <td>" . $gt . "</td>\n";
+         print "    <td><b>" . $_SESSION['gt'] . "</b></td>\n";
+         print "<tr>\n";
+         
+         //after discount 
+         print "<tr>\n";
+         print "    <td>" . $Adsgt . "</td>\n";
+         print "    <td><b>" . $grt_total-$Final_Aft_Dis . "</b></td>\n";
+         print "<tr>\n";
+        
+         
+         print "<tr>\n";
+         print "    <td>" . $freepop . "</td>\n";
+         if($flag>=3){
+         print "    <td><b>" . $yes . "</b></td>\n";
+         print "<tr>\n";}
+
+         else{
+          print "    <td><b>" . $no . "</b></td>\n";
+          print "<tr>\n";}
 
          print "</table>\n";
+         
         
 	    
         ?>
       <div class="row"> 
-          <div class="col-md-6">
+      
+          <div class="col-md-8">
           <button type="submit" data-toggle="modal" data-target="#myModal" name="proceed" class="btn btn-primary py-2 px-4">Proceed to make the purchase</button> 
           </div>
-          <div class="col-md-6">
-          <a href='http://localhost/302/myCart.php'><button type="button"  class="btn btn-primary py-2 px-4">LOGOUT</button></a>
-          
+          <div class="col-md-4">
+          <form action="payment.php" method="POST">
+          <a href='http://localhost/302/myCart.php'><button type="submit" name="logout" class="btn btn-primary py-2 px-4">LOGOUT</button></a>
+          <?php
+          if(isset($_POST['logout'])){
+            //$_SESSION['mevalid'] = false;
+
+            unset($_SESSION['cart']);
+            echo"<script> 
+            alert('Logged out');
+            window.location.href='myCart.php';
+           </script>";
+            
+          }
+
+          ?>
+
+
+          </form>
           </div>
 
         
@@ -291,6 +536,7 @@ span.price {
                   <div class="modal-content">
                       <div class="modal-header row d-flex justify-content-between mx-1 mx-sm-3 mb-0 pb-0 border-0">
                           <div class="tabs" id="tab01">
+                              
                               <h6 class="text-muted">Mobile Banking</h6>
                           </div>
                           <div class="tabs active" id="tab02">
@@ -306,7 +552,9 @@ span.price {
                       <form method="POST">
                           <fieldset id="tab011">
                               <div class="bg-light">
+                              
                                   <h3 class="text-center mb-4 mt-0 pt-4">Mobile Banking</h3>
+                                  <p>Account no. 0173647189</p>
                                   <br>
                                   <ol class="pb-4">
                                       <a href='https://payment.bkash.com/redirect/tokenized/?paymentID=TR0011UR1624019924510&hash=qoTzSj4Xf(vh-E6Dl9qpUQ1Ic3SNWn-10mKsV(wQhkm8u*FZaQfS3VwFwXcGDNm7UhIVthFaeDcN_pdLGIJ9a2.l-lIYuu.!!naQ1624019924547&mode=0011&apiVersion=v1.2.0-beta'><img src="images/bkash.jpg" alt="" class="rounded" width="160"></a>
@@ -316,8 +564,8 @@ span.price {
                                   </ol>
                                   <div class="modal-footer d-flex flex-column justify-content-center border-0">
                                   <div class="modal-footer d-flex flex-column justify-content-center border-0">
-                           <button type="submit" class="btn btn-primary" name="confirm">Confirm checkout</button>
-                     
+                           <button type="submit" class="btn btn-primary" name="confirm_mob">Confirm checkout</button>
+                              
                               </div>
                              
                           </fieldset>
@@ -325,7 +573,9 @@ span.price {
                           <form method="POST">
                           <fieldset class="show" id="tab021">
                               <div class="bg-light">
+                                  
                                   <h3 class="text-center mb-4 mt-0 pt-4">Internet Banking</h3><br>
+                                  <p>Account no. 413794000</p>
                                   <ol class="pb-4">
                                     <a href='https://www.citytouch.com.bd/login#!'><img src="images/city touch.png" alt="" class="rounded" width="160"></a>
                                     <a href='https://abdirect.abbl.com/merchant/login#!'><img src="images/ab bank.png" alt="" class="rounded" width="160"></a>
@@ -337,7 +587,7 @@ span.price {
                               <div class="modal-footer d-flex flex-column justify-content-center border-0">
                               <div class="modal-footer d-flex flex-column justify-content-center border-0">
                            
-                           <button type="submit" class="btn btn-primary" name="confirm">Confirm checkout</button>
+                           <button type="submit" class="btn btn-primary" name="confirm_int">Confirm checkout</button>
                          
                               </div>
                           </fieldset>
@@ -352,7 +602,7 @@ span.price {
                                             <div class="row">
                                             
                                             <div class="col-50">
-                                              
+                                              <h5><b>Account no. 1234-5678-9919-1287</b></h5>
                                               <label for="fname">Accepted Cards</label>
                                               <div class="icon-container">
                                                 <i class="fab fa-cc-visa" style="color:navy;"></i>
@@ -394,7 +644,7 @@ span.price {
                                             
                                           </div>
                                          
-                                          <input type="submit" value="Continue to checkout" class="btn" name="confirm">
+                                          <input type="submit" value="Continue to checkout" class="btn" name="confirm_card">
                                           
                                         </form>
                                       </div>

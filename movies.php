@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -180,10 +185,7 @@
     </style>
     
 
-    <!--[if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif]-->       
+           
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -229,8 +231,8 @@
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies3D.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
@@ -362,7 +364,7 @@
     );
 
     if (!$connection)
-        echo 'Oops 🙁 connection failed';
+        
     else
     $query = "SELECT movie_name from movie_info where movie_id='M0TB20210614'";
     $result = oci_parse($connection, $query);
@@ -423,7 +425,7 @@
     );
 
     if (!$connection)
-        echo 'Oops 🙁 connection failed';
+        
     else
     $query = "SELECT movie_name from movie_info where movie_id='MTCT20210614'";
     $result = oci_parse($connection, $query);
@@ -493,7 +495,7 @@
     );
 
     if (!$connection)
-        echo 'Oops 🙁 connection failed';
+       
     else
     $query = "SELECT movie_name from movie_info where movie_id='M0AE20210614'";
     $result = oci_parse($connection, $query);
@@ -638,7 +640,7 @@ Scarlett Johansson . Florence Pugh . David Harbour
     );
 
     if (!$connection)
-        echo 'Oops 🙁 connection failed';
+       
     else
     $query = "SELECT movie_name from movie_info where movie_id='MGVK20210614'";
     $result = oci_parse($connection, $query);

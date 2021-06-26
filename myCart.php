@@ -21,22 +21,24 @@ if(isset($_POST['submit']))
      }
  }
  
+ $grand_total=0;
  $u=$_POST['username'];
  $pas=$_POST['password'];
- 
+ $flag2=false;
  
   $_SESSION['mevalid'] = false;
+
  while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC))
   {  
-     
+      
     if(($row["EMAIL_ID"]==$u)&&($row["PASSWORD"]==$pas)&&($row["STATUS"]=='customer')&& ($flag==true))
       {
-        
+       
+        $flag2=true;
         $f=$row["FIRST_NAME"];
         $l=$row["LAST_NAME"];
         $p=$row["MOBILE_NO"];
         $b=$row["NO_OF_BOOKING"];
-        //$b=$b+1;
         $_SESSION['mevalid'] = true;
         $_SESSION['myid'] = $u;
         $_SESSION['myFirstName'] = $f;
@@ -44,17 +46,102 @@ if(isset($_POST['submit']))
         $_SESSION['myPhone'] = $p;
         $_SESSION['booking'] = $b;
         
-        
-     
+        //////////////////////////////////////////////////
+        if($flag2==true){
+           
+          
+          $query2="INSERT INTO PAYMENT (payment_ID,system,name,price,type,purchase_date,m_email_id,d_email_id)values(:payment_ID_bv,:system_bv,:name_bv,:price_bv,:type_bv,:purchase_date_bv,:m_email_id_bv,:d_email_id_bv)";
+         
+          $stmt=oci_parse($conn,$query2);
+
+          ///********************************Sequence************************************************/
+          $sql222="SELECT  payment_id_gen.NEXTVAL
+                   FROM DUAL";
+                   $stmt22=oci_parse($conn,$sql222);
+                   oci_execute($stmt22);
+                   $row = oci_fetch_array($stmt22, OCI_RETURN_NULLS+OCI_ASSOC);
+                   $payment_id=$row["NEXTVAL"];
+               
+                  
+                  $_SESSION['myP_ID']=$payment_id;
+                  echo $payment_id;
+          if($stmt){
+              
+              
+            
+              foreach($_SESSION['cart'] as $key => $values){
+                  
+                   $name=$values['Item_Name'];
+                    oci_bind_by_name($stmt, ":name_bv", $name);
+                  
+                  
+                  $Price=$values['Price'];
+                  oci_bind_by_name($stmt, ":price_bv", $Price);
+                  
+                  $Quantity=$values['Quantity'];
+                  
+
+                  $_SESSION['myPrice']=$Price*$Quantity;
+                  $grand_total=$grand_total+$_SESSION['myPrice'];
+                  
+                  
+                  $type=$values['Type'];
+                  oci_bind_by_name($stmt, ":type_bv", $type);
+                  //$_SESSION['myType']=$type;
+
+                  
+                  $system='cash on delivery';
+                  oci_bind_by_name($stmt, ":system_bv", $system);
+                  $_SESSION['mySystem']=$system;
+
+                  
+                  //////date choose//////
+                  $purchase_date=date("d-M-y");
+                  oci_bind_by_name($stmt, ":purchase_date_bv", $purchase_date);
+                  $_SESSION['myPurDate']=$system;
+                   
+                
+                  oci_bind_by_name($stmt, ":payment_id_bv", $payment_id);
+            
+                  $query3="select d_email_id from duty_employee d , payment p where d.assign_date = '".$purchase_date."'";
+       
+                  $stmt2=oci_parse($conn,$query3);
+                  oci_execute($stmt2);
+                  $row = oci_fetch_array($stmt2, OCI_RETURN_NULLS+OCI_ASSOC);
+                  $something=$row["D_EMAIL_ID"];
+                  if($stmt2){
+                    oci_bind_by_name($stmt, ":d_email_id_bv", $something);
+                  }
+                  oci_bind_by_name($stmt, ":m_email_id_bv", $u);
+                  oci_execute($stmt);}
+                  
+                }
+                  
+                  /*for ($i=0;$i<count($name[$i]);$i++){
+                    $_SESSION['myItem_Name']=$name[$i];
+                    }*/
+                  
+
+                  $_SESSION['gt']=$grand_total;
+                  //$m_email_id=$u;
+                  
+                  
+
+              
+          
+          $sql="insert into membership values ('$email','$f_name','$l_name','customer','$c_pass','$phone','2')";
+         
+        }
+        ///////////////////////////////////////////////
         
        header("Location:payment.php");
 
-       exit();}
-      
+      exit();
+    }
       else if ($flag==false && ($row["EMAIL_ID"]==$u)&&($row["PASSWORD"]==$pas)&&($row["STATUS"]=='customer') )
      
        { echo "<script>alert('Book a ticket first!');
-                           window.location.href='merch.php';
+                           window.location.href='movies3D.php';
                            </script>";}
        }
       echo "<script>alert('Wrong password!');
@@ -65,7 +152,9 @@ if(isset($_POST['submit']))
   
 
   
-   
+  
+  
+
 
 
 ?>
@@ -296,69 +385,53 @@ if(isset($_POST['submit']))
 </head>
 <body>
     <!--/head-->
-    <body>
 
-<header id="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 overflow">
-                <div class="social-icons pull-right">
-                    <ul class="nav nav-pills">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-google"></i></a></li>
-                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-                <div class="logo pull-left">
-                <h2>Lights Camera Action</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
+<header id="header">      
+        
 
+               
+        <div class="menu-bar">
+            <ul>
+                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
+                <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Admin</a></li>
+                <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a href="http://localhost/302/movies2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies3D.php"><i class="fa fa-check"></i> 3D</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                           
+                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
+                            <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
+                        </ul>
+                    </div>
 
-    <div class="menu-bar">
-        <ul>
-            <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
-            <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Admin</a></li>
-            <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
-                <div class="sub-menu-1">
-                    <ul>
-                        <li><a href="http://localhost/302/movies_2D.php"><i class="fa fa-check"></i> 2D</a></li>
-                        <li><a href="http://localhost/302/movies_3D.php"><i class="fa fa-check"></i> 3D</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
-                <div class="sub-menu-1">
-                    <ul>
-                       
-                        <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
-                        <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
-                    </ul>
-                </div>
+                </li>
+                <li><a href='http://localhost/302/registration.php'><i class="fa fa-user-plus"></i> Sign Up</a></li>
+                <li><a href='http://localhost/302/contact%20us.php'><i class="fa fa-phone"></i> Contact Us</a></li>
+                <li>
+                <?php
+                $count=0;
+                if(isset($_SESSION['cart']))
+                {
+                    $count=count($_SESSION['cart']);
 
-            </li>
-            <li><a href='http://localhost/302/registration.php'><i class="fa fa-user-plus"></i> Sign Up</a></li>
-            <li><a href='http://localhost/302/contact%20us.php'><i class="fa fa-phone"></i> Contact Us</a></li>
-            <li>
-            <?php
-            $count=0;
-            if(isset($_SESSION['cart']))
-            {
-                $count=count($_SESSION['cart']);
-
-            } 
-            ?>
-            <a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart (<?php echo $count; ?>)</a>
-            
-            </li>
-        </ul>
-    </div >
-
-</header>
+                } 
+                ?>
+                <a href="myCart.php"><i class="fa fa-shopping-cart"></i> My Cart (<?php echo $count; ?>)</a>
+                
+                </li>
+            </ul>
+        </div >
+         
+           
+    </header>
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
     <body>
       
@@ -402,8 +475,71 @@ if(isset($_POST['submit']))
       <td>$value[Type]</td>
       <td>$value[Price]<input type='hidden' class='iprice' value='$value[Price]'> </td>
       <td>
-      <form action='manage_cart.php' method='POST'>
-      <input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='50' style='color:black;'> 
+      <form action='manage_cart.php' method='POST'>";
+      if($value['Type']=='Food'){
+        
+        $q1="select available from food where food_name='".$value['Item_Name']."'";
+        
+        $stmt33=oci_parse($conn,$q1);
+        
+        oci_execute($stmt33);
+        $row = oci_fetch_array($stmt33,OCI_BOTH);
+        
+                  $something33=$row[0];
+                  
+
+        if ($something33<0){
+            echo "<input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='0' max='0' style='color:black;'>"; 
+         
+        }            
+        else{
+            echo "<input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='$something33' style='color:black;'>";
+               }
+        }
+     
+      else if($value['Type']=='Merchandise Product')
+      {
+        $q1="select available from merchandise where title='".$value['Item_Name']."'";
+        
+        $stmt33=oci_parse($conn,$q1);
+        
+        oci_execute($stmt33);
+        $row = oci_fetch_array($stmt33,OCI_BOTH);
+        
+       $something33=$row[0];
+       if ($something33<0){
+           echo "<input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='1' style='color:black;'>"; 
+                 
+       }            
+      else{
+            echo "<input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='$something33' style='color:black;'>";
+                 }
+         }
+      else if($value['Type']=='Ticket')
+      {
+        $q1="select availability from showtime s,movie_info m where s.showtime_id=m.movie_id and m.movie_name='".$value['Item_Name']."'";
+        
+        $stmt33=oci_parse($conn,$q1);
+        
+        oci_execute($stmt33);
+        $row = oci_fetch_array($stmt33,OCI_BOTH);
+        
+       $something33=$row[0];
+       if ($something33<0){
+           echo "<input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='1' style='color:black;'>"; 
+                 
+       }            
+      else{
+            echo "<input class='text-center iquantity' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='$value[Quantity]' min='1' max='$something33' style='color:black;'>";
+                 }
+         }
+      
+     
+     
+     
+     
+     
+      echo "
       <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
       </from>
       </td>
@@ -414,8 +550,8 @@ if(isset($_POST['submit']))
       <input type='hidden' name='Item_Name' value='$value[Item_Name]'>
       </form> 
       </tr>
-      ";}
-      
+      ";
+      } 
   }
   
   ?>
@@ -442,7 +578,7 @@ if(isset($_POST['submit']))
         <h4 >Dont have an account?</h4>
         <h4><a href='http://localhost/302/registration.php'>Register now.</a></h4>
         <br>
-        <input type="text" class="form-control" name="username" placeholder="Email" required="required" values="username">
+        <input type="email" class="form-control" name="username" placeholder="Email" required="required" values="username">
         </div>
         <div class="form-group">
         <input type="text" class="form-control" name="password" placeholder="Password" required="required" values="password">

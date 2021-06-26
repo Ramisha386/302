@@ -19,7 +19,7 @@
         echo 'Oops 🙁 connection failed';
     else
         
-    $query = "SELECT * from Duty_Employee";
+    $query = "SELECT emp_name,email_id,mobile_no from Duty_Employee";
     $result = oci_parse($connection, $query);
     oci_execute($result);
 

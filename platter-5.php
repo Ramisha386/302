@@ -1,7 +1,6 @@
 <?php session_start(); 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,201 +15,197 @@
     <link href="css/animate.min.css" rel="stylesheet"> 
 	<link href="css/main.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
+    <link href="css/image.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:wght@300&display=swap" rel="stylesheet">
-    <!--[if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif]-->       
+         
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
     <style>
+        .own
+        {
+            font-weight: bolder;
+            font-size: large;
+            font-family: 'Lobster', cursive;
+            font-family: 'Merriweather', serif;
+            color: darkred;
+        }
+        .display
+        {
+            font-style: oblique;
+            font-size: medium;
+        }
         *
-      {
-          padding: 0;
-          margin: 0;
-          box-sizing: border-box;
-      }
-      body
-      {
-          background-image: url("images/back.jpg");
-          background-size: cover;
-          background-position: center;
-         
-          font-family: 'Oswald', sans-serif;
-      }
-      .menu-bar
-      {
-          background:darkred;
-          text-align: center;
-          font-size: 15px;
-      }
-      .menu-bar ul
-      {
-          display: inline-flex;
-          list-style: none;
-          color: #fff;
-      }
-      .menu-bar ul li
-      {
-          width:120px;
-          margin:15px;
-          padding: 15px;
-      }
-      .menu-bar ul li a
-      {
-          text-decoration: none;
-          color: #fff;
-      }
-      .active , .menu-ar ul li:hover
-      {
-          background: #000;
-          border-radius: 2px;
-
-      }
-      .menu-bar fa
-      {
-          margin-left: 20px;
-          float: left;
-          padding-right: 5px;
-      }
-      .sub-menu-1
-      {
-          display:none;
-
-      }
-      .menu-bar ul li:hover  .sub-menu-1
-      {
-          display: block;
-          position: absolute;
-          background-color:darkred;
-          margin-top: 15px;
-          margin-left:-15px;
-          
-      }
-      .menu-bar ul li:hover  .sub-menu-1 ul
-      {
-          display: block;
-          margin:10px;
-          
-      }
-      .menu-bar ul li:hover  .sub-menu-1 ul li
-      {
-          width:150px;
-          padding:10px;
-          border-bottom: 1px dotted #fff;
-          background:transparent;
-          border-radius: 0;
-          text-align: left;
-          color: white;
-      }
-      
-      .menu-bar ul li:hover  .sub-menu-1 ul li:last-child
-      {
-          border-bottom: none;
-      }
-      .menu-bar ul li:hover  .sub-menu-1 ul a:hover
-      {
-          color: white;
-      }
-      .sub-menu-2
-      {
-          display: none;
-      }
-      .hover-me:hover .sub-menu-2
-      {
-          position: absolute;
-          display: block;
-          margin-top: -40px;
-          margin-left:140px;
-          background: darkred;
-      }
-     
-       .own
        {
-           font-weight: bolder;
-           font-size: large;
-           font-family: 'Lobster', cursive;
-           font-family: 'Merriweather', serif;
-           color: darkred;
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
        }
-       .display
+       body
        {
-           font-style: oblique;
-           font-size: medium;
+           
+
+        font-family: 'Varela Round', sans-serif;
+        background-image: url('images/food2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        color: #fff;
+        
+       }
+       .menu-bar
+       {
+           background:darkred;
+           text-align: center;
+           font-size: 15px;
+       }
+       .menu-bar ul
+       {
+           display: inline-flex;
+           list-style: none;
+           color: #fff;
+       }
+       .menu-bar ul li
+       {
+           width:120px;
+           margin:15px;
+           padding: 15px;
+       }
+       .menu-bar ul li a
+       {
+           text-decoration: none;
+           color: #fff;
+       }
+       .active , .menu-ar ul li:hover
+       {
+           background: #000;
+           border-radius: 2px;
+
+       }
+       .menu-bar fa
+       {
+           margin-left: 20px;
+           float: left;
+           padding-right: 5px;
+       }
+       .sub-menu-1
+       {
+           display:none;
+
+       }
+       .menu-bar ul li:hover  .sub-menu-1
+       {
+           display: block;
+           position: absolute;
+           background-color:darkred;
+           margin-top: 15px;
+           margin-left:-15px;
+           
+       }
+       .menu-bar ul li:hover  .sub-menu-1 ul
+       {
+           display: block;
+           margin:10px;
+           
+       }
+       .menu-bar ul li:hover  .sub-menu-1 ul li
+       {
+           width:150px;
+           padding:10px;
+           border-bottom: 1px dotted #fff;
+           background:transparent;
+           border-radius: 0;
+           text-align: left;
+           color: white;
+       }
+       
+       .menu-bar ul li:hover  .sub-menu-1 ul li:last-child
+       {
+           border-bottom: none;
+       }
+       .menu-bar ul li:hover  .sub-menu-1 ul a:hover
+       {
+           color: white;
+       }
+       .sub-menu-2
+       {
+           display: none;
+       }
+       .hover-me:hover .sub-menu-2
+       {
+           position: absolute;
+           display: block;
+           margin-top: -40px;
+           margin-left:140px;
+           background: darkred;
        }
        .btn
-      {
-          color: #fff;
-          border-color:darkred;
-      }
-      .btn:hover
-      {
-          color: white;
-          font-weight: bold;
-          border-color: whitesmoke;
+       {
+           color: #fff;
+           border-color:darkred;
+       }
+       .btn:hover
+       {
+           color: white;
+           font-weight: bold;
+           border-color: whitesmoke;
 
-      }
-   </style>
+       }
+
+       .logo h2
+        {
+            padding:20px 0;
+            width:100%;
+            font-size:50px;
+            font-family: 'Lobster', cursive;
+        }
+      
+    </style>
 </head><!--/head-->
 
 <body>
 	<!--/head-->
 
 <body>
-    <header id="header">
-        <div class="container">
+<header id="header">      
+        
+<div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
-                    <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                    <div class="logo pull-left">
+                    <h2>Lights Camera Action</h2>
                     </div>
                 </div>
             </div>
         </div>
-
-
+               
         <div class="menu-bar">
             <ul>
-                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i></i> Home</a></li>
-                <li><a href='#'><i class="fa fa-sign-in"></i> Log In</a>
-                <div class="sub-menu-1">
-                    <ul>
-                        <li><a href="https://localhost/302/login_admin.php"><i class="fa fa-check" ></i> Admin</a></li>
-                        <li><a href="https://localhost/302/login.php"><i class="fa fa-check" ></i> Customer</a></li>
-                    </ul>
-                </div>
-            </li>
+                <li class="active"><a href='http://localhost/302/homee.php'><i class="fa fa-home"></i> Home</a></li>
+                <li><a href='https://localhost/302/login_admin.php'><i class="fa fa-check" ></i> Admin</a></li>
                 <li><a href='#'><i class="fa fa-play-circle" ></i> Showtime</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 2D</a></li>
-                            <li><a href="http://localhost/302/movies.php"><i class="fa fa-check"></i> 3D</a></li>
+                            <li><a href="http://localhost/302/movies2D.php"><i class="fa fa-check"></i> 2D</a></li>
+                            <li><a href="http://localhost/302/movies3D.php"><i class="fa fa-check"></i> 3D</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href='#'><i class="fa fa-shopping-cart"></i> Concession</a>
                     <div class="sub-menu-1">
                         <ul>
-                            <li class="hover-me"><a href="Ticket.html"><i class="fa fa-credit-card"></i> Purchase Ticket</a>
-                                <div class="sub-menu-2">
-                                    <ul>
-                                        <li><a href="Food.html"><i class="fa fa-mobile"></i> Mobile-Banking</a></li>
-                                        <li><a href="merchandise.html"><i class="fa fa-address-card"></i> Internet-Banking</a></li>
-                                        <li><a href="merchandise.html"><i class="fa fa-credit-card"></i> Card</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="portfolio.html"><i class="fa fa-apple"></i> Refreshments</a></li>
+                           
+                            <li><a href="http://localhost/302/portfolio.php"><i class="fa fa-cutlery"></i> Refreshments</a></li>
                             <li><a href="http://localhost/302/merch.php"><i class="fa fa-coffee"></i> Merchandise</a></li>
                         </ul>
                     </div>
@@ -231,8 +226,9 @@
                 
                 </li>
             </ul>
-        </div>
-
+        </div >
+         
+           
     </header>
     <!-----------hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh------------------->
     <!--/#header-->
@@ -249,7 +245,36 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="project-info overflow">
-                        <h3 class="own">Platter-5</h3>
+                    <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT food_name from food where food_name='Platter-5'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h1 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h1>" ;
+                              }
+                            }
+
+                           
+               ?>
                         <p>The movies just wouldn't be the same without an ice-cold, refreshing pepsi and freshly popped popcorn. Now, classics like Pop Chicken and candy are joined with more menu options than ever. </p>
                         <ul class="elements">
                             <li><i class="fa fa-angle-right"></i> 1 French Fries</li>
@@ -261,13 +286,71 @@
                     <div class="skills overflow">
                         <h3 class="own">Total Price:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <h4 class="display">900 BDT</h4>
+                        <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT price from food where food_name='Platter-5'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                              }
+                            }
+
+                           
+               ?>
                         </ul>
                     </div>
                     <div class="client overflow">
                         <h3 class="own">Platter-Size:</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li class="display"> Medium</li>
+                        <?php
+                            
+                            //Oracle DB user name
+    $username = 'dbms';
+
+    // Oracle DB user password
+    $password = 'dbms';
+
+    // Oracle DB connection string
+    $connection_string = 'localhost/xe';
+ $connection = oci_connect(
+        $username,
+        $password,
+        $connection_string
+    );
+
+    if (!$connection)
+        echo 'Oops 🙁 connection failed';
+    else
+    $query = "SELECT platter_size from food where food_name='Platter-5'";
+    $result = oci_parse($connection, $query);
+    oci_execute($result);
+    while ($row = oci_fetch_array($result, OCI_ASSOC + OCI_RETURN_NULLS)) { 
+                            foreach ($row as $item) {
+                        print "<h4 >". ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;")."</h4>" ;
+                              }
+                            }
+
+                           
+               ?>
                         </ul>
                     </div>
                     <div class="live-preview">
